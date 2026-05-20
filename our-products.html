@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Products – SUN-X Concrete</title>
+  <link rel="stylesheet" href="src/css/comman.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red: #c0392b;
+      --navy: #1a2744;
+      --bg: #f5f4f2;
+      --bg-white: #ffffff;
+      --bg-dark: #1c1c1e;
+      --text: #1a1a1a;
+      --muted: #6e6e73;
+      --light-border: rgba(0,0,0,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg-white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ────────────────────────────────
+       SECTION 0 — HERO
+    ──────────────────────────────── */
+    .hero {
+      position: relative;
+      background: #e8e6e1;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    /* Ghost text background */
+    .hero-ghost {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-ghost-text {
+      font-size: clamp(10rem, 22vw, 22rem);
+      font-weight: 900;
+      color: rgba(0,0,0,0.055);
+      line-height: 0.85;
+      letter-spacing: -8px;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    /* Left: text */
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      padding: 8rem 5vw 7rem 7vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .hero-title {
+      font-size: clamp(2.8rem, 5.5vw, 5.6rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -2.5px;
+      color: var(--text);
+      margin-bottom: 1.6rem;
+    }
+    .hero-title .accent { color: var(--red); }
+    .hero-desc {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 400px;
+      margin-bottom: 1.4rem;
+    }
+    .hero-desc-sub {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 360px;
+      margin-bottom: 2.5rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--red);
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--text);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1.8rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: 100px;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .hero-cta:hover { background: var(--red); transform: translateY(-2px); }
+
+    /* Right: big image */
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 4vw;
+    }
+    .hero-img-wrap {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 1/1;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    .hero-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    /* count pill */
+    .hero-count {
+      position: absolute;
+      bottom: 3rem; left: 7vw;
+      display: flex; align-items: baseline; gap: 0.5rem;
+      z-index: 3;
+    }
+    .hero-count-num {
+      font-size: 4rem; font-weight: 900;
+      color: var(--red); line-height: 1;
+      letter-spacing: -3px;
+    }
+    .hero-count-label {
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 7rem 5vw 3rem; }
+      .hero-right { padding: 2rem 5vw 5rem; }
+      .hero-count { bottom: 2rem; }
+    }
+
+
+
+    /* TYPE C — light gray, centered editorial */
+    .prod-c {
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 7vw;
+    }
+    .prod-c-inner {
+      max-width: 1300px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative; z-index: 1;
+    }
+    .prod-c-image {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .prod-c-image img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .prod-c-image:hover img { transform: scale(1.04); }
+    .prod-c-ghost {
+      position: absolute;
+      bottom: -0.2em; right: -0.02em;
+      font-size: clamp(7rem, 16vw, 16rem);
+      font-weight: 900;
+      color: rgba(0,0,0,0.04);
+      line-height: 1;
+      letter-spacing: -5px;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    /* ── SHARED CONTENT TYPOGRAPHY ── */
+    .prod-num {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.7rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .prod-num::before {
+      content: '';
+      display: block;
+      width: 20px; height: 1.5px;
+      background: var(--red); flex-shrink: 0;
+    }
+
+    .prod-title {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1px;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+    }
+    .prod-b .prod-title { color: #fff; }
+
+    .prod-desc {
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+    .prod-b .prod-desc { color: rgba(255,255,255,0.5); }
+
+    /* Details two-col */
+    .prod-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem 1.8rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--light-border);
+    }
+    .prod-b .prod-details { border-top-color: rgba(255,255,255,0.1); }
+
+    .pd-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.6rem;
+    }
+    .pd-list { list-style: none; }
+    .pd-list li {
+      display: flex; align-items: flex-start; gap: 7px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      padding: 0.22rem 0;
+    }
+    .prod-b .pd-list li { color: rgba(255,255,255,0.45); }
+    .pd-dot {
+      width: 4px; height: 4px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    /* Tags row */
+    .prod-tags {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin-bottom: 1.6rem;
+    }
+    .p-tag {
+      font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 4px 11px;
+      background: rgba(192,57,43,0.08);
+      color: var(--red);
+      border: 1px solid rgba(192,57,43,0.18);
+      border-radius: 100px;
+    }
+    .prod-b .p-tag {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.6);
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    /* ── IMAGE overlay badge ── */
+    .img-badge {
+      position: absolute;
+      top: 1.5rem; left: 1.5rem;
+      background: var(--red);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      z-index: 2;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .prod-c-inner { grid-template-columns: 1fr; }
+      .prod-c { padding: 4rem 5vw; }
+      .prod-c-inner { gap: 2.5rem; }
+      .prod-details { grid-template-columns: 1fr; }
+    }
+
+    /* ────────────────────────────────
+       SCROLL ANIMATIONS
+    ──────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(44px);
+      filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1; transform: none; filter: none;
+    }
+    .reveal-left {
+      opacity: 0; transform: translateX(-44px); filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.8s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: none; filter: none; }
+    .reveal-right {
+      opacity: 0; transform: translateX(44px); filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.8s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: none; filter: none; }
+
+    /* ────────────────────────────────
+       CTA FOOTER STRIP
+    ──────────────────────────────── */
+    .cta-strip {
+      background: var(--navy);
+      padding: 5rem 7vw;
+      text-align: center;
+    }
+    .cta-strip h2 {
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+    }
+    .cta-strip h2 em { font-style: normal; color: #f0c040; }
+    .cta-strip p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 2.5rem;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--red); color: #fff; text-decoration: none;
+      padding: 0.85rem 2.2rem; font-size: 0.82rem; font-weight: 700;
+      letter-spacing: 0.5px; border-radius: 100px;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .cta-btn:hover { background: #a93226; transform: translateY(-2px); }
+    .cta-btn svg { width: 14px; height: 14px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" style="background-color: black !important;">
+    <div class="nav-left">
+      <a href="index.html" class="logo">
+        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" />
+      </a>
+    </div>
+    <div class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="services.html">Our Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="our-products.html">Our Products</a>
+      <a href="our-projects.html">Our Projects</a>
+      <a href="our-plants.html">Our Plants</a>
+    </div>
+    <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- DRAWER -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" />
+      <button class="drawer-close" id="drawerClose">&#x2715;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="services.html">Our Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="our-products.html">Our Products</a>
+      <a href="our-projects.html">Our Projects</a>
+      <a href="our-plants.html">Our Plants</a>
+    </nav>
+    <div class="drawer-footer">© 2026 Sun-X</div>
+  </div>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero">
+    <div class="hero-ghost">
+      <span class="hero-ghost-text">RMC</span>
+    </div>
+
+    <div class="hero-left">
+      <div class="hero-eyebrow">Ready-Mix Concrete · SUN-X</div>
+      <h1 class="hero-title">
+        Concrete<br>
+        Ready <span class="accent">Mix</span><br>
+        for All Your<br>
+        Needs
+      </h1>
+      <p class="hero-desc">
+        The team at SUN-X Concrete understand that all concrete is not the same and that customers have different needs. Whether it's a mixed concrete design specifically required to meet stringent criteria, the ability to supply concrete around the clock, or ready made concrete or decorative options, SUN-X Concrete will work with you to find the right concrete from our wide range of concrete products.
+      </p>
+      <p class="hero-desc-sub">
+        Consult with our technical team to find the right type of concrete mix for your project.
+      </p>
+      <a href="#products" class="hero-cta">
+        Explore Products
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+          <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+        </svg>
+      </a>
+      <div class="hero-count">
+        <span class="hero-count-num">8</span>
+        <span class="hero-count-label">Product<br>Types</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=85"
+          alt="SUN-X concrete pour"
+        />
+      </div>
+    </div>
+  </section>
+
+  <div id="products"></div>
+
+  <!-- ══════════ 01 TEMPERATURE CONTROLLED ══════════ -->
+  <section class="prod-c">
+    <div class="prod-c-ghost">TEMP</div>
+    <div class="prod-c-inner">
+      <div class="prod-c-image reveal-left" style="position:relative;">
+        <div class="img-badge">01 · Mass Concrete</div>
+        <img src="https://images.unsplash.com/photo-1567942712661-82b9b407abbf?w=900&q=80" alt="Temperature Controlled Concrete"/>
+      </div>
+      <div class="reveal-right">
+        <div class="prod-num">01 · Temperature Controlled</div>
+        <h2 class="prod-title">Temperature<br>Controlled<br>Concrete</h2>
+        <div class="prod-tags">
+          <span class="p-tag">Mass Concrete</span>
+          <span class="p-tag">High Durability</span>
+        </div>
+        <p class="prod-desc">Mixed concrete with lower heat of hydration for mass concrete requirements — ensuring lower core temperature and lower temperature differentials, and subsequently higher durability.</p>
+        <div class="prod-details">
+          <div>
+            <div class="pd-label">Applications</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Raft foundations</li>
+              <li><span class="pd-dot"></span>Large footings</li>
+              <li><span class="pd-dot"></span>Dams</li>
+              <li><span class="pd-dot"></span>Thick retaining walls</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pd-label">Properties</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Lower drying stress</li>
+              <li><span class="pd-dot"></span>Lower temperature stress</li>
+              <li><span class="pd-dot"></span>Higher durability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 02 SELF COMPACTING ══════════ -->
+  <section class="prod-c">
+    <div class="prod-c-ghost">SCC</div>
+    <div class="prod-c-inner" style="direction:rtl;">
+      <div class="prod-c-image reveal-right" style="position:relative;direction:ltr;">
+        <div class="img-badge">02 · Self Compacting</div>
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80" alt="Self Compacting Concrete"/>
+      </div>
+      <div class="reveal-left" style="direction:ltr;">
+        <div class="prod-num">02 · Self Compacting</div>
+        <h2 class="prod-title">Self<br>Compacting<br>Concrete</h2>
+        <div class="prod-tags">
+          <span class="p-tag">SCC</span>
+          <span class="p-tag">No Vibration</span>
+        </div>
+        <p class="prod-desc">Fresh concrete that flows under its own weight — no external vibration required. Ideal for complex reinforcement configurations and hard-to-reach areas.</p>
+        <div class="prod-details">
+          <div>
+            <div class="pd-label">Applications</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Drilled shafts</li>
+              <li><span class="pd-dot"></span>Columns</li>
+              <li><span class="pd-dot"></span>Earth retaining systems</li>
+              <li><span class="pd-dot"></span>High rebar areas</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pd-label">Properties</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Higher strength vs traditional</li>
+              <li><span class="pd-dot"></span>Resistance to segregation</li>
+              <li><span class="pd-dot"></span>No vibration needed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 03 GREEN BUILDING ══════════ -->
+  <section class="prod-c">
+    <div class="prod-c-ghost">GRN</div>
+    <div class="prod-c-inner">
+      <div class="prod-c-image reveal-left" style="position:relative;">
+        <div class="img-badge">03 · Green Building</div>
+        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=900&q=80" alt="Green Building Concrete"/>
+      </div>
+      <div class="reveal-right">
+        <div class="prod-num">03 · Green Building</div>
+        <h2 class="prod-title">Green<br>Building<br>Concrete</h2>
+        <div class="prod-tags">
+          <span class="p-tag">Sustainable</span>
+          <span class="p-tag">Low CO₂</span>
+        </div>
+        <p class="prod-desc">Extra steps in mix design and placement to ensure a sustainable structure, long life cycle, and low maintenance surface — with energy saving and reduced CO₂ emissions.</p>
+        <div class="prod-details">
+          <div>
+            <div class="pd-label">Applications</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Green homes</li>
+              <li><span class="pd-dot"></span>Exterior walls</li>
+              <li><span class="pd-dot"></span>Pavements</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pd-label">Properties</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>CO₂ reduced ≥ 30%</li>
+              <li><span class="pd-dot"></span>Min 20% residual aggregate</li>
+              <li><span class="pd-dot"></span>CO₂-neutral fuels ≥ 10%</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 04 HIGH DENSITY ══════════ -->
+  <section class="prod-c">
+    <div class="prod-c-ghost">HDD</div>
+    <div class="prod-c-inner">
+      <div class="prod-c-image reveal-left" style="position:relative;">
+        <div class="img-badge">04 · High Density</div>
+        <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=900&q=80" alt="High Density Concrete"/>
+      </div>
+      <div class="reveal-right">
+        <div class="prod-num">04 · High Density</div>
+        <h2 class="prod-title">High<br>Density<br>Concrete</h2>
+        <div class="prod-tags">
+          <span class="p-tag">Radiation Shield</span>
+          <span class="p-tag">5200 kg/m³</span>
+        </div>
+        <p class="prod-desc">Density ~50% more than conventional concrete — up to 5,200 kg/m³ using iron aggregate. Absorbs neutron and gamma rays, reducing radiation to a very weak state.</p>
+        <div class="prod-details">
+          <div>
+            <div class="pd-label">Applications</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Nuclear reactor structures</li>
+              <li><span class="pd-dot"></span>Radiation control buildings</li>
+              <li><span class="pd-dot"></span>EM wave shielding</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pd-label">Properties</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Absorbs neutron &amp; gamma rays</li>
+              <li><span class="pd-dot"></span>Good mechanical strength</li>
+              <li><span class="pd-dot"></span>High durability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 05 HIGH STRENGTH ══════════ -->
+  <section class="prod-c">
+    <div class="prod-c-ghost">HSC</div>
+    <div class="prod-c-inner" style="direction:rtl;">
+      <div class="prod-c-image reveal-right" style="position:relative;direction:ltr;">
+        <div class="img-badge">05 · High Strength</div>
+        <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=900&q=80" alt="High Strength Concrete"/>
+      </div>
+      <div class="reveal-left" style="direction:ltr;">
+        <div class="prod-num">05 · High Strength</div>
+        <h2 class="prod-title">High<br>Strength<br>Concrete</h2>
+        <div class="prod-tags">
+          <span class="p-tag">200 MPa</span>
+          <span class="p-tag">High Rise</span>
+        </div>
+        <p class="prod-desc">Formulated with portland cement, reactive powders, quartz flour, fine sand, and high-range water reducers. Achieves compressive strengths exceeding 29,000 psi (200 MPa).</p>
+        <div class="prod-details">
+          <div>
+            <div class="pd-label">Applications</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Highway bridges</li>
+              <li><span class="pd-dot"></span>Concrete girders</li>
+              <li><span class="pd-dot"></span>Buildings over 30 storeys</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pd-label">Properties</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Compressive strength &gt; 200 MPa</li>
+              <li><span class="pd-dot"></span>Dense, smooth surface finish</li>
+              <li><span class="pd-dot"></span>Precise form-detail transfer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 06 EARLY STRENGTH ══════════ -->
+  <section class="prod-c">
+    <div class="prod-c-ghost">ESC</div>
+    <div class="prod-c-inner">
+      <div class="prod-c-image reveal-left" style="position:relative;">
+        <div class="img-badge">06 · Early Strength</div>
+        <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=900&q=80" alt="Early Strength Concrete"/>
+      </div>
+      <div class="reveal-right">
+        <div class="prod-num">06 · Early Strength</div>
+        <h2 class="prod-title">Early<br>Strength<br>Concrete</h2>
+        <div class="prod-tags">
+          <span class="p-tag">&gt;60 MPa at 28d</span>
+          <span class="p-tag">High Performance</span>
+        </div>
+        <p class="prod-desc">High compressive strength (&gt;60 MPa) after 28 days — classified in the high performance group. Versatile technical characteristics make it ideal for earthquake-zone high-rise structures.</p>
+        <div class="prod-details">
+          <div>
+            <div class="pd-label">Applications</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>High load-bearing columns</li>
+              <li><span class="pd-dot"></span>Precast plant products</li>
+              <li><span class="pd-dot"></span>High-rise earthquake-zone buildings</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pd-label">Properties</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Higher cement content</li>
+              <li><span class="pd-dot"></span>Reduced water-cement ratio</li>
+              <li><span class="pd-dot"></span>Better workability &amp; compaction</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 07 LIGHT WEIGHT ══════════ -->
+  <section class="prod-c">
+    <div class="prod-c-ghost">LWC</div>
+    <div class="prod-c-inner">
+      <div class="prod-c-image reveal-left" style="position:relative;">
+        <div class="img-badge">07 · Light Weight</div>
+        <img src="https://images.unsplash.com/photo-1529408632839-a54952c491e5?w=900&q=80" alt="Light Weight Concrete"/>
+      </div>
+      <div class="reveal-right">
+        <div class="prod-num">07 · Light Weight</div>
+        <h2 class="prod-title">Light<br>Weight<br>Concrete</h2>
+        <div class="prod-tags">
+          <span class="p-tag">Thermal</span>
+          <span class="p-tag">Fire Resistant</span>
+        </div>
+        <p class="prod-desc">Significantly reduces dead loads, making savings in foundations and reinforcement. Improved thermal properties and fire resistance — with equivalent structural strengths where required.</p>
+        <div class="prod-details">
+          <div>
+            <div class="pd-label">Applications</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Structural applications</li>
+              <li><span class="pd-dot"></span>Architectural covering</li>
+              <li><span class="pd-dot"></span>Roof heat insulation</li>
+              <li><span class="pd-dot"></span>Water pipe insulation</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pd-label">Properties</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Reduced dead loads</li>
+              <li><span class="pd-dot"></span>Improved thermal properties</li>
+              <li><span class="pd-dot"></span>Improved fire resistance</li>
+              <li><span class="pd-dot"></span>Less formwork &amp; propping</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 08 WATER PERMEABLE ══════════ -->
+  <section class="prod-c">
+    <div class="prod-c-ghost">WPC</div>
+    <div class="prod-c-inner" style="direction:rtl;">
+      <div class="prod-c-image reveal-right" style="position:relative;direction:ltr;">
+        <div class="img-badge">08 · Water Permeable</div>
+        <img src="https://images.unsplash.com/photo-1444927714506-8492d94b4e3d?w=900&q=80" alt="Water Permeable Concrete"/>
+      </div>
+      <div class="reveal-left" style="direction:ltr;">
+        <div class="prod-num">08 · Water Permeable</div>
+        <h2 class="prod-title">Water<br>Permeable<br>Concrete</h2>
+        <div class="prod-tags">
+          <span class="p-tag">Pervious</span>
+          <span class="p-tag">Groundwater Recharge</span>
+        </div>
+        <p class="prod-desc">High porosity flatwork concrete that allows water to pass directly through — reducing site runoff, allowing groundwater recharge, and reducing water logging on roads and pavements.</p>
+        <div class="prod-details">
+          <div>
+            <div class="pd-label">Applications</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>Pavements</li>
+              <li><span class="pd-dot"></span>Streets and roads</li>
+              <li><span class="pd-dot"></span>Water logging reduction</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pd-label">Properties</div>
+            <ul class="pd-list">
+              <li><span class="pd-dot"></span>High porosity structure</li>
+              <li><span class="pd-dot"></span>Direct water pass-through</li>
+              <li><span class="pd-dot"></span>Reduces runoff &amp; flooding</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CTA STRIP ══════════ -->
+  <section class="cta-strip reveal">
+    <h2>Not sure which mix is right for <em>your project?</em></h2>
+    <p>Consult with our technical team to find the right concrete for your requirements.</p>
+    <a href="contact.html" class="cta-btn">
+      Talk To Our Experts
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+  </section>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+        else e.target.classList.remove('visible');
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

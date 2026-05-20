@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SUN-X — Our Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="src/css/comman.css">
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      margin: 0 !important; padding: 0 !important;
+      font-family: 'Inter Variable', Inter, Arial, sans-serif;
+      font-size: 16px; line-height: 1.6; color: #111; overflow-x: hidden;
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .anim-left, .anim-right, .anim-up {
+      transition: opacity 0.78s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.78s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.78s ease;
+    }
+    .anim-left  { opacity: 0; transform: translateX(-48px); filter: blur(4px); }
+    .anim-right { opacity: 0; transform: translateX(48px);  filter: blur(4px); }
+    .anim-up    { opacity: 0; transform: translateY(36px);  filter: blur(4px); }
+    .anim-left.in-view, .anim-right.in-view, .anim-up.in-view {
+      opacity: 1; transform: translate(0); filter: blur(0);
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+    .srv-hero {
+      position: relative; height: 62vh; min-height: 440px;
+      background-image: url('./src/assets/images/Poonamallee%20Plant.jpg');
+      background-size: cover; background-position: center 40%;
+      display: flex; align-items: center; padding: 0 5vw; overflow: hidden;
+    }
+    .srv-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.82) 40%, rgba(0,0,0,0.25) 100%),
+                  linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%);
+    }
+    .srv-hero::after {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 420px; height: 100%;
+      background: linear-gradient(120deg, transparent 40%, rgba(192,57,43,0.12) 100%);
+      pointer-events: none;
+    }
+    .srv-hero-content {
+      position: relative; z-index: 2; max-width: 680px; margin-top: 64px;
+      animation: heroIn 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s both;
+    }
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateX(-50px); filter: blur(6px) brightness(0.3); }
+      60%  { filter: blur(2px) brightness(0.7); }
+      to   { opacity: 1; transform: translateX(0); filter: blur(0) brightness(1); }
+    }
+    .srv-eb { display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem; }
+    .srv-eb-line { width: 40px; height: 2px; background: #c0392b; flex-shrink: 0; }
+    .srv-eb-text { font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+    .srv-hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3rem, 7.5vw, 3.8rem); font-weight: 700; color: #fff;
+      line-height: 1; text-transform: uppercase; margin-bottom: 1.2rem; letter-spacing: -0.5px;
+    }
+    .srv-hero-title .red { color: #c0392b; }
+    .srv-hero-sub { font-size: clamp(0.9rem,1.5vw,1rem); color: rgba(255,255,255,0.72); max-width: 520px; line-height: 1.75; }
+
+    /* =====================================================
+       SERVICES MAIN — ONE SECTION
+       Top: left headline + right quote/promises
+       Bottom: 3 service cards (white bg)
+    ===================================================== */
+
+    /* shared button */
+    .srv-btn-red {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #c0392b; color: #fff; text-decoration: none;
+      padding: 0.85rem 2rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 1px;
+      border-radius: 3px; transition: background 0.3s, transform 0.2s;
+    }
+    .srv-btn-red:hover { background: #a93226; transform: translateY(-2px); }
+    .srv-btn-red svg { width: 14px; height: 14px; }
+
+    /* ── WRAPPER ── */
+    .srv-main { overflow: hidden; }
+
+    /* ── TOP: white bg, centered, with image ── */
+    .srv-main-top {
+      background: #fff;
+      padding: 6rem 5vw 0;
+    }
+
+    /* eyebrow + heading block — centered */
+    .smt-head {
+      text-align: center;
+      max-width: 1160px;
+      margin: 0 auto 3.5rem;
+    }
+    .smt-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(192,57,43,0.08); border: 1px solid rgba(192,57,43,0.25);
+      border-radius: 999px; padding: 0.28rem 1rem;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: #c0392b; margin-bottom: 1.4rem;
+    }
+    .smt-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; color: #1a2744;
+      text-transform: uppercase; line-height: 1.05; letter-spacing: -0.5px;
+      margin-bottom: 1.2rem;
+    }
+    .smt-title em { font-style: normal; color: #c0392b; }
+    .smt-desc {
+      font-size: 0.9rem; color: #666; line-height: 1.9;
+      max-width: 1100px; margin: 0 auto 2rem;
+    }
+
+    /* 4 promise pills — centered row */
+    .smt-pills {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 0.6rem; margin-bottom: 2.4rem;
+    }
+    .smt-pill {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      background: #f5f5f5; border: 1px solid #e8e8e8;
+      border-radius: 999px; padding: 0.5rem 1.1rem;
+      font-size: 0.75rem; font-weight: 700; color: #1a2744;
+      transition: background 0.25s, border-color 0.25s, color 0.25s;
+    }
+    .smt-pill:hover { background: rgba(192,57,43,0.07); border-color: rgba(192,57,43,0.3); color: #c0392b; }
+    .smt-pill-dot { width: 5px; height: 5px; border-radius: 50%; background: #c0392b; flex-shrink: 0; }
+
+    /* cta row centered */
+    .smt-cta { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    .smt-btn-out {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: #1a2744; text-decoration: none;
+      padding: 0.83rem 2rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 1px;
+      border: 1.5px solid #1a2744; border-radius: 3px;
+      transition: border-color 0.3s, color 0.3s, background 0.3s, transform 0.2s;
+    }
+    .smt-btn-out:hover { border-color: #c0392b; color: #c0392b; transform: translateY(-2px); }
+
+    /* image — full width, clipped bottom */
+    .smt-img-wrap {
+      position: relative;
+      width: 100%; max-width: 1180px;
+      margin: 0 auto;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+      aspect-ratio: 16 / 7;
+      box-shadow: 0 -8px 40px rgba(0,0,0,0.08);
+    }
+    .smt-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.9s cubic-bezier(0.22,1,0.36,1);
+    }
+    .smt-img-wrap:hover img { transform: scale(1.03); }
+
+    /* overlay strip at bottom of image */
+    .smt-img-wrap::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,18,38,0.55) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    /* quote overlay on image */
+    .smt-img-quote {
+      position: absolute; bottom: 2rem; left: 2.5rem; right: 2.5rem;
+      z-index: 2;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 2rem;
+    }
+    .smt-img-quote-text {
+      font-size: 0.88rem; color: rgba(255,255,255,0.88); line-height: 1.75;
+      font-style: italic; max-width: 520px;
+      border-left: 3px solid #c0392b; padding-left: 1rem;
+    }
+    .smt-img-badge {
+      background: #c0392b; color: #fff;
+      padding: 0.7rem 1.4rem; border-radius: 3px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; white-space: nowrap; flex-shrink: 0;
+      text-decoration: none; transition: background 0.3s;
+    }
+    .smt-img-badge:hover { background: #a93226; }
+
+    @media (max-width: 900px) {
+      .srv-main-top { padding: 4rem 5vw 0; }
+      .smt-img-wrap { aspect-ratio: 16 / 9; border-radius: 8px 8px 0 0; }
+      .smt-img-quote { flex-direction: column; align-items: flex-start; gap: 1rem; bottom: 1.4rem; left: 1.4rem; right: 1.4rem; }
+    }
+    @media (max-width: 600px) {
+      .srv-main-top { padding: 3rem 5vw 0; }
+      .smt-pills { gap: 0.4rem; }
+      .smt-img-badge { display: none; }
+    }
+
+    /* ── SERVICE CARDS (white bg, below top split) ── */
+    .srv-cards-wrap {
+      background: #f5f5f5;
+      padding: 5rem 5vw 6rem;
+    }
+    .srv-cards-wrap-inner { max-width: 1280px; margin: 0 auto; }
+
+    /* section label row */
+    .sc-label-row {
+      display: flex; align-items: center; gap: 1.2rem;
+      margin-bottom: 2.8rem;
+      opacity: 0; transform: translateY(20px); filter: blur(3px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s, filter 0.8s;
+    }
+    .sc-label-row.in-view { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .sc-label-line { flex: 1; height: 1px; background: #ddd; }
+    .sc-label-txt { font-size: 0.62rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #c0392b; white-space: nowrap; }
+
+    /* 3-column card grid */
+    .sc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .sc-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+      opacity: 0; transform: translateY(32px); filter: blur(4px);
+      transition:
+        opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+        transform 0.8s cubic-bezier(0.22,1,0.36,1),
+        filter 0.8s ease,
+        box-shadow 0.3s, border-color 0.3s;
+    }
+    .sc-card.in-view { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .sc-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-color: rgba(192,57,43,0.25); }
+
+    /* top accent bar sweeps on hover */
+    .sc-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: #c0392b; transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .sc-card:hover::before { transform: scaleX(1); }
+
+    .sc-body { padding: 2.2rem 2rem 2.4rem; flex: 1; display: flex; flex-direction: column; }
+
+    .sc-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #c0392b; margin-bottom: 0.6rem; }
+    .sc-title { font-size: 1.15rem; font-weight: 800; color: #1a2744; line-height: 1.2; margin-bottom: 0.9rem; }
+    .sc-desc { font-size: 0.85rem; color: #666; line-height: 1.9; flex: 1; }
+
+    @media (max-width: 960px) {
+      .srv-main-top { grid-template-columns: 1fr; }
+      .smt-left { padding: 4rem 5vw; }
+      .smt-right { padding: 3.5rem 5vw; border-left: none; border-top: 1px solid #e8e8e8; }
+      .sc-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .sc-grid { grid-template-columns: 1fr; }
+      .smt-pills { grid-template-columns: 1fr; }
+      .srv-cards-wrap { padding: 3.5rem 5vw 4rem; }
+    }
+
+    /* =====================================================
+       HOW WE WORK
+    ===================================================== */
+    .srv-process { background: #f5f5f5; padding: 6rem 5vw; overflow: hidden; }
+    .srv-process-inner { max-width: 1280px; margin: 0 auto; }
+    .srv-sec-hdr { text-align: center; margin-bottom: 3.5rem; }
+    .srv-sec-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #c0392b; margin-bottom: 1rem; }
+    .srv-sec-eline { width: 28px; height: 2px; background: #c0392b; flex-shrink: 0; }
+    .srv-sec-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #1a2744; line-height: 1.1; letter-spacing: -0.5px; }
+    .srv-process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 3.5rem; position: relative; }
+    .srv-process-steps::before { content: ''; position: absolute; top: 32px; left: calc(12.5% + 16px); right: calc(12.5% + 16px); height: 2px; background: linear-gradient(to right,#c0392b,rgba(192,57,43,0.15)); }
+    .srv-proc-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1.5rem; opacity: 0; transform: translateY(28px); filter: blur(4px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s, filter 0.8s; }
+    .srv-proc-step.in-view { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .srv-proc-dot { width: 64px; height: 64px; border-radius: 50%; background: #fff; border: 2px solid #e0e0e0; display: flex; align-items: center; justify-content: center; margin-bottom: 1.6rem; position: relative; z-index: 2; transition: border-color 0.3s, background 0.3s; }
+    .srv-proc-step:hover .srv-proc-dot { border-color: #c0392b; background: #c0392b; }
+    .srv-proc-dot svg { width: 22px; height: 22px; stroke: #c0392b; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.3s; }
+    .srv-proc-step:hover .srv-proc-dot svg { stroke: #fff; }
+    .srv-proc-n { position: absolute; top: -8px; right: -8px; width: 22px; height: 22px; background: #c0392b; border-radius: 50%; font-size: 0.6rem; font-weight: 800; color: #fff; display: flex; align-items: center; justify-content: center; }
+    .srv-proc-ttl { font-size: 0.9rem; font-weight: 800; color: #1a2744; margin-bottom: 0.6rem; }
+    .srv-proc-dsc { font-size: 0.8rem; color: #888; line-height: 1.75; }
+    @media (max-width: 900px) { .srv-process-steps { grid-template-columns: 1fr 1fr; gap: 2.5rem; } .srv-process-steps::before { display: none; } }
+    @media (max-width: 500px) { .srv-process-steps { grid-template-columns: 1fr; gap: 2rem; } .srv-process { padding: 4rem 5vw; } }
+
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+    .srv-cta { background: #6e0f0f; padding: 5.5rem 5vw; text-align: center; position: relative; overflow: hidden; }
+    .srv-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,255,255,0.04) 0%, transparent 70%), repeating-linear-gradient(-55deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px); pointer-events: none; }
+    .srv-cta-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; opacity: 0; transform: translateY(36px); filter: blur(4px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s, filter 0.9s; }
+    .srv-cta-inner.in-view { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .srv-cta-eb { display: inline-flex; align-items: center; gap: 14px; margin-bottom: 1.4rem; }
+    .srv-cta-ebline { width: 40px; height: 2px; background: rgba(255,255,255,0.4); flex-shrink: 0; }
+    .srv-cta-ebtxt { font-size: 0.68rem; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    .srv-cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 700; color: #fff; text-transform: uppercase; line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 1.4rem; }
+    .srv-cta-desc { font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: 2.5rem; }
+    .srv-cta-btn { display: inline-flex; align-items: center; gap: 12px; background: transparent; color: #fff; text-decoration: none; border: 2px solid rgba(255,255,255,0.5); padding: 0.95rem 2.6rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 3px; transition: border-color 0.3s, background 0.3s, transform 0.2s; }
+    .srv-cta-btn:hover { border-color: #fff; background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+    .srv-cta-btn svg { width: 15px; height: 15px; }
+  </style>
+</head>
+<body>
+
+
+
+
+    <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <a href="#" class="logo">
+        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" />
+      </a>
+    </div>
+    <div class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Our Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="our-products.html">Our Products</a>
+      <a href="our-projects.html">Our Projects</a>
+      <a href="our-plants.html">Our Plants</a>
+    </div>
+    <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" />
+      <button class="drawer-close" id="drawerClose">&#x2715;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Our Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="our-products.html">Our Products</a>
+      <a href="our-projects.html">Our Projects</a>
+      <a href="our-plants.html">Our Plants</a>
+    </nav>
+    <div class="drawer-footer">© 2026 Sun-X</div>
+  </div>
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+  <section class="srv-hero" id="hero">
+    <div class="srv-hero-overlay"></div>
+    <div class="srv-hero-content">
+      <div class="srv-eb">
+        <div class="srv-eb-line"></div>
+        <span class="srv-eb-text">Our Services · Sun-X Concrete</span>
+      </div>
+      <h1 class="srv-hero-title">
+        BUILT ON
+        <!-- <br> -->
+        <span class="red">QUALITY.</span> DELIVERED<br>
+        WITH PRECISION.
+      </h1>
+      <p class="srv-hero-sub">
+        From Ready-Mix Concrete and Technical Support to on-site Concrete Placement —
+        SUN-X offers a single source for all your construction material needs across
+        Tamil Nadu, Karnataka &amp; Andhra Pradesh.
+      </p>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SERVICES MAIN — ONE SECTION
+  ===================================================== -->
+  <section class="srv-main">
+
+    <!-- TOP: white bg, centered content + image -->
+    <div class="srv-main-top">
+
+      <!-- Centered heading block -->
+      <div class="smt-head anim-up">
+        <span class="smt-tag">Our Services · Sun-X Concrete</span>
+        <h2 class="smt-title">
+          Dynamic Services.<br>
+          Expert <em>Performance.</em>
+        </h2>
+        <p class="smt-desc">
+          At the International Mining and Mines Safety Expo-Symposium, organised by Stone Quarry,
+          Crusher and Lorry Owners' Association and Mining Engineers Association of India, quarry
+          owners were urged to take measures to minimise environmental degradation due to quarrying —
+          a standard we hold ourselves to every single day.
+        </p>
+
+        <!-- Promise pills -->
+        <div class="smt-pills">
+          <div class="smt-pill"><span class="smt-pill-dot"></span>Full-focused project approach</div>
+          <div class="smt-pill"><span class="smt-pill-dot"></span>Unmatched Efficiency</div>
+          <div class="smt-pill"><span class="smt-pill-dot"></span>A phone call away</div>
+          <div class="smt-pill"><span class="smt-pill-dot"></span>Building Supplies in Tamilnadu</div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="smt-cta">
+          <a href="#" class="srv-btn-red">
+            Request a Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#" class="smt-btn-out">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Full-width image -->
+      <div class="smt-img-wrap anim-up" style="transition-delay:0.18s;">
+        <img
+          src="./src/assets/images/Poonamallee%20Plant.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=85'"
+          alt="SUN-X Concrete Services"
+        />
+        <div class="smt-img-quote">
+          <p class="smt-img-quote-text">
+            "We are dedicated to being the most reliable building supplies partner across Southern India —
+            committed to quality, trust, and transparency with every customer."
+          </p>
+          <a href="#" class="smt-img-badge">Our Projects →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM: 3 service cards -->
+    <div class="srv-cards-wrap">
+      <div class="srv-cards-wrap-inner">
+
+        <div class="sc-label-row" id="scLabelRow">
+          <div class="sc-label-line"></div>
+          <span class="sc-label-txt">Core Services</span>
+          <div class="sc-label-line"></div>
+        </div>
+
+        <div class="sc-grid">
+
+          <!-- Card 1 -->
+          <div class="sc-card" id="scard1">
+            <div class="sc-body">
+              <div class="sc-tag">Engineering · Planning</div>
+              <div class="sc-title">Technical Expertise</div>
+              <p class="sc-desc">We utilize conceptual estimates; on- and off-site design assist and value-engineering processes; and seasoned project scheduling efforts to ensure the most cost-effective, schedule-driven budgets.</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="sc-card" id="scard2">
+            <div class="sc-body">
+              <div class="sc-tag">Support · Materials</div>
+              <div class="sc-title">Technical Support</div>
+              <p class="sc-desc">Wide-ranging facilities and multidisciplinary staff allow us to solve all sorts of construction industry problems, from design failures and repair specifications to materials issues, queries on Building Supplies. SUN-X concrete offers a single source for construction service to meet all your needs.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="sc-card" id="scard3">
+            <div class="sc-body">
+              <div class="sc-tag">Ready-Mix · Foundation</div>
+              <div class="sc-title">Concrete Placement</div>
+              <p class="sc-desc">From concrete slabs, Mini-Mix Concrete to laying foundations, we can provide you with a custom-made batch of concrete that is tailored to suit your own commercial requirements.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- =====================================================
+       HOW WE WORK
+  ===================================================== -->
+  <section class="srv-process">
+    <div class="srv-process-inner">
+      <div class="srv-sec-hdr anim-up">
+        <div class="srv-sec-eyebrow">
+          <span class="srv-sec-eline"></span>Our Process<span class="srv-sec-eline"></span>
+        </div>
+        <h2 class="srv-sec-title">How We Work</h2>
+      </div>
+      <div class="srv-process-steps" id="processSteps">
+        <div class="srv-proc-step">
+          <div class="srv-proc-dot"><span class="srv-proc-n">01</span><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="srv-proc-ttl">Consultation</div>
+          <div class="srv-proc-dsc">Understand project requirements, site conditions, and concrete grade specifications.</div>
+        </div>
+        <div class="srv-proc-step">
+          <div class="srv-proc-dot"><span class="srv-proc-n">02</span><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div class="srv-proc-ttl">Mix Design</div>
+          <div class="srv-proc-dsc">Our engineers create a bespoke concrete mix tailored to your structural and environmental needs.</div>
+        </div>
+        <div class="srv-proc-step">
+          <div class="srv-proc-dot"><span class="srv-proc-n">03</span><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="srv-proc-ttl">Quality Check</div>
+          <div class="srv-proc-dsc">Every batch is tested in our onsite laboratory against IS:1786 and international standards.</div>
+        </div>
+        <div class="srv-proc-step">
+          <div class="srv-proc-dot"><span class="srv-proc-n">04</span><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <div class="srv-proc-ttl">On-Time Delivery</div>
+          <div class="srv-proc-dsc">Our 150+ fleet dispatches from the nearest plant to reach your site exactly when needed.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       CTA
+  ===================================================== -->
+  <section class="srv-cta">
+    <div class="srv-cta-inner" id="srvCta">
+      <div class="srv-cta-eb">
+        <div class="srv-cta-ebline"></div>
+        <span class="srv-cta-ebtxt">Get In Touch</span>
+        <div class="srv-cta-ebline"></div>
+      </div>
+      <h2 class="srv-cta-title">Ready to Build<br>with Sun-X?</h2>
+      <p class="srv-cta-desc">Our solutions enjoy very high confidence among customers as a company that delivers high quality products, consistency in delivery, and honesty in business. Let's talk about your next project.</p>
+      <a href="#" class="srv-cta-btn">
+        Contact Us Today
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </section>
+
+
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap');
+.fx{font-family:'Instrument Sans',sans-serif;background:#fff;padding:4rem 5vw 0;border-top:1px solid #eeede8}
+.fx-top{display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:3rem;border-bottom:1px solid #eeede8}
+/* .fx-logo-ring{width:88px;height:88px;border-radius:50%;border:1.5px solid #e8e6e0;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:transform 0.4s cubic-bezier(.34,1.56,.64,1),border-color 0.3s}
+.fx-logo-ring:hover{transform:scale(1.08) rotate(-4deg);border-color:#1a2744} */
+.fx-main-logo{height:52px;object-fit:contain}
+.fx-brand{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:700;color:#1a2744;letter-spacing:0.5px;margin-bottom:0.3rem}
+.fx-tagline{font-size:0.65rem;letter-spacing:3.5px;text-transform:uppercase;color:#aaa;margin-bottom:1.3rem}
+.fx-desc{font-size:0.83rem;color:#888;line-height:1.9;max-width:460px;margin-bottom:2rem}
+.fx-socials{display:flex;gap:0.7rem}
+.fx-soc{width:40px;height:40px;border-radius:50%;border:1px solid #e8e6e0;display:flex;align-items:center;justify-content:center;color:#bbb;text-decoration:none;transition:all 0.35s cubic-bezier(.34,1.56,.64,1)}
+.fx-soc:hover{border-color:#1a2744;color:#1a2744;transform:translateY(-5px) scale(1.12)}
+.fx-sub{padding:2.8rem 0 2.5rem}
+.fx-sub-label{font-size:0.62rem;font-weight:500;color:#ccc;letter-spacing:3px;text-transform:uppercase;margin-bottom:1.8rem;display:flex;align-items:center;gap:14px}
+.fx-sub-label::after{content:'';flex:1;height:1px;background:#eeede8}
+.fx-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.fx-logo-item{display:flex;align-items:center;justify-content:center;padding:2rem 1.2rem;border:1px solid #eeede8;border-radius:16px;cursor:pointer;background:#fff;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:opacity 0.55s cubic-bezier(.34,1.56,.64,1),transform 0.55s cubic-bezier(.34,1.56,.64,1),border-color 0.4s,box-shadow 0.4s}
+.fx-logo-item.fx-in{opacity:1;transform:translateY(0)}
+.fx-logo-item::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:#1a2744;border-radius:2px;transition:width 0.3s}
+.fx-logo-item:hover{border-color:#ddd;transform:translateY(-6px);box-shadow:0 12px 32px rgba(26,39,68,0.08)}
+.fx-logo-item:hover::after{width:40%}
+.fx-logo-item img{max-height:46px;max-width:120px;object-fit:contain}
+.fx-top-item{opacity:0;transform:translateY(16px);transition:opacity 0.55s cubic-bezier(.34,1.56,.64,1),transform 0.55s cubic-bezier(.34,1.56,.64,1)}
+.fx-top-item.fx-in{opacity:1;transform:translateY(0)}
+@media(max-width:720px){.fx-logos{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.fx-logos{grid-template-columns:1fr 1fr;gap:0.7rem}.fx-logo-item{padding:1.4rem 0.8rem}}
+</style>
+
+<footer class="fx">
+  <div class="fx-top">
+    <div class="fx-logo-ring fx-top-item">
+      <img src="./src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo"/>
+    </div>
+    <p class="fx-brand fx-top-item">SUN-X Concrete</p>
+    <p class="fx-tagline fx-top-item">Strength · Mining · Ready-Mix</p>
+    <p class="fx-desc fx-top-item">SUN-X Group Is An Established Concrete Supplier In TamilNadu, Karnataka And AndhraPradesh With A Strong Foothold In Mining And Ready-Mix Concrete.</p>
+    <div class="fx-socials fx-top-item">
+      <a href="#" class="fx-soc">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="#" class="fx-soc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+      </a>
+      <a href="#" class="fx-soc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="#" class="fx-soc">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="fx-sub">
+    <div class="fx-sub-label fx-top-item">Subsidiary of</div>
+    <div class="fx-logos">
+      <div class="fx-logo-item">
+        <img src="./src/assets/images/sun-x.png" alt="SUNX Holdings"/>
+      </div>
+      <div class="fx-logo-item">
+        <img src="./src/assets/images/sun-x.png" alt="Suntech Civil Services"/>
+      </div>
+      <div class="fx-logo-item">
+        <img src="./src/assets/images/sun-x.png" alt="SUN-X"/>
+      </div>
+      <div class="fx-logo-item">
+        <img src="./src/assets/images/sun-x.png" alt="Alturas Infrastructure"/>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const topItems = document.querySelectorAll('.fx-top-item');
+  const logoItems = document.querySelectorAll('.fx-logo-item');
+
+  const fxObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('fx-in');
+        fxObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+
+  topItems.forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.08) + 's';
+    fxObs.observe(el);
+  });
+
+  logoItems.forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.1) + 's';
+    fxObs.observe(el);
+  });
+})();
+</script>
+
+<style>
+.fx2{font-family:'Inter Variable',Inter,Arial,sans-serif;background:#fff;padding:4rem 5vw 0;border-top:1px solid #e8e8e8}
+.fx2-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:3rem;padding-bottom:3.5rem}
+.fx2-col-title{font-family:'Inter Variable',Inter,Arial,sans-serif;font-size:1rem;font-weight:700;color:#1a2744;margin-bottom:1.4rem}
+.fx2-info-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:1.2rem}
+.fx2-info-icon{width:18px;height:18px;flex-shrink:0;color:#1a2744;margin-top:2px}
+.fx2-info-text{font-size:0.84rem;color:#555;line-height:1.7}
+.fx2-info-text a{color:#555;text-decoration:none}
+.fx2-info-text a:hover{color:#1a2744}
+.fx2-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem}
+.fx2-links li a{font-family:'Inter Variable',Inter,Arial,sans-serif;font-size:0.84rem;color:#555;text-decoration:none;transition:color 0.2s,padding-left 0.2s}
+.fx2-links li a:hover{color:#1a2744;padding-left:4px}
+.fx2-links li a.fx2-muted{color:#aaa}
+.fx2-links li a.fx2-muted:hover{color:#1a2744}
+.fx2-bottom{background:#111;margin:0 -5vw;padding:1.1rem 5vw;display:flex;align-items:center;justify-content:center}
+.fx2-bottom-right{font-family:'Inter Variable',Inter,Arial,sans-serif;font-size:0.88rem;color:rgb(255, 255, 255);letter-spacing:0.3px}
+.fx2-col{opacity:0;transform:translateY(22px);transition:opacity 0.6s cubic-bezier(.34,1.56,.64,1),transform 0.6s cubic-bezier(.34,1.56,.64,1)}
+.fx2-col.fx-in{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.fx2-grid{grid-template-columns:1fr 1fr;gap:2.5rem}}
+@media(max-width:560px){.fx2-grid{grid-template-columns:1fr;gap:2rem}.fx2-bottom{flex-direction:column;align-items:center;gap:0.3rem}}
+</style>
+
+<footer class="fx2">
+  <div class="fx2-grid">
+
+    <div class="fx2-col">
+      <p class="fx2-col-title">Head Office</p>
+      <div class="fx2-info-item">
+        <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span class="fx2-info-text">No 11, Ramaniyam Isha, Old Mahabalipuram Road, Okkiyam Thoraipakkam, Chennai – 600097</span>
+      </div>
+      <div class="fx2-info-item">
+        <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span class="fx2-info-text">
+          +91 9940400050<br/>+91 88071 47050
+        </span>
+      </div>
+      <div class="fx2-info-item">
+        <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span class="fx2-info-text"><a href="mailto:info@sunxconcrete.org">info@sunxconcrete.org</a></span>
+      </div>
+    </div>
+
+    <div class="fx2-col">
+      <p class="fx2-col-title">Quick Links</p>
+      <ul class="fx2-links">
+        <li><a href="#">Our Products</a></li>
+        <li><a href="#">Our Projects</a></li>
+        <li><a href="#">Our Plants</a></li>
+      </ul>
+    </div>
+
+    <div class="fx2-col">
+      <p class="fx2-col-title">About Us</p>
+      <ul class="fx2-links">
+        <li><a href="#" class="fx2-muted">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Services</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="fx2-col">
+      <p class="fx2-col-title">Resources &amp; Insights</p>
+      <ul class="fx2-links">
+        <li><a href="#">Logistics Supervisor</a></li>
+        <li><a href="#">Accounts Executive</a></li>
+        <li><a href="#">Footing Foundation – Velacherry Project</a></li>
+        <li><a href="#">Bangalore Development Authority Project</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="fx2-bottom">
+    <span class="fx2-bottom-right">All Rights Reserved © 2026 | Sun-X Concrete Pvt Ltd.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const cols = document.querySelectorAll('.fx2-col');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('fx-in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+  cols.forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.1) + 's';
+    obs.observe(el);
+  });
+})();
+</script>
+
+
+  <script type="module" src="src/js/comman.js" defer></script>
+  <script>
+    // Universal observer
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
+    }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.anim-left, .anim-right, .anim-up').forEach(el => obs.observe(el));
+
+    // Section label row
+    const lr = document.getElementById('scLabelRow');
+    if (lr) obs.observe(lr);
+
+    // Service cards staggered
+    const cardObs = new IntersectionObserver(entries => {
+      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
+    }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
+    ['scard1','scard2','scard3'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el) { el.style.transitionDelay = (i * 0.15) + 's'; cardObs.observe(el); }
+    });
+
+    // Process steps staggered
+    document.querySelectorAll('.srv-proc-step').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.14) + 's';
+      obs.observe(el);
+    });
+
+    // CTA
+    const cta = document.getElementById('srvCta');
+    if (cta) obs.observe(cta);
+  </script>
+
+</body>
+</html>

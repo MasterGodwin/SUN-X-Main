@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Projects – SUN-X Concrete</title>
+  <link rel="stylesheet" href="src/css/comman.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red: #c0392b;
+      --navy: #1a2744;
+      --bg: #f5f4f2;
+      --bg-white: #ffffff;
+      --bg-dark: #1c1c1e;
+      --text: #1a1a1a;
+      --muted: #6e6e73;
+      --light-border: rgba(0,0,0,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg-white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ────────────────────────────────
+       HERO
+    ──────────────────────────────── */
+    .hero {
+      position: relative;
+      background: #e8e6e1;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .hero-ghost {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-ghost-text {
+      font-size: clamp(10rem, 22vw, 22rem);
+      font-weight: 900;
+      color: rgba(0,0,0,0.055);
+      line-height: 0.85;
+      letter-spacing: -8px;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      padding: 8rem 5vw 7rem 7vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .hero-title {
+      font-size: clamp(2.8rem, 5.5vw, 5.6rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -2.5px;
+      color: var(--text);
+      margin-bottom: 1.6rem;
+    }
+    .hero-title .accent { color: var(--red); }
+    .hero-desc {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 400px;
+      margin-bottom: 1.4rem;
+    }
+    .hero-desc-sub {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 360px;
+      margin-bottom: 2.5rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--red);
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--text);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1.8rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: 100px;
+      transition: background 0.25s, transform 0.2s;
+      width: fit-content;
+    }
+    .hero-cta:hover { background: var(--red); transform: translateY(-2px); }
+
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 4vw;
+    }
+    .hero-img-wrap {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 1/1;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    .hero-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    .hero-count {
+      position: absolute;
+      bottom: 3rem; left: 7vw;
+      display: flex; align-items: baseline; gap: 0.5rem;
+      z-index: 3;
+    }
+    .hero-count-num {
+      font-size: 4rem; font-weight: 900;
+      color: var(--red); line-height: 1;
+      letter-spacing: -3px;
+    }
+    .hero-count-label {
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 7rem 5vw 3rem; }
+      .hero-right { padding: 2rem 5vw 5rem; }
+      .hero-count { bottom: 2rem; }
+    }
+
+    /* ────────────────────────────────
+       SPOTLIGHT STRIP
+    ──────────────────────────────── */
+    .spotlight-strip {
+      background: var(--navy);
+      padding: 3.5rem 7vw;
+      text-align: center;
+    }
+    .spotlight-strip h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #f0c040;
+      letter-spacing: -0.5px;
+    }
+
+    /* ────────────────────────────────
+       FEATURED PROJECT
+    ──────────────────────────────── */
+    .featured-section {
+      background: var(--bg);
+      padding: 5rem 7vw;
+    }
+    .featured-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    /* Text card (left two cols on screenshot are actually info cards) */
+    .feat-info-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--light-border);
+    }
+    .feat-card-eyebrow {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.8rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .feat-card-eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px; height: 1.5px;
+      background: var(--red); flex-shrink: 0;
+    }
+    .feat-card-title {
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .feat-card-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.85;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+    .feat-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .feat-tag {
+      font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 4px 11px;
+      background: rgba(192,57,43,0.08);
+      color: var(--red);
+      border: 1px solid rgba(192,57,43,0.18);
+      border-radius: 100px;
+    }
+
+    /* Image card */
+    .feat-img-card {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: unset;
+      min-height: 320px;
+    }
+    .feat-img-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .feat-img-card:hover img { transform: scale(1.04); }
+    .feat-img-badge {
+      position: absolute;
+      bottom: 1.2rem; left: 1.2rem;
+      background: var(--red);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 5px 14px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .feat-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    @media (max-width: 960px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      .feat-img-card { min-height: 260px; }
+    }
+
+    /* ────────────────────────────────
+       OTHER PROJECTS STRIP
+    ──────────────────────────────── */
+    .other-strip {
+      background: #4a0a0a;
+      padding: 3.5rem 7vw;
+      text-align: center;
+    }
+    .other-strip h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #f0c040;
+      letter-spacing: -0.5px;
+    }
+
+    /* ────────────────────────────────
+       PROJECTS GRID
+    ──────────────────────────────── */
+    .projects-section {
+      background: var(--bg);
+      padding: 4rem 7vw 5rem;
+    }
+    .projects-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .proj-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--light-border);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+    }
+    .proj-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+    }
+    .proj-card-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      position: relative;
+    }
+    .proj-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .proj-card:hover .proj-card-img img { transform: scale(1.06); }
+
+    .proj-card-body {
+      padding: 1.5rem 1.4rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .proj-card-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1.35;
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.2px;
+    }
+    .proj-card-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.4rem;
+      padding-top: 3rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .page-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--light-border);
+      background: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .page-btn.active, .page-btn:hover {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+    }
+
+    .page-sep {
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding: 0 0.2rem;
+    }
+
+    @media (max-width: 860px) {
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ────────────────────────────────
+       SCROLL ANIMATIONS
+    ──────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(44px);
+      filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; filter: none; }
+    .reveal-left {
+      opacity: 0; transform: translateX(-44px); filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.8s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: none; filter: none; }
+    .reveal-right {
+      opacity: 0; transform: translateX(44px); filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.8s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: none; filter: none; }
+
+    /* staggered card delays */
+    .proj-card:nth-child(1) { transition-delay: 0s; }
+    .proj-card:nth-child(2) { transition-delay: 0.08s; }
+    .proj-card:nth-child(3) { transition-delay: 0.16s; }
+    .proj-card:nth-child(4) { transition-delay: 0.24s; }
+    .proj-card:nth-child(5) { transition-delay: 0.32s; }
+    .proj-card:nth-child(6) { transition-delay: 0.40s; }
+
+    /* ────────────────────────────────
+       CTA STRIP
+    ──────────────────────────────── */
+    .cta-strip {
+      background: var(--navy);
+      padding: 5rem 7vw;
+      text-align: center;
+    }
+    .cta-strip h2 {
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+    }
+    .cta-strip h2 em { font-style: normal; color: #f0c040; }
+    .cta-strip p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 2.5rem;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--red); color: #fff; text-decoration: none;
+      padding: 0.85rem 2.2rem; font-size: 0.82rem; font-weight: 700;
+      letter-spacing: 0.5px; border-radius: 100px;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .cta-btn:hover { background: #a93226; transform: translateY(-2px); }
+    .cta-btn svg { width: 14px; height: 14px; }
+
+    /* Hidden page pages */
+    .page-content { display: none; }
+    .page-content.active { display: contents; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" style="background-color: black !important;">
+    <div class="nav-left">
+      <a href="index.html" class="logo">
+        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" />
+      </a>
+    </div>
+    <div class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Our Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="our-products.html">Our Products</a>
+      <a href="our-projects.html" class="active">Our Projects</a>
+      <a href="our-plants.html">Our Plants</a>
+    </div>
+    <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- DRAWER -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" />
+      <button class="drawer-close" id="drawerClose">&#x2715;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Our Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="our-products.html">Our Products</a>
+      <a href="our-projects.html" class="active">Our Projects</a>
+      <a href="our-plants.html">Our Plants</a>
+    </nav>
+    <div class="drawer-footer">© 2026 Sun-X</div>
+  </div>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero">
+    <div class="hero-ghost">
+      <span class="hero-ghost-text">RMC</span>
+    </div>
+
+    <div class="hero-left">
+      <div class="hero-eyebrow">Project Portfolio · SUN-X Concrete</div>
+      <h1 class="hero-title">
+        Snapshot<br>
+        Of Our <span class="accent">Projects</span>
+      </h1>
+      <p class="hero-desc">
+        With over 1000 projects spanning across TamilNadu, Andhra and Karnataka, we are well positioned to identify areas where our solutions can enable you to discover full potential.
+      </p>
+      <p class="hero-desc-sub">
+        From residential foundations to large-scale infrastructure — we deliver precision concrete for every application.
+      </p>
+      <a href="#projects" class="hero-cta">
+        View Projects
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+          <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+        </svg>
+      </a>
+      <div class="hero-count">
+        <span class="hero-count-num">1000+</span>
+        <span class="hero-count-label">Projects<br>Delivered</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=900&q=85"
+          alt="SUN-X Concrete project site"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SPOTLIGHT STRIP ══════════ -->
+  <div class="spotlight-strip">
+    <h2>Spotlight on..</h2>
+  </div>
+
+  <!-- ══════════ FEATURED PROJECT ══════════ -->
+  <section class="featured-section" id="projects">
+    <div class="featured-grid">
+
+      <!-- Info Card 1 -->
+      <div class="feat-info-card reveal-left">
+        <div>
+          <div class="feat-card-eyebrow">Featured · Residential</div>
+          <h3 class="feat-card-title">Footing Foundation –<br>Velacherry Project</h3>
+          <p class="feat-card-desc">
+            Sun-X Concrete is set to execute Footing Foundation with 70 cum of M25 grade Concrete for a residential project at Velacherry. Our technical team ensured precise mix design and timely delivery to meet the project schedule.
+          </p>
+        </div>
+        <div class="feat-card-meta">
+          <span class="feat-tag">M25 Grade</span>
+          <span class="feat-tag">70 CUM</span>
+          <span class="feat-tag">Residential</span>
+        </div>
+      </div>
+
+      <!-- Info Card 2 -->
+      <div class="feat-info-card reveal">
+        <div>
+          <div class="feat-card-eyebrow">Details · Location</div>
+          <h3 class="feat-card-title">Project<br>Specifications</h3>
+          <p class="feat-card-desc">
+            Location: Velacherry, Chennai<br><br>
+            Concrete Grade: M25<br>
+            Volume: 70 CUM<br>
+            Application: Footing Foundation<br><br>
+            Delivered with zero slump deviation using our on-site quality control protocols.
+          </p>
+        </div>
+        <div class="feat-card-meta">
+          <span class="feat-tag">Chennai</span>
+          <span class="feat-tag">On-Time Delivery</span>
+        </div>
+      </div>
+
+      <!-- Image Card -->
+      <div class="feat-img-card reveal-right">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80"
+          alt="Footing Foundation Velacherry Project"
+        />
+        <div class="feat-img-overlay"></div>
+        <div class="feat-img-badge">Footing Foundation · Velacherry</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ OTHER PROJECTS STRIP ══════════ -->
+  <div class="other-strip">
+    <h2>Other Projects</h2>
+  </div>
+
+  <!-- ══════════ PROJECTS GRID ══════════ -->
+  <section class="projects-section">
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Cards injected by JS -->
+    </div>
+    <div class="pagination" id="pagination"></div>
+  </section>
+
+  <!-- ══════════ CTA STRIP ══════════ -->
+  <section class="cta-strip reveal">
+    <h2>Ready to start your <em>next project?</em></h2>
+    <p>Our technical team is ready to design the right concrete mix for your requirements.</p>
+    <a href="contact.html" class="cta-btn">
+      Talk To Our Experts
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+  </section>
+
+  <script>
+    /* ── Projects Data ── */
+    const projects = [
+      {
+        img: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=700&q=80",
+        title: "Bangalore Development Authority Project",
+        desc: "Sun-X is the concrete partner of the Bangalore Development Authority project. Our team enabled a concrete pour of 321.5 cum."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80",
+        title: "High Strength Concrete for Foundation",
+        desc: "M55 Grade high strength concrete for Aishwarya Fertility Center Foundation at SRP Tools, Perungudi."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80",
+        title: "Roofing – Annur",
+        desc: "Our Trained Technical Team in action for Roofing at Sakthivel Area, Annur, Coimbatore."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1565008576549-57569a49371d?w=700&q=80",
+        title: "Railway Work – Kanchi Koodu",
+        desc: "SunX team in a Railway work at Kanchi Koodu, designed and executed for KMC Infrastructure."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=700&q=80",
+        title: "Coimbatore Railway Project",
+        desc: "Designed and Executed by SunX Concrete. High-performance concrete for critical rail infrastructure."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1567942712661-82b9b407abbf?w=700&q=80",
+        title: "Concrete Pour – Srinivasa Associates",
+        desc: "Designed and Executed by SunX Concrete. Structural concrete pour for residential complex."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=700&q=80",
+        title: "Industrial Flooring – Hosur",
+        desc: "High-strength industrial flooring project in Hosur. M40 grade concrete with superior surface finish."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1529408632839-a54952c491e5?w=700&q=80",
+        title: "Bridge Deck – NH-44",
+        desc: "SunX supplied high-performance concrete for bridge deck construction along National Highway 44."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1444927714506-8492d94b4e3d?w=700&q=80",
+        title: "Water Treatment Plant – Trichy",
+        desc: "Specialized waterproof concrete for water treatment plant infrastructure, Trichy district."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=700&q=80",
+        title: "High-Rise Foundation – OMR",
+        desc: "Raft foundation pour for 30-storey high-rise on Old Mahabalipuram Road, Chennai. 450 cum in single pour."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80",
+        title: "Retaining Wall – Mysore Road",
+        desc: "Designed and Executed by SunX Concrete. Temperature-controlled mass concrete for retaining walls."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=700&q=80",
+        title: "Precast Yard – Kancheepuram",
+        desc: "Supplied early-strength high-performance concrete for precast element production yard, Kancheepuram."
+      },
+    ];
+
+    const PER_PAGE = 6;
+    let currentPage = 1;
+    const totalPages = Math.ceil(projects.length / PER_PAGE);
+
+    function renderProjects(page) {
+      const grid = document.getElementById('projectsGrid');
+      const start = (page - 1) * PER_PAGE;
+      const end = start + PER_PAGE;
+      const slice = projects.slice(start, end);
+
+      grid.innerHTML = slice.map(p => `
+        <div class="proj-card reveal">
+          <div class="proj-card-img">
+            <img src="${p.img}" alt="${p.title}" loading="lazy"/>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-title">${p.title}</div>
+            <p class="proj-card-desc">${p.desc}</p>
+          </div>
+        </div>
+      `).join('');
+
+      /* re-observe new cards */
+      document.querySelectorAll('.proj-card').forEach(el => obs.observe(el));
+    }
+
+    function renderPagination() {
+      const pag = document.getElementById('pagination');
+      let html = '';
+      for (let i = 1; i <= totalPages; i++) {
+        html += `<button class="page-btn${i === currentPage ? ' active' : ''}" data-page="${i}">${i}</button>`;
+        if (i < totalPages) html += `<span class="page-sep">|</span>`;
+      }
+      pag.innerHTML = html;
+      pag.querySelectorAll('.page-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentPage = parseInt(btn.dataset.page);
+          renderProjects(currentPage);
+          renderPagination();
+          document.querySelector('.projects-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    }
+
+    /* ── Scroll reveal ── */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+        else e.target.classList.remove('visible');
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+
+    /* ── Init ── */
+    renderProjects(1);
+    renderPagination();
+  </script>
+</body>
+</html>

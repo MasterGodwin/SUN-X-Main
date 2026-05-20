@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – SUN-X Concrete</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Barlow+Condensed:wght@500;600;700&family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="src/css/comman.css">
+  <style>
+    :root {
+      --gold: #f0c040;
+      --gold-dark: #b07b00;
+      --red: #c0392b;
+      --dark: #0a0a0a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #111;
+      overflow-x: hidden;
+    }
+
+    /* ============================
+       NAVBAR (identical to index)
+    ============================ */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem;
+      z-index: 300;
+      background: transparent;
+      transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+    }
+    .navbar.nav-hidden { transform: translateY(-100%); }
+    .navbar.scrolled { background: #ffffff; box-shadow: 0 2px 16px rgba(0,0,0,0.1); }
+    .nav-left { display: flex; align-items: center; gap: 2rem; }
+    .logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: inherit; }
+    .logo-img { width: 160px; height: 70px; object-fit: contain; }
+    .main-nav { display: flex; align-items: center; gap: 0.3rem; }
+    .main-nav a {
+      font-size: 0.82rem; font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      padding: 0.45rem 0.75rem;
+      transition: color 0.3s; text-decoration: none; white-space: nowrap;
+    }
+    .navbar.scrolled .main-nav a { color: rgba(0,0,0,0.75); }
+    .main-nav a:hover, .main-nav a.active { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .hamburger {
+      display: none; flex-direction: column;
+      justify-content: center; gap: 5px;
+      background: none; border: none;
+      cursor: pointer; padding: 8px; z-index: 400;
+    }
+    .hamburger span {
+      width: 26px; height: 2.5px; background: #fff;
+      display: block; border-radius: 2px;
+      transition: transform 0.35s ease, opacity 0.25s ease, background 0.3s;
+    }
+    .navbar.scrolled .hamburger span { background: #111; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Drawer */
+    .drawer-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+      z-index: 350; opacity: 0; pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .drawer-overlay.open { opacity: 1; pointer-events: auto; }
+    .drawer {
+      position: fixed; top: 0; left: 0;
+      width: 280px; height: 100%; background: #0f0f0f;
+      z-index: 360; transform: translateX(-100%);
+      transition: transform 0.38s cubic-bezier(0.22,1,0.36,1);
+      display: flex; flex-direction: column; overflow-y: auto;
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 1.4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .drawer-logo { height: 48px; object-fit: contain; }
+    .drawer-close {
+      background: none; border: none; color: rgba(255,255,255,0.7);
+      font-size: 1.6rem; cursor: pointer; line-height: 1; padding: 4px 8px;
+      transition: color 0.2s;
+    }
+    .drawer-close:hover { color: #fff; }
+    .drawer-nav { display: flex; flex-direction: column; padding: 1.2rem 0; flex: 1; }
+    .drawer-nav a {
+      color: rgba(255,255,255,0.8); text-decoration: none;
+      font-size: 0.95rem; font-weight: 500;
+      padding: 0.85rem 1.6rem;
+      border-left: 3px solid transparent;
+      transition: all 0.25s; letter-spacing: 0.3px;
+    }
+    .drawer-nav a:hover { color: #fff; background: rgba(255,255,255,0.05); border-left-color: var(--gold); }
+    .drawer-footer {
+      padding: 1.2rem 1.6rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.78rem; color: rgba(255,255,255,0.3);
+    }
+
+    @media (max-width: 1280px) {
+      .main-nav a { font-size: 0.78rem; padding: 0.4rem 0.6rem; }
+      .logo-img { width: 140px; height: 60px; }
+    }
+    @media (max-width: 1024px) {
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .navbar { padding: 0 1.6rem; }
+    }
+    @media (max-width: 768px) {
+      .navbar { height: 60px; padding: 0 1.1rem; }
+      .logo-img { width: 110px; height: 50px; }
+    }
+    @media (max-width: 480px) { .drawer { width: 100%; } }
+
+    /* ============================
+       ABOUT HERO
+    ============================ */
+    .about-hero {
+      position: relative;
+      height: 100vh; min-height: 600px;
+      background: url('src/assets/images/HO.jpg') center/cover no-repeat;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(110deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.2) 100%),
+                  linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
+    }
+    .about-hero-content {
+      position: relative; z-index: 2;
+      padding: 0 5vw;
+      max-width: 780px;
+      opacity: 0; transform: translateY(40px);
+      animation: heroFadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s forwards;
+    }
+    @keyframes heroFadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .about-hero-breadcrumb {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 1.6rem;
+    }
+    .about-hero-breadcrumb .line { width: 40px; height: 2px; background: var(--red); }
+    .about-hero-breadcrumb span {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+    }
+    .about-hero-title {
+      font-size: clamp(3.6rem, 9vw, 6.5rem);
+      font-weight: 900; color: #fff;
+      line-height: 0.95; text-transform: uppercase;
+      letter-spacing: -1px; margin-bottom: 1.6rem;
+    }
+    .about-hero-title .red { color: var(--red); }
+    .about-hero-desc {
+      font-size: clamp(0.92rem, 1.5vw, 1.05rem);
+      color: rgba(255,255,255,0.72);
+      max-width: 540px; line-height: 1.75;
+      margin-bottom: 2.4rem;
+    }
+    .about-hero-tag {
+      display: inline-block;
+      background: rgba(240,192,64,0.15);
+      border: 1px solid rgba(240,192,64,0.4);
+      color: var(--gold);
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      padding: 0.45rem 1.2rem; border-radius: 2px;
+    }
+    /* scroll indicator */
+    .about-hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      z-index: 2; opacity: 0.6;
+      animation: heroFadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 1.1s forwards;
+    }
+    .about-hero-scroll span {
+      font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+      color: #fff;
+    }
+    .scroll-line {
+      width: 1px; height: 40px; background: rgba(255,255,255,0.4);
+      position: relative; overflow: hidden;
+    }
+    .scroll-line::after {
+      content: '';
+      position: absolute; top: -100%; left: 0;
+      width: 100%; height: 100%;
+      background: var(--gold);
+      animation: scrollDown 1.6s ease-in-out infinite;
+    }
+    @keyframes scrollDown {
+      0% { top: -100%; }
+      100% { top: 100%; }
+    }
+
+    /* ============================
+       INTRO SECTION
+    ============================ */
+    .intro-section {
+      background: #fff;
+      padding: 7rem 5vw;
+      overflow: hidden;
+    }
+    .intro-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0; align-items: center;
+    }
+    .intro-divider-line {
+      background: #eee; height: 80%; margin: 0 4rem;
+    }
+    .intro-left {
+      padding-right: 4rem;
+      opacity: 0; transform: translateX(-50px); filter: blur(4px);
+      transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.75s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.75s ease;
+    }
+    .intro-left.in-view { opacity: 1; transform: translateX(0); filter: blur(0); }
+    .intro-right {
+      padding-left: 4rem;
+      opacity: 0; transform: translateX(50px); filter: blur(4px);
+      transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.75s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.75s ease;
+      transition-delay: 0.1s;
+    }
+    .intro-right.in-view { opacity: 1; transform: translateX(0); filter: blur(0); }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--red); margin-bottom: 1.2rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      font-weight: 900; color: #1a2744;
+      line-height: 1.1; letter-spacing: -0.5px;
+      margin-bottom: 1.4rem;
+    }
+    .section-title .red { color: var(--red); }
+    .section-desc {
+      font-size: 0.9rem; color: #555; line-height: 1.9;
+    }
+    .section-desc + .section-desc { margin-top: 1rem; }
+
+    .vm-blocks { display: flex; flex-direction: column; gap: 0; }
+    .vm-block {
+      padding: 1.8rem 0;
+      border-top: 1px solid #eee;
+    }
+    .vm-block:last-child { border-bottom: 1px solid #eee; }
+    .vm-block-title {
+      font-size: 1rem; font-weight: 800; color: #1a2744;
+      margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .vm-block-title::before {
+      content: ''; display: inline-block;
+      width: 18px; height: 2px; background: var(--red); flex-shrink: 0;
+    }
+    .vm-block-text {
+      font-size: 0.86rem; color: #666; line-height: 1.85;
+      padding-left: 26px;
+    }
+
+    @media (max-width: 900px) {
+      .intro-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .intro-divider-line { display: none; }
+      .intro-left { padding-right: 0; }
+      .intro-right { padding-left: 0; }
+    }
+
+    /* ============================
+       FACILITY SECTION
+    ============================ */
+    .facility-section {
+      background: #0d1226;
+      padding: 7rem 5vw;
+      overflow: hidden;
+    }
+    .facility-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .facility-left {
+      opacity: 0; transform: translateX(-50px); filter: blur(4px);
+      transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.75s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.75s ease;
+    }
+    .facility-left.in-view { opacity: 1; transform: translateX(0); filter: blur(0); }
+    .facility-right {
+      opacity: 0; transform: translateX(50px); filter: blur(4px);
+      transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.75s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.75s ease;
+      transition-delay: 0.12s;
+    }
+    .facility-right.in-view { opacity: 1; transform: translateX(0); filter: blur(0); }
+
+    .facility-section .section-tag { color: var(--gold); }
+    .facility-section .section-title { color: #fff; }
+    .facility-section .section-desc { color: rgba(255,255,255,0.58); }
+
+    .facility-img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .facility-img-grid img {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover; border-radius: 6px; display: block;
+    }
+    .facility-img-grid img:first-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/9;
+    }
+    .fac-highlights {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-top: 2rem;
+    }
+    .fac-highlight {
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .fac-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      border-radius: 6px;
+      background: rgba(240,192,64,0.12);
+      border: 1px solid rgba(240,192,64,0.25);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+    }
+    .fac-icon svg { width: 16px; height: 16px; }
+    .fac-highlight-text strong {
+      display: block; font-size: 0.82rem;
+      font-weight: 700; color: #fff;
+      margin-bottom: 2px;
+    }
+    .fac-highlight-text span {
+      font-size: 0.78rem; color: rgba(255,255,255,0.42);
+      line-height: 1.5;
+    }
+    .facility-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 2.2rem;
+      background: var(--gold); color: #111; text-decoration: none;
+      padding: 0.85rem 2rem;
+      font-size: 0.8rem; font-weight: 800; letter-spacing: 1px;
+      border-radius: 3px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .facility-cta:hover { background: #d4a800; transform: translateY(-2px); }
+    .facility-cta svg { width: 15px; height: 15px; }
+
+    @media (max-width: 900px) {
+      .facility-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    /* ============================
+       VALUED RELATIONSHIPS
+    ============================ */
+    .valued-section { background: #080808; padding: 5.5rem 5vw; }
+    .valued-header { text-align: center; margin-bottom: 3.2rem; }
+    .valued-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; color: #fff; line-height: 1.18; letter-spacing: -0.5px; margin-bottom: 0.55rem; }
+    .valued-subtitle { font-size: 0.92rem; color: rgba(255,255,255,0.45); }
+    .valued-grid-outer { max-width: 1100px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.13); border-radius: 10px; overflow: hidden; }
+    .valued-grid-track { display: grid; grid-template-rows: repeat(2, 100px); grid-template-columns: repeat(3, 1fr); }
+    .vg-cell { display: flex; align-items: center; justify-content: center; border-right: 1px solid rgba(255,255,255,0.1); padding: 0 2rem; transition: background 0.3s ease; }
+    .vg-cell:hover { background: rgba(255,255,255,0.04); }
+    .vg-cell.r1 { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .vg-cell:nth-child(3n) { border-right: none; }
+    .vg-img { max-width: 140px; max-height: 55px; width: auto; height: auto; object-fit: contain; filter: brightness(0) invert(1) opacity(0.75); transition: opacity 0.3s ease, filter 0.3s ease; display: block; }
+    .vg-cell:hover .vg-img { filter: brightness(0) invert(1) opacity(1); }
+
+    .valued-section,
+    .valued-section .valued-header,
+    .valued-section .valued-grid-outer {
+      opacity: 0; transform: translateY(36px); filter: blur(5px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.8s ease;
+    }
+    .valued-section .valued-grid-outer { transition-delay: 0.15s; }
+    .valued-section.in-view .valued-header,
+    .valued-section.in-view .valued-grid-outer { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .valued-section.in-view { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+    @media (max-width: 480px) {
+      .valued-grid-track { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 80px); }
+      .vg-cell.r1 { border-bottom: none; }
+      .vg-cell:nth-child(odd) { border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .vg-cell:nth-child(2n) { border-right: none; }
+      .vg-img { max-width: 90px; }
+    }
+
+    /* ============================
+       STATS SECTION
+    ============================ */
+    .stats-section { background: #111; padding: 0; }
+    .stats-container { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-card {
+      padding: 2.8rem 1.2rem; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      position: relative; overflow: hidden; transition: background 0.3s;
+    }
+    .stat-card:last-child { border-right: none; }
+    .stat-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--red);
+      transform: scaleX(0); transition: transform 0.4s ease;
+    }
+    .stat-card:hover::before { transform: scaleX(1); }
+    .stat-card:hover { background: rgba(255,255,255,0.03); }
+    .stat-number { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+    .stat-plus { color: var(--red); font-size: 0.65em; vertical-align: super; }
+    .stat-divider { width: 24px; height: 2px; background: var(--gold); margin: 0 auto 0.6rem; }
+    .stat-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.5); line-height: 1.4; }
+    @media (max-width: 1024px) {
+      .stats-container { grid-template-columns: repeat(2, 1fr); }
+      .stat-card:nth-child(2) { border-right: none; }
+      .stat-card:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.08); }
+      .stat-card:nth-child(1), .stat-card:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    }
+    @media (max-width: 480px) {
+      .stat-card { padding: 2.5rem 1rem; }
+    }
+
+    /* ============================
+       MORE TO WHO WE ARE
+    ============================ */
+    .more-section {
+      background: #fff;
+      padding: 7rem 5vw;
+      overflow: hidden;
+    }
+    .more-inner { max-width: 1280px; margin: 0 auto; }
+    .more-header {
+      text-align: center; margin-bottom: 4rem;
+      opacity: 0; transform: translateY(30px); filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1), filter 0.8s ease;
+    }
+    .more-header.in-view { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .more-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--red); margin-bottom: 1rem;
+    }
+    .more-eyebrow-line { width: 28px; height: 2px; background: var(--red); flex-shrink: 0; }
+    .more-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900; color: #1a2744;
+      line-height: 1.15; letter-spacing: -0.5px;
+    }
+    .more-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .more-card {
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      opacity: 0; transform: translateY(36px); filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.8s ease,
+                  border-color 0.3s, box-shadow 0.3s;
+    }
+    .more-card:nth-child(1) { transition-delay: 0s; }
+    .more-card:nth-child(2) { transition-delay: 0.13s; }
+    .more-card:nth-child(3) { transition-delay: 0.26s; }
+    .more-card.in-view { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .more-card:hover { border-color: #c0392b; box-shadow: 0 8px 32px rgba(192,57,43,0.1); }
+    .more-card-img {
+      width: 100%; aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+    .more-card-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .more-card:hover .more-card-img img { transform: scale(1.06); }
+    .more-card-body { padding: 1.6rem 1.6rem 1.4rem; }
+    .more-card-title {
+      font-size: 1.05rem; font-weight: 800; color: #1a2744;
+      margin-bottom: 0.6rem;
+    }
+    .more-card-desc {
+      font-size: 0.84rem; color: #666; line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+    .more-card-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--red); text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: gap 0.25s, border-color 0.25s;
+    }
+    .more-card-link:hover { gap: 12px; border-bottom-color: var(--red); }
+    .more-card-link svg { width: 14px; height: 14px; }
+    @media (max-width: 900px) {
+      .more-cards { grid-template-columns: 1fr 1fr; }
+      .more-card:nth-child(3) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .more-cards { grid-template-columns: 1fr; }
+      .more-card:nth-child(3) { max-width: 100%; grid-column: auto; }
+    }
+
+    /* ============================
+       PROJECTS SECTION
+    ============================ */
+    .proj-section { background: #0d1226; padding: 6rem 5vw 6.5rem; overflow: hidden; }
+    .proj-inner { max-width: 1280px; margin: 0 auto; }
+    .proj-header {
+      text-align: center; max-width: 600px; margin: 0 auto 3.5rem;
+      opacity: 0; transform: translateY(36px); filter: blur(5px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1), filter 0.8s ease;
+    }
+    .proj-header.in-view { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .proj-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--red); margin-bottom: 1rem;
+    }
+    .proj-eyebrow-line { width: 28px; height: 2px; background: var(--red); flex-shrink: 0; }
+    .proj-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -0.8px; margin-bottom: 1rem; }
+    .proj-subtitle { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 2rem; }
+    .proj-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--red); color: #fff; text-decoration: none;
+      padding: 0.82rem 2rem; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 1px; border-radius: 3px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .proj-btn:hover { background: #a93226; transform: translateY(-2px); }
+    .proj-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .proj-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .proj-card {
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+      overflow: hidden; background: #111829; display: flex; flex-direction: column;
+      cursor: pointer;
+      opacity: 0; transform: translateY(36px); filter: blur(5px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1),
+                  filter 0.8s ease, border-color 0.3s, background 0.3s;
+    }
+    .proj-card:nth-child(1) { transition-delay: 0s; }
+    .proj-card:nth-child(2) { transition-delay: 0.13s; }
+    .proj-card:nth-child(3) { transition-delay: 0.26s; }
+    .proj-card.in-view { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .proj-card:hover { border-color: rgba(255,255,255,0.28); background: #151e32; }
+    .proj-card-img { width: 100%; aspect-ratio: 16/9; overflow: hidden; flex-shrink: 0; }
+    .proj-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+    .proj-card:hover .proj-card-img img { transform: scale(1.07); }
+    .proj-card-body { padding: 1.5rem 1.5rem 1.3rem; display: flex; flex-direction: column; flex: 1; }
+    .proj-card-title { font-size: 1rem; font-weight: 700; color: #fff; line-height: 1.45; flex: 1; margin-bottom: 1.2rem; }
+    .proj-card-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 600;
+      color: rgba(255,255,255,0.5); text-decoration: none;
+      padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);
+      transition: color 0.25s, gap 0.25s;
+    }
+    .proj-card-link:hover { color: #fff; gap: 12px; }
+    .proj-card-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+    @media (max-width: 900px) {
+      .proj-cards { grid-template-columns: repeat(2, 1fr); }
+      .proj-card:nth-child(3) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .proj-section { padding: 4rem 5vw; }
+      .proj-cards { grid-template-columns: 1fr; }
+      .proj-card:nth-child(3) { grid-column: auto; max-width: 100%; }
+    }
+
+    /* ============================
+       CONTACT / REACH US
+    ============================ */
+    .contact-section {
+      background: #f5f5f5;
+      padding: 7rem 5vw;
+      overflow: hidden;
+    }
+    .contact-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center;
+    }
+    .contact-left {
+      opacity: 0; transform: translateX(-50px); filter: blur(4px);
+      transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.75s cubic-bezier(0.22,1,0.36,1), filter 0.75s ease;
+    }
+    .contact-left.in-view { opacity: 1; transform: translateX(0); filter: blur(0); }
+    .contact-right {
+      opacity: 0; transform: translateX(50px); filter: blur(4px);
+      transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.75s cubic-bezier(0.22,1,0.36,1), filter 0.75s ease;
+      transition-delay: 0.12s;
+    }
+    .contact-right.in-view { opacity: 1; transform: translateX(0); filter: blur(0); }
+
+    .contact-accent { width: 4px; height: 60px; background: var(--red); border-radius: 0 2px 2px 0; margin-bottom: 1.4rem; }
+    .contact-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; color: #1a2744; line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 1.2rem; }
+    .contact-desc { font-size: 0.9rem; color: #666; line-height: 1.85; margin-bottom: 2rem; }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 12px; }
+    .contact-info-icon {
+      width: 38px; height: 38px; flex-shrink: 0;
+      background: rgba(192,57,43,0.08);
+      border: 1px solid rgba(192,57,43,0.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--red);
+    }
+    .contact-info-icon svg { width: 16px; height: 16px; }
+    .contact-info-text strong { display: block; font-size: 0.8rem; font-weight: 700; color: #1a2744; margin-bottom: 2px; }
+    .contact-info-text span { font-size: 0.82rem; color: #666; line-height: 1.6; }
+    .contact-info-text a { color: #666; text-decoration: none; }
+    .contact-info-text a:hover { color: var(--red); }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #888; }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 0.9rem 1.1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.9rem; font-family: inherit;
+      color: #111;
+      background: #fff;
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.08);
+    }
+    .form-textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--red); color: #fff; border: none;
+      padding: 1rem 2.4rem;
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; border-radius: 3px;
+      cursor: pointer; align-self: flex-start;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .form-submit:hover { background: #a93226; transform: translateY(-2px); }
+    .form-submit svg { width: 15px; height: 15px; }
+
+    @media (max-width: 900px) {
+      .contact-inner { grid-template-columns: 1fr; gap: 3.5rem; }
+    }
+    @media (max-width: 600px) {
+      .contact-section { padding: 4.5rem 5vw; }
+    }
+
+    /* ============================
+       FOOTER (identical to index)
+    ============================ */
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap');
+    .fx{font-family:'Instrument Sans',sans-serif;background:#fff;padding:4rem 5vw 0;border-top:1px solid #eeede8}
+    .fx-top{display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:3rem;border-bottom:1px solid #eeede8}
+    .fx-main-logo{height:52px;object-fit:contain}
+    .fx-brand{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:700;color:#1a2744;letter-spacing:0.5px;margin-bottom:0.3rem}
+    .fx-tagline{font-size:0.65rem;letter-spacing:3.5px;text-transform:uppercase;color:#aaa;margin-bottom:1.3rem}
+    .fx-desc{font-size:0.83rem;color:#888;line-height:1.9;max-width:460px;margin-bottom:2rem}
+    .fx-socials{display:flex;gap:0.7rem}
+    .fx-soc{width:40px;height:40px;border-radius:50%;border:1px solid #e8e6e0;display:flex;align-items:center;justify-content:center;color:#bbb;text-decoration:none;transition:all 0.35s cubic-bezier(.34,1.56,.64,1)}
+    .fx-soc:hover{border-color:#1a2744;color:#1a2744;transform:translateY(-5px) scale(1.12)}
+    .fx-sub{padding:2.8rem 0 2.5rem}
+    .fx-sub-label{font-size:0.62rem;font-weight:500;color:#ccc;letter-spacing:3px;text-transform:uppercase;margin-bottom:1.8rem;display:flex;align-items:center;gap:14px}
+    .fx-sub-label::after{content:'';flex:1;height:1px;background:#eeede8}
+    .fx-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .fx-logo-item{display:flex;align-items:center;justify-content:center;padding:2rem 1.2rem;border:1px solid #eeede8;border-radius:16px;cursor:pointer;background:#fff;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:opacity 0.55s cubic-bezier(.34,1.56,.64,1),transform 0.55s cubic-bezier(.34,1.56,.64,1),border-color 0.4s,box-shadow 0.4s}
+    .fx-logo-item.fx-in{opacity:1;transform:translateY(0)}
+    .fx-logo-item::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:#1a2744;border-radius:2px;transition:width 0.3s}
+    .fx-logo-item:hover{border-color:#ddd;transform:translateY(-6px);box-shadow:0 12px 32px rgba(26,39,68,0.08)}
+    .fx-logo-item:hover::after{width:40%}
+    .fx-logo-item img{max-height:46px;max-width:120px;object-fit:contain}
+    .fx-top-item{opacity:0;transform:translateY(16px);transition:opacity 0.55s cubic-bezier(.34,1.56,.64,1),transform 0.55s cubic-bezier(.34,1.56,.64,1)}
+    .fx-top-item.fx-in{opacity:1;transform:translateY(0)}
+    @media(max-width:720px){.fx-logos{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:420px){.fx-logos{grid-template-columns:1fr 1fr;gap:0.7rem}.fx-logo-item{padding:1.4rem 0.8rem}}
+
+    .fx2{font-family:'Inter Variable',Inter,Arial,sans-serif;background:#fff;padding:4rem 5vw 0;border-top:1px solid #e8e8e8}
+    .fx2-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:3rem;padding-bottom:3.5rem}
+    .fx2-col-title{font-size:1rem;font-weight:700;color:#1a2744;margin-bottom:1.4rem}
+    .fx2-info-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:1.2rem}
+    .fx2-info-icon{width:18px;height:18px;flex-shrink:0;color:#1a2744;margin-top:2px}
+    .fx2-info-text{font-size:0.84rem;color:#555;line-height:1.7}
+    .fx2-info-text a{color:#555;text-decoration:none}
+    .fx2-info-text a:hover{color:#1a2744}
+    .fx2-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem}
+    .fx2-links li a{font-size:0.84rem;color:#555;text-decoration:none;transition:color 0.2s,padding-left 0.2s}
+    .fx2-links li a:hover{color:#1a2744;padding-left:4px}
+    .fx2-links li a.fx2-muted{color:#aaa}
+    .fx2-links li a.fx2-muted:hover{color:#1a2744}
+    .fx2-bottom{background:#111;margin:0 -5vw;padding:1.1rem 5vw;display:flex;align-items:center;justify-content:center}
+    .fx2-bottom-right{font-size:0.88rem;color:#fff;letter-spacing:0.3px}
+    .fx2-col{opacity:0;transform:translateY(22px);transition:opacity 0.6s cubic-bezier(.34,1.56,.64,1),transform 0.6s cubic-bezier(.34,1.56,.64,1)}
+    .fx2-col.fx-in{opacity:1;transform:translateY(0)}
+    @media(max-width:900px){.fx2-grid{grid-template-columns:1fr 1fr;gap:2.5rem}}
+    @media(max-width:560px){.fx2-grid{grid-template-columns:1fr;gap:2rem}.fx2-bottom{flex-direction:column;align-items:center;gap:0.3rem}}
+
+  </style>
+</head>
+<body>
+
+  <!-- ============================
+       NAVBAR
+  ============================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="logo">
+        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" />
+      </a>
+    </div>
+    <div class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="#">Our Services</a>
+      <a href="#">Our Team</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Our Products</a>
+      <a href="#">Our Projects</a>
+      <a href="#">Our Plants</a>
+    </div>
+    <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" />
+      <button class="drawer-close" id="drawerClose">&#x2715;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="#">Our Services</a>
+      <a href="#">Our Team</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Our Products</a>
+      <a href="#">Our Projects</a>
+      <a href="#">Our Plants</a>
+    </nav>
+    <div class="drawer-footer">© 2026 Sun-X</div>
+  </div>
+
+  <!-- ============================
+       ABOUT HERO
+  ============================ -->
+  <section class="about-hero" id="aboutHero">
+    <div class="about-hero-content">
+      <div class="about-hero-breadcrumb">
+        <div class="line"></div>
+        <span>Ready-Mix Concrete Supplier &nbsp;·&nbsp; South India</span>
+      </div>
+      <h1 class="about-hero-title">
+        DRIVEN<br>BY <span class="red">TRUST</span>
+      </h1>
+      <p class="about-hero-desc">
+        SUN-X Group is an established Concrete Supplier with a strong foothold in mining and Ready-Mix Concrete — powered by unique technology and state-of-the-art equipment across South India.
+      </p>
+      <span class="about-hero-tag">Ready-Mix Concrete · Karnataka · Tamil Nadu</span>
+    </div>
+    <div class="about-hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============================
+       INTRO: ABOUT + VISION/MISSION
+  ============================ -->
+  <section class="intro-section" id="introSection">
+    <div class="intro-inner">
+
+      <div class="intro-left" id="introLeft">
+        <span class="section-tag">About SUN-X</span>
+        <h2 class="section-title">Building Supplies in<br><span class="red">Tamil Nadu</span></h2>
+        <p class="section-desc">
+          SUN-X Group is an established Concrete Supplier in Chennai with a strong foothold in mining and Ready-Mix Concrete. Powered by unique technology and state-of-the-art equipment, we are well-equipped to handle all construction-related materials, be it — Ready-Mix, aggregate, cement and allied materials.
+        </p>
+        <p class="section-desc" style="margin-top:1rem;">
+          SUN-X Concrete remains committed to <strong>Quality, Trust, Transparency</strong> and a ceaseless commitment to delivering unparalleled solutions in concrete, construction and allied services across South India.
+        </p>
+      </div>
+
+      <div class="intro-divider-line"></div>
+
+      <div class="intro-right" id="introRight">
+        <div class="vm-blocks">
+          <div class="vm-block">
+            <h3 class="vm-block-title">Our Vision</h3>
+            <p class="vm-block-text">To achieve leadership position in the industry and shape the way the future is built. We are committed to maintain highest levels of principles for our employees in regards to health, safety and the environment while promoting leadership and cognizance.</p>
+          </div>
+          <div class="vm-block">
+            <h3 class="vm-block-title">Our Mission</h3>
+            <p class="vm-block-text">Driven by trust, transparency and a ceaseless commitment to quality, we are passionate about delivering unparalleled and sustainable solutions in concrete, construction, mining and allied services. We pride ourselves on creating unmatched value for all stakeholders.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       OUR FACILITY
+  ============================ -->
+  <section class="facility-section" id="facilitySection">
+    <div class="facility-inner">
+
+      <div class="facility-left" id="facilityLeft">
+        <span class="section-tag">Infrastructure</span>
+        <h2 class="section-title" style="color:#fff;">Our <span class="red">Facility</span></h2>
+        <p class="section-desc">
+          To achieve excellence in delivery standards and service level in the industry, SUN-X CONCRETE — a leading Construction Material Company — facilities are fully computerised and our production processes completely automated.
+        </p>
+        <p class="section-desc" style="margin-top:1rem;">
+          Our facilities are located across Tamil Nadu and Karnataka with a fleet of more than 150+ units including transit mixers, tippers and cement bulkers, giving us a strategic edge.
+        </p>
+
+        <div class="fac-highlights">
+          <div class="fac-highlight">
+            <div class="fac-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h2M7 11h5"/></svg>
+            </div>
+            <div class="fac-highlight-text">
+              <strong>Fully Computerised</strong>
+              <span>Automated production processes</span>
+            </div>
+          </div>
+          <div class="fac-highlight">
+            <div class="fac-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div class="fac-highlight-text">
+              <strong>On-Time Delivery</strong>
+              <span>Strategic fleet across states</span>
+            </div>
+          </div>
+          <div class="fac-highlight">
+            <div class="fac-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <div class="fac-highlight-text">
+              <strong>Quality Certified</strong>
+              <span>IS:1786 Standard met, 100% tested</span>
+            </div>
+          </div>
+          <div class="fac-highlight">
+            <div class="fac-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="fac-highlight-text">
+              <strong>16+ Plant Locations</strong>
+              <span>Tamil Nadu & Karnataka</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://sunxconcrete.org/our-plants/" class="facility-cta">
+          See Our Plants
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="facility-right" id="facilityRight">
+        <div class="facility-img-grid">
+          <img src="./src/assets/images/Poonamallee Plant.jpg"
+               onerror="this.src='https://images.unsplash.com/photo-1567942712661-82b9b407abbf?w=800&q=80'"
+               alt="SUN-X Concrete Plant" />
+          <img src="./src/assets/images/MDV Plant.jpg"
+               onerror="this.src='https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=80'"
+               alt="Transit Mixer Fleet" />
+          <img src="./src/assets/images/HO.jpg"
+               onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80'"
+               alt="SUN-X Head Office" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       VALUED RELATIONSHIPS
+  ============================ -->
+  <section class="valued-section" id="valuedSection">
+    <div class="valued-header">
+      <h2 class="valued-title">Valued Relationships</h2>
+      <p class="valued-subtitle">We're proud to work with a broad spectrum of industry leaders.</p>
+    </div>
+    <div class="valued-grid-outer">
+      <div class="valued-grid-track">
+        <div class="vg-cell r1"><img src="./src/assets/images/client/1-1(1).png" onerror="this.style.display='none'" alt="Ocean" class="vg-img" /></div>
+        <div class="vg-cell r1"><img src="./src/assets/images/client/1-1.png" onerror="this.style.display='none'" alt="Harinarayana" class="vg-img" /></div>
+        <div class="vg-cell r1"><img src="./src/assets/images/client/2-1.png" onerror="this.style.display='none'" alt="GKS" class="vg-img" /></div>
+        <div class="vg-cell r2"><img src="./src/assets/images/client/3-1.png" onerror="this.style.display='none'" alt="Ramaniyan" class="vg-img" /></div>
+        <div class="vg-cell r2"><img src="./src/assets/images/client/4-1.png" onerror="this.style.display='none'" alt="Radiance" class="vg-img" /></div>
+        <div class="vg-cell r2"><img src="./src/assets/images/client/5-1.png" onerror="this.style.display='none'" alt="DRA" class="vg-img" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       STATS / STRENGTH IN NUMBERS
+  ============================ -->
+  <section class="stats-section" id="statsSection">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number"><span data-count="1000">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Project Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number"><span data-count="300">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Staff Strength</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-count="16">0</div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Plant Locations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-count="4">0</div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">State Presence in India</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       MORE TO WHO WE ARE
+  ============================ -->
+  <section class="more-section" id="moreSection">
+    <div class="more-inner">
+      <div class="more-header" id="moreHeader">
+        <div class="more-eyebrow">
+          <span class="more-eyebrow-line"></span>
+          Who We Are
+          <span class="more-eyebrow-line"></span>
+        </div>
+        <h2 class="more-title">There's Much More To Who We Are<br>Than What We Do.</h2>
+      </div>
+      <div class="more-cards" id="moreCards">
+
+        <div class="more-card">
+          <div class="more-card-img">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=700&q=80" alt="Management Team" />
+          </div>
+          <div class="more-card-body">
+            <h3 class="more-card-title">Our Management Team</h3>
+            <p class="more-card-desc">We know that, at the end of the day, our buildings are only as good as the team that builds them. Our management team has a cumulative experience of 100+ years.</p>
+            <a href="#" class="more-card-link">
+              Meet the Team
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="more-card">
+          <div class="more-card-img">
+            <img src="./src/assets/images/Poonamallee Plant.jpg"
+                 onerror="this.src='https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=700&q=80'"
+                 alt="Plant Location" />
+          </div>
+          <div class="more-card-body">
+            <h3 class="more-card-title">Our Plant Location</h3>
+            <p class="more-card-desc">We have strategically positioned our operations across South India to ensure that we can move product to and within the markets where our customers need it.</p>
+            <a href="https://sunxconcrete.org/our-plants/" class="more-card-link">
+              View All Plants
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="more-card">
+          <div class="more-card-img">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80" alt="Our Projects" />
+          </div>
+          <div class="more-card-body">
+            <h3 class="more-card-title">Our Projects</h3>
+            <p class="more-card-desc">As one of the trusted concrete partners we have demonstrable track record of delivering value in various government and prestigious projects.</p>
+            <a href="https://sunxconcrete.org/our-projects/" class="more-card-link">
+              See All Projects
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       OUR PROJECTS
+  ============================ -->
+  <section class="proj-section" id="projSection">
+    <div class="proj-inner">
+      <div class="proj-header" id="projHeader">
+        <div class="proj-eyebrow">
+          <span class="proj-eyebrow-line"></span>
+          Our Work
+          <span class="proj-eyebrow-line"></span>
+        </div>
+        <h2 class="proj-title">Our Projects</h2>
+        <p class="proj-subtitle">Every project we deliver is an opportunity for us to bring our unique thinking to solve problems, innovate and collaborate with our clients and beyond.</p>
+        <a href="https://sunxconcrete.org/our-projects/" class="proj-btn">
+          See Our Projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <div class="proj-cards" id="projCards">
+        <div class="proj-card">
+          <div class="proj-card-img">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Footing Foundation – Velacherry Project" />
+          </div>
+          <div class="proj-card-body">
+            <p class="proj-card-title">Footing Foundation –<br>Velacherry Project</p>
+            <a href="https://sunxconcrete.org/our-projects/" class="proj-card-link">
+              View Project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-card-img">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80" alt="Bangalore Development Authority Project" />
+          </div>
+          <div class="proj-card-body">
+            <p class="proj-card-title">Bangalore Development<br>Authority Project</p>
+            <a href="https://sunxconcrete.org/our-projects/" class="proj-card-link">
+              View Project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-card-img">
+            <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=700&q=80" alt="High strength concrete for Foundation" />
+          </div>
+          <div class="proj-card-body">
+            <p class="proj-card-title">High strength concrete for<br>Foundation</p>
+            <a href="https://sunxconcrete.org/our-projects/" class="proj-card-link">
+              View Project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       REACH US / CONTACT
+  ============================ -->
+  <section class="contact-section" id="contactSection">
+    <div class="contact-inner">
+
+      <div class="contact-left" id="contactLeft">
+        <div class="contact-accent"></div>
+        <h2 class="contact-title">Reach Us</h2>
+        <p class="contact-desc">Have a project in mind or need a quote? Get in touch with our team — we're ready to help with all your concrete and construction material needs.</p>
+
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <strong>Head Office</strong>
+              <span>No 11, Ramaniyam Isha, Old Mahabalipuram Road,<br>Okkiyam Thoraipakkam, Chennai – 600097</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <strong>Phone</strong>
+              <span>+91 9940400050 &nbsp;|&nbsp; +91 88071 47050</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <strong>Email</strong>
+              <span><a href="mailto:info@sunxconcrete.org">info@sunxconcrete.org</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-right" id="contactRight">
+        <div class="contact-form">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="Enter your first name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="Enter your email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="Enter your phone number" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Tell us about your project…"></textarea>
+          </div>
+          <button class="form-submit">
+            Send Message
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER (identical to index)
+  ============================ -->
+  <footer class="fx">
+    <div class="fx-top">
+      <div class="fx-logo-ring fx-top-item">
+        <img src="./src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo"/>
+      </div>
+      <p class="fx-brand fx-top-item">SUN-X Concrete</p>
+      <p class="fx-tagline fx-top-item">Strength · Mining · Ready-Mix</p>
+      <p class="fx-desc fx-top-item">SUN-X Group Is An Established Concrete Supplier In TamilNadu, Karnataka And AndhraPradesh With A Strong Foothold In Mining And Ready-Mix Concrete.</p>
+      <div class="fx-socials fx-top-item">
+        <a href="#" class="fx-soc">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="fx-soc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        </a>
+        <a href="#" class="fx-soc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="fx-soc">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="fx-sub">
+      <div class="fx-sub-label fx-top-item">Subsidiary of</div>
+      <div class="fx-logos">
+        <div class="fx-logo-item"><img src="./src/assets/images/sun-x.png" alt="SUNX Holdings"/></div>
+        <div class="fx-logo-item"><img src="./src/assets/images/sun-x.png" alt="Suntech Civil Services"/></div>
+        <div class="fx-logo-item"><img src="./src/assets/images/sun-x.png" alt="SUN-X"/></div>
+        <div class="fx-logo-item"><img src="./src/assets/images/sun-x.png" alt="Alturas Infrastructure"/></div>
+      </div>
+    </div>
+  </footer>
+
+  <footer class="fx2">
+    <div class="fx2-grid">
+      <div class="fx2-col">
+        <p class="fx2-col-title">Head Office</p>
+        <div class="fx2-info-item">
+          <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="fx2-info-text">No 11, Ramaniyam Isha, Old Mahabalipuram Road, Okkiyam Thoraipakkam, Chennai – 600097</span>
+        </div>
+        <div class="fx2-info-item">
+          <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="fx2-info-text">+91 9940400050<br/>+91 88071 47050</span>
+        </div>
+        <div class="fx2-info-item">
+          <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span class="fx2-info-text"><a href="mailto:info@sunxconcrete.org">info@sunxconcrete.org</a></span>
+        </div>
+      </div>
+      <div class="fx2-col">
+        <p class="fx2-col-title">Quick Links</p>
+        <ul class="fx2-links">
+          <li><a href="#">Our Products</a></li>
+          <li><a href="#">Our Projects</a></li>
+          <li><a href="#">Our Plants</a></li>
+        </ul>
+      </div>
+      <div class="fx2-col">
+        <p class="fx2-col-title">About Us</p>
+        <ul class="fx2-links">
+          <li><a href="index.html" class="fx2-muted">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="fx2-col">
+        <p class="fx2-col-title">Resources &amp; Insights</p>
+        <ul class="fx2-links">
+          <li><a href="#">Logistics Supervisor</a></li>
+          <li><a href="#">Accounts Executive</a></li>
+          <li><a href="#">Footing Foundation – Velacherry Project</a></li>
+          <li><a href="#">Bangalore Development Authority Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fx2-bottom">
+      <span class="fx2-bottom-right">All Rights Reserved © 2026 | Sun-X Concrete Pvt Ltd.</span>
+    </div>
+  </footer>
+
+  <script>
+    // ══════════════════════════════════════
+    // NAVBAR
+    // ══════════════════════════════════════
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = window.scrollY;
+    function updateNav() {
+      const currentScrollY = window.scrollY;
+      navbar.classList.toggle('nav-hidden', currentScrollY > lastScrollY && currentScrollY > 80);
+      if (currentScrollY <= lastScrollY) navbar.classList.remove('nav-hidden');
+      navbar.classList.toggle('scrolled', currentScrollY > 80);
+      lastScrollY = currentScrollY;
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    // ══════════════════════════════════════
+    // DRAWER
+    // ══════════════════════════════════════
+    const hamburger     = document.getElementById('hamburger');
+    const drawer        = document.getElementById('drawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerClose   = document.getElementById('drawerClose');
+    const openDrawer  = () => { drawer.classList.add('open'); drawerOverlay.classList.add('open'); hamburger.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+    const closeDrawer = () => { drawer.classList.remove('open'); drawerOverlay.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+    hamburger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+    drawerClose.addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+    document.querySelectorAll('.drawer-nav a').forEach(l => l.addEventListener('click', closeDrawer));
+
+    // ══════════════════════════════════════
+    // STAT COUNTER
+    // ══════════════════════════════════════
+    const countEls = document.querySelectorAll('[data-count]');
+    let countStarted = false;
+    new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countStarted) {
+          countStarted = true;
+          countEls.forEach(el => {
+            const target = parseInt(el.getAttribute('data-count'));
+            let count = 0;
+            const inc = target / 60;
+            const timer = setInterval(() => {
+              count += inc;
+              if (count >= target) { count = target; clearInterval(timer); }
+              el.textContent = Math.floor(count);
+            }, 1400 / 60);
+          });
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -50px 0px' }).observe(document.getElementById('statsSection'));
+
+    // ══════════════════════════════════════
+    // SCROLL ANIMATIONS
+    // ══════════════════════════════════════
+    const scrollObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); } });
+    }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
+
+    [
+      'introLeft','introRight',
+      'facilityLeft','facilityRight',
+      'moreHeader',
+      'projHeader',
+      'contactLeft','contactRight'
+    ].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) scrollObs.observe(el);
+    });
+
+    document.querySelectorAll('#moreCards .more-card').forEach(el => scrollObs.observe(el));
+    document.querySelectorAll('#projCards .proj-card').forEach(el => scrollObs.observe(el));
+
+    // Valued section
+    new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.08 }).observe(document.getElementById('valuedSection'));
+
+    // Footer fx animations
+    const fxObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('fx-in'); fxObs.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.fx-top-item').forEach((el, i) => { el.style.transitionDelay = (i * 0.08) + 's'; fxObs.observe(el); });
+    document.querySelectorAll('.fx-logo-item').forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; fxObs.observe(el); });
+
+    const fx2Obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('fx-in'); fx2Obs.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fx2-col').forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; fx2Obs.observe(el); });
+  </script>
+
+</body>
+</html>

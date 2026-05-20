@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – SUN-X Concrete</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="src/css/comman.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    /* ── GRID BG ── */
+    .contact-page {
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-page::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── HEADER ── */
+    .contact-header {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 6rem 5vw 4rem;
+      max-width: 680px; margin: 0 auto;
+    }
+    .contact-header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -1.5px; color: #0f0f0f;
+      margin-bottom: 1rem;
+    }
+    .contact-header p {
+      font-size: 0.95rem; color: #666; line-height: 1.7;
+    }
+
+    /* ── BODY ── */
+    .contact-body {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 5vw 6rem;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* ── LEFT FORM ── */
+    .contact-form { display: flex; flex-direction: column; gap: 1.4rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label {
+      font-size: 0.72rem; font-weight: 600; color: #333; letter-spacing: 0.2px;
+    }
+    .form-label .req { color: #c0392b; margin-left: 2px; }
+
+    .form-input, .form-textarea {
+      width: 100%; padding: 0.7rem 0.95rem;
+      border: 1.5px solid #d5d5d5; border-radius: 8px;
+      font-size: 0.88rem; font-family: inherit; color: #111;
+      background: #fff; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: #bbb; }
+    .form-input:focus, .form-textarea:focus {
+      border-color: #1a2744;
+      box-shadow: 0 0 0 3px rgba(26,39,68,0.08);
+    }
+    .form-textarea { resize: vertical; min-height: 130px; }
+
+    /* phone row */
+    .phone-wrap { display: flex; gap: 0; }
+    .phone-country {
+      padding: 0.7rem 0.8rem; border: 1.5px solid #d5d5d5; border-right: none;
+      border-radius: 8px 0 0 8px; background: #fff; font-size: 0.85rem;
+      color: #333; font-family: inherit; outline: none; cursor: pointer;
+      appearance: none; -webkit-appearance: none;
+      display: flex; align-items: center; gap: 4px; white-space: nowrap;
+      transition: border-color 0.2s;
+    }
+    .phone-country:focus { border-color: #1a2744; }
+    .phone-num {
+      flex: 1; padding: 0.7rem 0.95rem;
+      border: 1.5px solid #d5d5d5; border-radius: 0 8px 8px 0;
+      font-size: 0.88rem; font-family: inherit; color: #111;
+      background: #fff; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .phone-num::placeholder { color: #bbb; }
+    .phone-num:focus { border-color: #1a2744; box-shadow: 0 0 0 3px rgba(26,39,68,0.08); }
+
+    /* checkboxes */
+    .cb-label { font-size: 0.72rem; font-weight: 600; color: #333; margin-bottom: 0.6rem; }
+    .cb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
+    .cb-item { display: flex; align-items: center; gap: 0.55rem; cursor: pointer; }
+    .cb-item input[type="checkbox"] { display: none; }
+    .cb-box {
+      width: 16px; height: 16px; flex-shrink: 0;
+      border: 1.5px solid #ccc; border-radius: 4px; background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cb-item input:checked ~ .cb-box {
+      background: #1a2744; border-color: #1a2744;
+    }
+    .cb-item input:checked ~ .cb-box::after {
+      content: '';
+      width: 9px; height: 5px;
+      border-left: 2px solid #fff; border-bottom: 2px solid #fff;
+      transform: rotate(-45deg) translateY(-1px);
+      display: block;
+    }
+    .cb-text { font-size: 0.82rem; color: #444; }
+
+    /* submit */
+    .form-submit {
+      width: 100%; padding: 0.9rem 1.5rem;
+      background: #fff; color: #111;
+      border: 1.5px solid #d5d5d5; border-radius: 8px;
+      font-size: 0.88rem; font-weight: 600; font-family: inherit;
+      cursor: pointer; letter-spacing: 0.2px;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      margin-top: 0.4rem;
+    }
+    .form-submit:hover { background: #1a2744; color: #fff; border-color: #1a2744; }
+
+    /* ── RIGHT INFO ── */
+    .contact-info { display: flex; flex-direction: column; gap: 2.4rem; padding-top: 0.5rem; }
+
+    .info-block {}
+    .info-block-title {
+      font-size: 0.95rem; font-weight: 700; color: #0f0f0f;
+      margin-bottom: 0.3rem;
+    }
+    .info-block-sub {
+      font-size: 0.82rem; color: #777; line-height: 1.6; margin-bottom: 1rem;
+    }
+    .info-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .info-link {
+      display: flex; align-items: center; gap: 0.7rem;
+      font-size: 0.84rem; color: #1a2744; font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .info-link:hover { color: #c0392b; }
+    .info-link-icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      border: 1px solid #e0e0e0; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      color: #555; background: #fafafa;
+    }
+    .info-link-icon svg { width: 14px; height: 14px; }
+
+    /* divider */
+    .info-divider { height: 1px; background: #efefef; }
+
+    /* trusted logos */
+    .trust-logos {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.8rem;
+    }
+    .trust-logo {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px;
+      padding: 4px 12px; border: 1px solid #e0e0e0; border-radius: 4px;
+      color: #888; background: #fafafa;
+    }
+
+    @media (max-width: 900px) {
+      .contact-body { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-body .contact-info { order: -1; }
+    }
+    @media (max-width: 560px) {
+      .form-row { grid-template-columns: 1fr; }
+      .cb-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" style="background-color: black !important;">
+    <div class="nav-left">
+      <a href="index.html" class="logo">
+        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" />
+      </a>
+    </div>
+    <div class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="services.html">Our Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="our-products.html">Our Products</a>
+      <a href="our-projects.html">Our Projects</a>
+      <a href="our-plants.html">Our Plants</a>
+    </div>
+    <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- DRAWER -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" />
+      <button class="drawer-close" id="drawerClose">&#x2715;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="services.html">Our Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="our-products.html">Our Products</a>
+      <a href="our-projects.html">Our Projects</a>
+      <a href="our-plants.html">Our Plants</a>
+    </nav>
+    <div class="drawer-footer">© 2026 Sun-X</div>
+  </div>
+
+  <script type="module" src="src/js/comman.js" defer></script>
+
+  <div class="contact-page">
+
+    <!-- header -->
+    <div class="contact-header">
+      <h1>Talk to our friendly team</h1>
+      <p>We'll help you find the right concrete solution, no matter your project size.</p>
+    </div>
+
+    <!-- body -->
+    <div class="contact-body">
+
+      <!-- LEFT: form -->
+      <div class="contact-form">
+
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">First name <span class="req">*</span></label>
+            <input class="form-input" type="text" placeholder="First name" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Last name <span class="req">*</span></label>
+            <input class="form-input" type="text" placeholder="Last name" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Email <span class="req">*</span></label>
+          <input class="form-input" type="email" placeholder="you@company.com" />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Phone number</label>
+          <div class="phone-wrap">
+            <select class="phone-country">
+              <option>🇮🇳 +91</option>
+              <option>🇺🇸 +1</option>
+              <option>🇬🇧 +44</option>
+            </select>
+            <input class="phone-num" type="tel" placeholder="+91 98765 43210" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Message <span class="req">*</span></label>
+          <textarea class="form-textarea" placeholder="Leave us a message..."></textarea>
+        </div>
+
+        <div class="form-field">
+          <div class="cb-label">Services</div>
+          <div class="cb-grid">
+            <label class="cb-item">
+              <input type="checkbox" /><span class="cb-box"></span>
+              <span class="cb-text">Ready-Mix Concrete</span>
+            </label>
+            <label class="cb-item">
+              <input type="checkbox" /><span class="cb-box"></span>
+              <span class="cb-text">Bulk Orders</span>
+            </label>
+            <label class="cb-item">
+              <input type="checkbox" /><span class="cb-box"></span>
+              <span class="cb-text">Site Consultation</span>
+            </label>
+            <label class="cb-item">
+              <input type="checkbox" /><span class="cb-box"></span>
+              <span class="cb-text">Project Planning</span>
+            </label>
+            <label class="cb-item">
+              <input type="checkbox" /><span class="cb-box"></span>
+              <span class="cb-text">Quality Testing</span>
+            </label>
+            <label class="cb-item">
+              <input type="checkbox" /><span class="cb-box"></span>
+              <span class="cb-text">Other</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="form-submit">Send message</button>
+
+      </div>
+
+      <!-- RIGHT: info -->
+      <div class="contact-info">
+
+        <div class="info-block">
+          <div class="info-block-title">Chat with us</div>
+          <div class="info-block-sub">Speak to our friendly team via email or phone.</div>
+          <div class="info-links">
+            <a href="mailto:info@sunxconcrete.org" class="info-link">
+              <span class="info-link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              info@sunxconcrete.org
+            </a>
+            <a href="https://wa.me/919940400050" class="info-link">
+              <span class="info-link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </span>
+              Message us on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="info-divider"></div>
+
+        <div class="info-block">
+          <div class="info-block-title">Call us</div>
+          <div class="info-block-sub">Call our team Mon–Sat from 9am to 6pm.</div>
+          <div class="info-links">
+            <a href="tel:+919940400050" class="info-link">
+              <span class="info-link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+              </span>
+              +91 99404 00050
+            </a>
+            <a href="tel:+918807147050" class="info-link">
+              <span class="info-link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+              </span>
+              +91 88071 47050
+            </a>
+          </div>
+        </div>
+
+        <div class="info-divider"></div>
+
+        <div class="info-block">
+          <div class="info-block-title">Visit us</div>
+          <div class="info-block-sub">No 11, Ramaniyam Isha, Old Mahabalipuram Road,<br>Okkiyam Thoraipakkam, Chennai – 600097</div>
+          <div class="trust-logos">
+            <span class="trust-logo">Tamil Nadu</span>
+            <span class="trust-logo">Karnataka</span>
+            <span class="trust-logo">Andhra Pradesh</span>
+            <span class="trust-logo">1000+ Projects</span>
+            <span class="trust-logo">ISO Certified</span>
+            <span class="trust-logo">Since 2004</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
