@@ -486,7 +486,7 @@ body {
 /* ===== ABOUT ===== */
 .about-section {
   background: #fff;
-  padding: 6rem 5vw;
+  padding: 3rem 5vw;
 }
 
 .about-inner {
@@ -910,10 +910,11 @@ body {
 
   .vg-cell {
     padding: 0 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .vg-cell.r1 {
-    border-bottom: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);;
   }
 
   .vg-cell:nth-child(odd) {

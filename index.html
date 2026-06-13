@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SUN-X</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="src/css/comman.css">
-    <link rel="stylesheet" href="style.css">
-
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Barlow+Condensed:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/comman.css" />
+  <link rel="stylesheet" href="src/css/index.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/Nav-Dropdown.css" />
 </head>
+
 <body>
 
   <nav class="navbar" id="navbar">
@@ -19,15 +23,44 @@
       </a>
     </div>
     <div class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Our Services</a>
-      <a href="team.html">Our Team</a>
-      <a href="careers.html">Careers</a>
+      <a href="index.html" class="active">Home</a>
+
+      <div class="nav-item">
+      <a href="#">About Us</a>
+      <div class="nav-dropdown">
+        <a href="about.html">About Sunx Concrete</a>
+        <a href="#">About Sunx UAE</a>
+        <a href="team.html">Our Team</a>
+        <a href="careers.html">Careers</a>
+      </div>
+      </div>
+
+      <a href="services.html">Services</a>
+
+      <div class="nav-item">
+        <a href="#">Capabilities</a>
+        <div class="nav-dropdown">
+          <a href="#">Quality Assurance</a>
+          <a href="#">Production Facilities</a>
+          <a href="#">Fleet Management</a>
+          <a href="#">Batching Plant</a>
+          <a href="#">Product Portfolio</a>
+          <a href="#">Certifications</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#">Our Works</a>
+        <div class="nav-dropdown">
+          <a href="our-projects.html">Our Projects</a>
+          <a href="our-plants.html">Our Plants</a>
+          <a href="our-products.html">Our Products</a>
+        </div>
+      </div>
+
+      <a href="careers.html">Carrers</a>
+
       <a href="contact.html">Contact Us</a>
-      <a href="our-products.html">Our Products</a>
-      <a href="our-projects.html">Our Projects</a>
-      <a href="our-plants.html">Our Plants</a>
     </div>
     <div class="nav-right">
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
@@ -42,21 +75,46 @@
       <button class="drawer-close" id="drawerClose">&#x2715;</button>
     </div>
     <nav class="drawer-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Our Services</a>
-      <a href="team.html">Our Team</a>
-      <a href="careers.html">Careers</a>
+      <a href="index.html" class="active">Home</a>
+
+      <details>
+        <summary>About Us</summary>
+        <div class="drawer-subnav">
+          <a href="about.html">About Us</a>
+          <a href="team.html">Our Team</a>
+          <a href="careers.html">Careers</a>
+        </div>
+      </details>
+
+      <a href="services.html">Services</a>
+
+      <details>
+        <summary>Capabilities</summary>
+        <div class="drawer-subnav">
+          <a href="#">Quality Assurance</a>
+          <a href="#">Production Facilities</a>
+          <a href="#">Fleet Management</a>
+          <a href="#">Batching Plant</a>
+          <a href="#">Product Portfolio</a>
+          <a href="#">Certifications</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>Our Works</summary>
+        <div class="drawer-subnav">
+          <a href="our-projects.html">Our Projects</a>
+          <a href="our-plants.html">Our Plants</a>
+          <a href="our-products.html">Our Products</a>
+        </div>
+      </details>
+
+      <a href="careers.html">Carrers</a>
+
       <a href="contact.html">Contact Us</a>
-      <a href="our-products.html">Our Products</a>
-      <a href="our-projects.html">Our Projects</a>
-      <a href="our-plants.html">Our Plants</a>
     </nav>
     <div class="drawer-footer">© 2026 Sun-X</div>
   </div>
-
-
-
 
   <section class="hero" id="hero">
     <div class="slides-wrapper" id="slidesWrapper">
@@ -68,7 +126,8 @@
             <span class="eyebrow-text">Ready-Mix Concrete Supplier &nbsp;·&nbsp; South India</span>
           </div>
           <h1 class="slide-title">DRIVEN<br>BY <span class="red">TRUST</span></h1>
-          <p class="slide-subtitle">We believe in existing for a higher cause — we exist to build the future. Quality concrete solutions across Tamil Nadu, Karnataka &amp; Andhra Pradesh.</p>
+          <p class="slide-subtitle">We believe in existing for a higher cause — we exist to build the future. Quality
+            concrete solutions across Tamil Nadu, Karnataka &amp; Andhra Pradesh.</p>
           <div class="hero-btns">
             <button class="btn-primary">Request a Quote</button>
             <a href="#" class="btn-outline">View Projects →</a>
@@ -83,7 +142,8 @@
             <span class="eyebrow-text">Ready-Mix Concrete Supplier &nbsp;·&nbsp; South India</span>
           </div>
           <h1 class="slide-title">BUILT ON<br><span class="red">STRENGTH</span></h1>
-          <p class="slide-subtitle">Delivering precision-engineered concrete for high-rise, infrastructure, and industrial projects across South India since 2005.</p>
+          <p class="slide-subtitle">Delivering precision-engineered concrete for high-rise, infrastructure, and
+            industrial projects across South India since 2005.</p>
           <div class="hero-btns">
             <button class="btn-primary">Request a Quote</button>
             <a href="#" class="btn-outline">Our Services →</a>
@@ -98,7 +158,8 @@
             <span class="eyebrow-text">Ready-Mix Concrete Supplier &nbsp;·&nbsp; South India</span>
           </div>
           <h1 class="slide-title">SHAPING<br>THE <span class="red">FUTURE</span></h1>
-          <p class="slide-subtitle">From residential foundations to mega infrastructure — every pour is backed by quality control, on-time delivery, and trusted expertise.</p>
+          <p class="slide-subtitle">From residential foundations to mega infrastructure — every pour is backed by
+            quality control, on-time delivery, and trusted expertise.</p>
           <div class="hero-btns">
             <button class="btn-primary">Request a Quote</button>
             <a href="#" class="btn-outline">Our Plants →</a>
@@ -118,6 +179,7 @@
 
     <button class="pause-btn" id="pauseBtn">⏸</button>
   </section>
+
   <section class="stats-section" id="statsSection">
     <div class="stats-container">
       <div class="stat-card">
@@ -126,22 +188,23 @@
         <div class="stat-label">Projects Completed</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number" data-count="16">0</div>
+        <div class="stat-number" data-count="25">0</div>
         <div class="stat-divider"></div>
-        <div class="stat-label">Strategically Located Plants</div>
+        <div class="stat-label">State-Of-The-Art Batching Plants</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number" data-count="4">0</div>
+        <div class="stat-number"><span data-count="160">0</span><span class="stat-plus">+</span></div>
         <div class="stat-divider"></div>
-        <div class="stat-label">Presence In States Across India</div>
+        <div class="stat-label">Transit Mixers &amp; Boom Pumps</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number"><span data-count="300">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-number"><span data-count="650">0</span><span class="stat-plus">+</span></div>
         <div class="stat-divider"></div>
-        <div class="stat-label">Experienced Employees</div>
+        <div class="stat-label">Skilled &amp; Dedicated Professionals</div>
       </div>
     </div>
   </section>
+
   <section class="about-section" id="aboutSection">
     <div class="about-inner">
 
@@ -149,13 +212,15 @@
         <span class="about-tag">One Step Ahead</span>
         <h2 class="about-title">Building A <span class="about-red">Solid Future</span></h2>
         <p class="about-desc">
-          SUN-X Concrete as a commercial construction material supplier remain committed to
-          <strong>Quality, Trust, Transparency</strong> and a ceaseless commitment to delivering
-          unparalleled solutions in concrete, construction and allied services across South India.
+          <strong>SUN-X Group</strong> is a building materials company specializing in high-quality
+          Ready-Mix Concrete (RMC), aggregates, and allied solutions. With a strong foundation built on
+          performance, reliability, and innovation, we deliver customized concrete solutions tailored to
+          meet the evolving demands of residential, commercial, infrastructure and industrial developments.
         </p>
         <div class="about-divider"></div>
         <div class="about-quality-title">Quality Assurance</div>
-        <p class="about-quality-text">Always committed to maintaining and improving the quality of our product using the best quality materials available in the country and the most advanced equipment in the concrete industry.</p>
+        <p class="about-quality-text">All products are manufactured using advanced batching systems and premium raw
+          materials, ensuring compliance with international standards such as ASTM, BS, and local regulations.</p>
       </div>
 
       <div class="about-center anim-up">
@@ -169,7 +234,7 @@
           <div class="about-circle">
             <svg class="rotate-text" viewBox="0 0 130 130" width="130" height="130">
               <defs>
-                <path id="circlePath" d="M 65,65 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0"/>
+                <path id="circlePath" d="M 65,65 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" />
               </defs>
               <text font-size="10.5" font-weight="600" fill="#bbb" letter-spacing="3.2" font-family="Inter,sans-serif">
                 <textPath href="#circlePath">KNOW MORE · ABOUT US · KNOW MORE · ABOUT US ·</textPath>
@@ -182,16 +247,21 @@
         </div>
         <div class="about-mv-block">
           <h3 class="about-mv-title">Our Mission</h3>
-          <p class="about-mv-text">To achieve leadership position in the industry and shape the way the future is built. Committed to maintaining the highest principles for health, safety and the environment.</p>
+          <p class="about-mv-text">To lead the construction materials industry by building a safer, sustainable future
+            through innovation, integrity, and a steadfast commitment to health, safety and environmental excellence.
+          </p>
         </div>
         <div class="about-mv-block">
           <h3 class="about-mv-title">Our Vision</h3>
-          <p class="about-mv-text">Driven by trust, transparency and a ceaseless commitment to quality — delivering unparalleled and sustainable solutions in concrete, construction, mining and allied services.</p>
+          <p class="about-mv-text">To be a globally trusted provider of sustainable solutions in concrete, construction
+            and mining — delivering exceptional value through innovation, integrity, and environmental stewardship
+            across all markets.</p>
         </div>
       </div>
 
     </div>
   </section>
+
   <section class="valued-section" id="valuedSection">
     <div class="valued-header">
       <h2 class="valued-title">Valued Relationships</h2>
@@ -199,7 +269,8 @@
     </div>
     <div class="valued-grid-outer">
       <div class="valued-grid-track">
-        <div class="vg-cell r1"><img src="./src/assets/images/client/1-1(1).png" alt="Client 1" class="vg-img" style="background-color: #fff;" /></div>
+        <div class="vg-cell r1"><img src="./src/assets/images/client/1-1(1).png" alt="Client 1" class="vg-img"
+            style="background-color: #fff;" /></div>
         <div class="vg-cell r1"><img src="./src/assets/images/client/1-1.png" alt="Client 2" class="vg-img" /></div>
         <div class="vg-cell r1"><img src="./src/assets/images/client/2-1.png" alt="Client 3" class="vg-img" /></div>
         <div class="vg-cell r2"><img src="./src/assets/images/client/3-1.png" alt="Client 4" class="vg-img" /></div>
@@ -208,6 +279,7 @@
       </div>
     </div>
   </section>
+
   <section class="video-section" id="videoSection">
     <div class="video-inner">
 
@@ -231,20 +303,22 @@
 
         <div class="video-info-col">
           <p class="video-desc">
-            A commercial construction material supplier committed to quality, trust, and transparency — delivering unparalleled solutions in concrete, construction, and allied services across South India.
+            SUN-X Group has established a strong presence across South India, particularly in Tamil Nadu and
+            Karnataka, driven by robust infrastructure and operational capabilities — earning a reputation as one
+            of the <strong>Top 5 concrete solution providers in India</strong>.
           </p>
           <div class="video-stats-row">
             <div class="vs2-item">
-              <div class="vs2-num">1000<span class="vs2-plus">+</span></div>
-              <div class="vs2-label">Projects<br>Completed</div>
+              <div class="vs2-num">25<span class="vs2-plus">+</span></div>
+              <div class="vs2-label">Batching<br>Plants</div>
             </div>
             <div class="vs2-item">
-              <div class="vs2-num">16<span class="vs2-plus">+</span></div>
-              <div class="vs2-label">Plant<br>Locations</div>
+              <div class="vs2-num">160<span class="vs2-plus">+</span></div>
+              <div class="vs2-label">Transit Mixers<br>&amp; Boom Pumps</div>
             </div>
             <div class="vs2-item">
-              <div class="vs2-num">300<span class="vs2-plus">+</span></div>
-              <div class="vs2-label">Trusted<br>Employees</div>
+              <div class="vs2-num">650<span class="vs2-plus">+</span></div>
+              <div class="vs2-label">Skilled<br>Professionals</div>
             </div>
           </div>
         </div>
@@ -254,111 +328,20 @@
       <!-- FULL-WIDTH VIDEO THUMBNAIL -->
       <div class="video-thumb-full va-thumb playing" id="videoThumb">
 
-        <!-- <video
-          id="heroVideo"
-          src="https://youtu.be/ev41yx7Atus?si=u4Bal9oIPDLv-Ixt"
-          poster="./src/assets/images/Poonamallee%20Plant.jpg"
-          muted
-          autoplay
-          playsinline
-          loop
-          preload="auto"
-        ></video> -->
-
-        <iframe
-  width="100%"
-  height="100%"
-  src="https://www.youtube.com/embed/ev41yx7Atus?autoplay=1&mute=1&loop=1&playlist=ev41yx7Atus"
-  title="YouTube video player"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen
-></iframe>
-        <!-- <div class="vtf-overlay"></div>
+        <iframe width="100%" height="100%"
+          src="https://www.youtube.com/embed/ev41yx7Atus?autoplay=1&mute=1&loop=1&playlist=ev41yx7Atus"
+          title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
 
         <div class="vtf-center-play" id="vtfCenterPlay">
-          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          <svg viewBox="0 0 24 24">
+            <polygon points="5,3 19,12 5,21" />
+          </svg>
         </div>
-
-        <div class="vtf-controls" id="vtfControls">
-
-          <div class="vtf-progress-row">
-            <span class="vtf-time-current" id="vtfTimeCurrent">0:00</span>
-            <div class="vtf-progress-track" id="vtfProgressTrack">
-              <div class="vtf-progress-buf"  id="vtfProgressBuf"></div>
-              <div class="vtf-progress-fill" id="vtfProgressFill">
-                <div class="vtf-progress-thumb"></div>
-              </div>
-            </div>
-            <span class="vtf-time-total" id="vtfTimeTotal">0:00</span>
-          </div>
-
-          <div class="vtf-btn-row">
-
-            <button class="vtf-btn" id="vtfPlayBtn" title="Play / Pause">
-              <svg id="vtfPlayIcon" viewBox="0 0 24 24" fill="currentColor">
-                <rect x="5"  y="3" width="4" height="18" rx="1"/>
-                <rect x="15" y="3" width="4" height="18" rx="1"/>
-              </svg>
-            </button>
-
-            <div class="vtf-vol-group">
-              <button class="vtf-btn" id="vtfMuteBtn" title="Mute / Unmute">
-                <svg id="vtfVolIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                  <line x1="23" y1="9" x2="17" y2="15"/>
-                  <line x1="17" y1="9" x2="23" y2="15"/>
-                </svg>
-              </button>
-              <div class="vtf-vol-slider-wrap">
-                <input type="range" class="vtf-vol-slider" id="vtfVolSlider" min="0" max="1" step="0.01" value="0" />
-              </div>
-            </div>
-
-            <div class="vtf-spacer"></div>
-
-            <span class="vtf-quality-badge">HD</span>
-
-            <div class="vtf-menu-wrap" id="vtfMenuWrap">
-              <button class="vtf-btn" id="vtfMenuBtn" title="Settings">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="3"/>
-                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                </svg>
-              </button>
-              <div class="vtf-menu-dropdown" id="vtfMenuDropdown">
-                <div class="vtf-menu-item" id="menuAutoplay">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5,3 19,12 5,21"/><line x1="19" y1="3" x2="19" y2="21"/></svg>
-                  Autoplay: <strong id="autoplayLabel" style="margin-left:4px;color:#fff;">On</strong>
-                </div>
-                <div class="vtf-menu-item" id="menuLoop">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-                  Loop: <strong id="loopLabel" style="margin-left:4px;color:#fff;">On</strong>
-                </div>
-                <div class="vtf-menu-divider"></div>
-                <div class="vtf-menu-item" id="menuPip">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><rect x="12" y="9" width="8" height="6" rx="1"/></svg>
-                  Picture in Picture
-                </div>
-                <div class="vtf-menu-item" id="menuDownload">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                  Download Video
-                </div>
-              </div>
-            </div>
-
-            <button class="vtf-btn" id="vtfFullscreenBtn" title="Fullscreen">
-              <svg id="vtfFsIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-              </svg>
-            </button>
-
-          </div>
-        </div> -->
-
       </div>
     </div>
   </section>
+
   <section class="adv-section" id="advSection">
 
     <!-- LEFT: dark bg image with text -->
@@ -366,16 +349,27 @@
       <div class="adv-accent-bar"></div>
       <div class="adv-left-content">
         <h2 class="adv-title">The Sun-X<br>Advantages</h2>
-        <p class="adv-desc">We are equipped with the knowledge and awareness of customer needs in an ever-changing market.</p>
-        <p class="adv-desc-2">Because we're dedicated to being the most reliable concrete, building materials and allied products in Tamil Nadu and Karnataka, our customer promises set the high standards we always aim to follow – with every customer.</p>
+        <p class="adv-desc">We are equipped with the knowledge and awareness of customer needs in an ever-changing
+          market.</p>
+        <p class="adv-desc-2">Because we're dedicated to being the most reliable concrete, building materials and allied
+          products in Tamil Nadu and Karnataka, our customer promises set the high standards we always aim to follow –
+          with every customer.</p>
         <div class="adv-cta-row">
-          <a href="https://sunxconcrete.org/about-us/" class="adv-btn-primary">
+          <a href="about.html" class="adv-btn-primary">
             About Us
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
-          <a href="https://sunxconcrete.org/our-projects/" class="adv-btn-ghost">
+          <a href="our-projects.html" class="adv-btn-ghost">
             See All Our Projects
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
@@ -385,28 +379,32 @@
     <div class="adv-right" id="advCards">
 
       <div class="adv-card">
-        <a href="https://sunxconcrete.org/our-products/" class="adv-card-title">Our Products</a>
-        <p class="adv-card-desc">We work with you to find the right Concrete from our wide range of concrete products.</p>
+        <a href="our-products.html" class="adv-card-title">Our Products</a>
+        <p class="adv-card-desc">We work with you to find the right Concrete from our wide range of concrete products.
+        </p>
       </div>
 
       <div class="adv-card">
-        <a href="https://sunxconcrete.org/our-projects/" class="adv-card-title">Our Projects</a>
+        <a href="our-projects.html" class="adv-card-title">Our Projects</a>
         <p class="adv-card-desc">Here is a snapshot of our projects across various verticals across 4 states.</p>
       </div>
 
       <div class="adv-card">
-        <a href="https://sunxconcrete.org/our-team/" class="adv-card-title">Our Team</a>
-        <p class="adv-card-desc">Our management team has a cumulative experience of 100+ years and a proven track record of delivering excellence in the industry.</p>
+        <a href="team.html" class="adv-card-title">Our Team</a>
+        <p class="adv-card-desc">Our management team has a cumulative experience of 100+ years and a proven track record
+          of delivering excellence in the industry.</p>
       </div>
 
       <div class="adv-card">
-        <a href="https://sunxconcrete.org/our-services/" class="adv-card-title">Our Services</a>
-        <p class="adv-card-desc">Our technical expertise is unmatched in the industry. Our fleet of vehicles enable us to solve any complex process.</p>
+        <a href="services.html" class="adv-card-title">Our Services</a>
+        <p class="adv-card-desc">Our technical expertise is unmatched in the industry. Our fleet of vehicles enable us
+          to solve any complex process.</p>
       </div>
 
     </div>
 
   </section>
+
   <section class="proj-section" id="projSection">
     <div class="proj-inner">
 
@@ -418,10 +416,15 @@
           <span class="proj-eyebrow-line"></span>
         </div>
         <h2 class="proj-title">Our Projects</h2>
-        <p class="proj-subtitle">Every project we deliver is an opportunity for us to bring our unique thinking to solve problems, innovate and collaborate with our clients and beyond.</p>
-        <a href="https://sunxconcrete.org/our-projects/" class="proj-btn">
+        <p class="proj-subtitle">Every project we deliver is an opportunity for us to bring our unique thinking to solve
+          problems, innovate and collaborate with our clients and beyond.</p>
+        <a href="our-projects.html" class="proj-btn">
           See Our Projects
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
         </a>
       </div>
 
@@ -430,39 +433,54 @@
 
         <div class="proj-card">
           <div class="proj-card-img">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Footing Foundation – Velacherry Project" />
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80"
+              alt="Footing Foundation – Velacherry Project" />
           </div>
           <div class="proj-card-body">
             <p class="proj-card-title">Footing Foundation –<br>Velacherry Project</p>
-            <a href="https://sunxconcrete.org/our-projects/" class="proj-card-link">
+            <a href="our-projects.html" class="proj-card-link">
               View Project
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </a>
           </div>
         </div>
 
         <div class="proj-card">
           <div class="proj-card-img">
-            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80" alt="Bangalore Development Authority Project" />
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80"
+              alt="Bangalore Development Authority Project" />
           </div>
           <div class="proj-card-body">
             <p class="proj-card-title">Bangalore Development<br>Authority Project</p>
-            <a href="https://sunxconcrete.org/our-projects/" class="proj-card-link">
+            <a href="our-projects.html" class="proj-card-link">
               View Project
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </a>
           </div>
         </div>
 
         <div class="proj-card">
           <div class="proj-card-img">
-            <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=700&q=80" alt="High strength concrete for Foundation" />
+            <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=700&q=80"
+              alt="High strength concrete for Foundation" />
           </div>
           <div class="proj-card-body">
             <p class="proj-card-title">High strength concrete for<br>Foundation</p>
-            <a href="https://sunxconcrete.org/our-projects/" class="proj-card-link">
+            <a href="our-projects.html" class="proj-card-link">
               View Project
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </a>
           </div>
         </div>
@@ -491,16 +509,23 @@
         </div>
         <div class="news-feat-body">
           <h3 class="news-feat-title">Quarry owners urged to take up 'responsible mining'</h3>
-          <p class="news-feat-excerpt">At the International Mining and Mines Safety Expo-Symposium, organised by Stone Quarry, Crusher and Lorry Owners' Association and Mining Engineers Association of India, he said the quarry owners should take measures to minimise environmental degradation due to quarrying.</p>
+          <p class="news-feat-excerpt">At the International Mining and Mines Safety Expo-Symposium, organised by Stone
+            Quarry, Crusher and Lorry Owners' Association and Mining Engineers Association of India, he said the quarry
+            owners should take measures to minimise environmental degradation due to quarrying.</p>
           <a href="https://www.thehindu.com" target="_blank" class="news-source-btn">
             The Hindu
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
 
     </div>
   </section>
+
   <section class="plants-section" id="plantsSection">
     <div class="plants-inner">
 
@@ -508,10 +533,15 @@
       <div class="plants-left" id="plantsLeft">
         <div class="plants-accent"></div>
         <h2 class="plants-title">Our Concrete<br>Plants</h2>
-        <p class="plants-desc">Every project we deliver is an opportunity for us to bring our unique thinking to solve problems, innovate and collaborate with our clients and beyond.</p>
-        <a href="https://sunxconcrete.org/our-plants/" class="plants-btn">
+        <p class="plants-desc">Every project we deliver is an opportunity for us to bring our unique thinking to solve
+          problems, innovate and collaborate with our clients and beyond.</p>
+        <a href="our-plants.html" class="plants-btn">
           See Our Plants
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
         </a>
       </div>
 
@@ -520,28 +550,32 @@
 
         <div class="plants-img-main" id="plantsImgMain">
           <img src="./src/assets/images/Poonamallee%20Plant.jpg"
-               onerror="this.src='https://images.unsplash.com/photo-1567942712661-82b9b407abbf?w=700&q=80'"
-               alt="SUN-X Concrete Plant" />
+            onerror="this.src='https://images.unsplash.com/photo-1567942712661-82b9b407abbf?w=700&q=80'"
+            alt="SUN-X Concrete Plant" />
         </div>
 
         <div class="plants-text-block" id="plantsText">
-          <p>The demand for new structures is still high and will continue to rise in the coming years, at the same time leading to a growing demand for ready-mix concrete. Our 30+ strategically located concrete plants is equipped to handle the demand seamlessly.</p>
+          <p>The demand for new structures is still high and will continue to rise in the coming years, at the same time
+            leading to a growing demand for ready-mix concrete. Our 30+ strategically located concrete plants is
+            equipped to handle the demand seamlessly.</p>
         </div>
 
         <div class="plants-img-secondary" id="plantsImgSecondary">
           <img src="./src/assets/images/MDV%20Plant.jpg"
-               onerror="this.src='https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=700&q=80'"
-               alt="SUN-X Concrete Mixer" />
+            onerror="this.src='https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=700&q=80'"
+            alt="SUN-X Concrete Mixer" />
         </div>
 
         <div class="plants-bottom-text" id="plantsBottomText">
-          <p>The location of our plants are not only is perfect for the actual project but also allows a fast concrete delivery to any location in major cities</p>
+          <p>The location of our plants are not only is perfect for the actual project but also allows a fast concrete
+            delivery to any location in major cities</p>
         </div>
 
       </div>
 
     </div>
   </section>
+
   <section class="exp-banner" id="expBanner">
     <div class="exp-inner" id="expInner">
       <div class="exp-eyebrow">
@@ -549,660 +583,246 @@
         <span class="exp-eyebrow-text">Our Heritage</span>
         <span class="exp-eyebrow-line"></span>
       </div>
-      <h2 class="exp-title">More Than <span>100 Years</span><br>Of Combined Experience</h2>
-      <p class="exp-desc">Our solutions enjoy very high confidence among customers as a company that delivers high quality products, consistency in delivery, and honesty in business. That's how we became a leading <strong>Construction Material Supplier</strong> in South-India.</p>
-      <a href="https://sunxconcrete.org/about-us/" class="exp-cta">
+      <h2 class="exp-title">Among The <span>Top 5</span><br>Concrete Solution Providers In India</h2>
+      <p class="exp-desc">Through efficient logistics, stringent quality control, and on-time delivery, we have earned a
+        reputation as a trusted name in the industry. Our operations are guided by
+        <strong>international best practices</strong>, ensuring consistency, safety, and performance across every
+        project.
+      </p>
+      <a href="about.html" class="exp-cta">
         More About Us
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
       </a>
     </div>
   </section>
-<section class="sx-section">
-  <div class="sx-wrap">
 
-    <div class="sx-header">
-      <div class="sx-pill">
-        <span class="sx-pill-dot"></span>
-        <span class="sx-pill-text">Why Sun-X</span>
-      </div>
-      <p class="sx-title">Built on trust,<br>delivered with <em>precision.</em></p>
-    </div>
+  <section class="sx-section">
+    <div class="sx-wrap">
 
-    <div class="sx-grid">
-
-      <div class="sx-card">
-        <span class="sx-bg-num">01</span>
-        <div class="sx-icon-ring">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <polyline points="9 12 11 14 15 10"/>
-          </svg>
+      <div class="sx-header">
+        <div class="sx-pill">
+          <span class="sx-pill-dot"></span>
+          <span class="sx-pill-text">Why Sun-X</span>
         </div>
-        <div class="sx-card-label">Quality</div>
-        <div class="sx-card-title">Uncompromised standards in every batch</div>
-        <div class="sx-card-desc">Computerized dry batch methods and industry-leading materials ensure your ready-mix meets the highest spec, every time.</div>
-        <div class="sx-bar-wrap">
-          <div class="sx-bar-meta"><span>Consistency score</span><span>99%</span></div>
-          <div class="sx-bar-track"><div class="sx-bar-fill" style="width:99%"></div></div>
-        </div>
+        <p class="sx-title">Built on trust,<br>delivered with <em>precision.</em></p>
       </div>
 
-      <div class="sx-card sx-card--dark">
-        <span class="sx-bg-num">02</span>
-        <div class="sx-icon-ring">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2"/>
-            <path d="M8 21h8M12 17v4"/>
-            <path d="M7 8h2M7 11h5M15 8l2 3-2 3"/>
-          </svg>
-        </div>
-        <div class="sx-card-label">Order management</div>
-        <div class="sx-card-title">Full visibility from order to delivery</div>
-        <div class="sx-card-desc">Our ERP system tracks your bulk order in real time — from placement through dispatch to arrival on site.</div>
-        <div class="sx-tag">
-          <span class="sx-tag-dot"></span>Live tracking
-        </div>
-      </div>
+      <div class="sx-grid">
 
-      <div class="sx-card sx-card--wide">
-        <div class="sx-mini-bars" aria-hidden="true">
-          <div class="sx-bar-col" style="height:40%"></div>
-          <div class="sx-bar-col" style="height:60%"></div>
-          <div class="sx-bar-col" style="height:75%"></div>
-          <div class="sx-bar-col sx-bar-col--active" style="height:100%"></div>
-          <div class="sx-bar-col sx-bar-col--active" style="height:90%"></div>
-        </div>
-        <div class="sx-wide-content">
-          <span class="sx-bg-num">03</span>
-          <div class="sx-stat-row">
-            <div class="sx-stat">
-              <span class="sx-stat-num">IS:1786</span>
-              <span class="sx-stat-lbl">Standard met</span>
-            </div>
-            <div class="sx-stat">
-              <span class="sx-stat-num">100%</span>
-              <span class="sx-stat-lbl">Batch tested</span>
+        <div class="sx-card">
+          <span class="sx-bg-num">01</span>
+          <div class="sx-icon-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <polyline points="9 12 11 14 15 10" />
+            </svg>
+          </div>
+          <div class="sx-card-label">Quality</div>
+          <div class="sx-card-title">Uncompromised standards in every batch</div>
+          <div class="sx-card-desc">Computerized dry batch methods and industry-leading materials ensure your ready-mix
+            meets the highest spec, every time.</div>
+          <div class="sx-bar-wrap">
+            <div class="sx-bar-meta"><span>Consistency score</span><span>99%</span></div>
+            <div class="sx-bar-track">
+              <div class="sx-bar-fill" style="width:99%"></div>
             </div>
           </div>
-          <div class="sx-card-label">Testing</div>
-          <div class="sx-card-title">Tested and proved — onsite, every pour</div>
-          <div class="sx-card-desc">Our onsite laboratory verifies every batch against international standards before a single truck rolls out.</div>
+        </div>
+
+        <div class="sx-card sx-card--dark">
+          <span class="sx-bg-num">02</span>
+          <div class="sx-icon-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+              <path d="M7 8h2M7 11h5M15 8l2 3-2 3" />
+            </svg>
+          </div>
+          <div class="sx-card-label">Order management</div>
+          <div class="sx-card-title">Full visibility from order to delivery</div>
+          <div class="sx-card-desc">Our ERP system tracks your bulk order in real time — from placement through dispatch
+            to arrival on site.</div>
+          <div class="sx-tag">
+            <span class="sx-tag-dot"></span>Live tracking
+          </div>
+        </div>
+
+        <div class="sx-card sx-card--wide">
+          <div class="sx-mini-bars" aria-hidden="true">
+            <div class="sx-bar-col" style="height:40%"></div>
+            <div class="sx-bar-col" style="height:60%"></div>
+            <div class="sx-bar-col" style="height:75%"></div>
+            <div class="sx-bar-col sx-bar-col--active" style="height:100%"></div>
+            <div class="sx-bar-col sx-bar-col--active" style="height:90%"></div>
+          </div>
+          <div class="sx-wide-content">
+            <span class="sx-bg-num">03</span>
+            <div class="sx-stat-row">
+              <div class="sx-stat">
+                <span class="sx-stat-num">IS:1786</span>
+                <span class="sx-stat-lbl">Standard met</span>
+              </div>
+              <div class="sx-stat">
+                <span class="sx-stat-num">100%</span>
+                <span class="sx-stat-lbl">Batch tested</span>
+              </div>
+            </div>
+            <div class="sx-card-label">Testing</div>
+            <div class="sx-card-title">Tested and proved — onsite, every pour</div>
+            <div class="sx-card-desc">Our onsite laboratory verifies every batch against international standards before
+              a single truck rolls out.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="fx">
+    <div class="fx-top">
+      <div class="fx-logo-ring fx-top-item">
+        <img src="./src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo" />
+      </div>
+      <p class="fx-brand fx-top-item">SUN-X Concrete</p>
+      <p class="fx-tagline fx-top-item">Strength · Mining · Ready-Mix</p>
+      <p class="fx-desc fx-top-item">SUN-X Group is a building materials company specializing in high-quality
+        Ready-Mix Concrete (RMC), aggregates, and allied solutions — with a strong presence across Tamil Nadu,
+        Karnataka and Andhra Pradesh, and a growing international footprint in the UAE.</p>
+      <div class="fx-socials fx-top-item">
+        <a href="#" class="fx-soc">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </a>
+        <a href="#" class="fx-soc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" width="14" height="14">
+            <path
+              d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+          </svg>
+        </a>
+        <a href="#" class="fx-soc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" width="14" height="14">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+        </a>
+        <a href="#" class="fx-soc">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="fx-sub">
+      <div class="fx-sub-label fx-top-item">Subsidiary of</div>
+      <div class="fx-logos">
+        <div class="fx-logo-item">
+          <img src="./src/assets/images/sunxholding.png" alt="SUNX Holdings"
+            style="max-height: 68px !important; max-width: 219px !important;" />
+        </div>
+        <div class="fx-logo-item">
+          <img src="./src/assets/images/sunxtech.png" alt="Suntech Civil Services"
+            style="max-height: 68px !important; max-width: 219px !important;" />
+        </div>
+        <div class="fx-logo-item">
+          <img src="./src/assets/images/sun-x.png" alt="SUN-X" />
+        </div>
+        <div class="fx-logo-item">
+          <img src="./src/assets/images/alturus.png" alt="Alturas Infrastructure"
+            style="max-height: 68px !important; max-width: 219px !important;" />
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <footer class="fx2">
+    <div class="fx2-grid">
+
+      <div class="fx2-col">
+        <p class="fx2-col-title">Head Office</p>
+        <div class="fx2-info-item">
+          <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span class="fx2-info-text">No 11, Ramaniyam Isha, Old Mahabalipuram Road, Okkiyam Thoraipakkam, Chennai –
+            600097</span>
+        </div>
+        <div class="fx2-info-item">
+          <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span class="fx2-info-text">
+            +91 9940400050<br />+91 88071 47050
+          </span>
+        </div>
+        <div class="fx2-info-item">
+          <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <span class="fx2-info-text"><a href="mailto:info@sunxconcrete.org">info@sunxconcrete.org</a></span>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ljnvnr -->
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap');
-.fx{font-family:'Instrument Sans',sans-serif;background:#fff;padding:4rem 5vw 0;border-top:1px solid #eeede8}
-.fx-top{display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:3rem;border-bottom:1px solid #eeede8}
-/* .fx-logo-ring{width:88px;height:88px;border-radius:50%;border:1.5px solid #e8e6e0;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:transform 0.4s cubic-bezier(.34,1.56,.64,1),border-color 0.3s}
-.fx-logo-ring:hover{transform:scale(1.08) rotate(-4deg);border-color:#1a2744} */
-.fx-main-logo{height:52px;object-fit:contain}
-.fx-brand{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:700;color:#1a2744;letter-spacing:0.5px;margin-bottom:0.3rem}
-.fx-tagline{font-size:0.65rem;letter-spacing:3.5px;text-transform:uppercase;color:#aaa;margin-bottom:1.3rem}
-.fx-desc{font-size:0.83rem;color:#888;line-height:1.9;max-width:460px;margin-bottom:2rem}
-.fx-socials{display:flex;gap:0.7rem}
-.fx-soc{width:40px;height:40px;border-radius:50%;border:1px solid #e8e6e0;display:flex;align-items:center;justify-content:center;color:#bbb;text-decoration:none;transition:all 0.35s cubic-bezier(.34,1.56,.64,1)}
-.fx-soc:hover{border-color:#1a2744;color:#1a2744;transform:translateY(-5px) scale(1.12)}
-.fx-sub{padding:2.8rem 0 2.5rem}
-.fx-sub-label{font-size:0.62rem;font-weight:500;color:#ccc;letter-spacing:3px;text-transform:uppercase;margin-bottom:1.8rem;display:flex;align-items:center;gap:14px}
-.fx-sub-label::after{content:'';flex:1;height:1px;background:#eeede8}
-.fx-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.fx-logo-item{display:flex;align-items:center;justify-content:center;padding:2rem 1.2rem;border:1px solid #eeede8;border-radius:16px;cursor:pointer;background:#fff;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:opacity 0.55s cubic-bezier(.34,1.56,.64,1),transform 0.55s cubic-bezier(.34,1.56,.64,1),border-color 0.4s,box-shadow 0.4s}
-.fx-logo-item.fx-in{opacity:1;transform:translateY(0)}
-.fx-logo-item::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:#1a2744;border-radius:2px;transition:width 0.3s}
-.fx-logo-item:hover{border-color:#ddd;transform:translateY(-6px);box-shadow:0 12px 32px rgba(26,39,68,0.08)}
-.fx-logo-item:hover::after{width:40%}
-.fx-logo-item img{max-height:46px;max-width:120px;object-fit:contain}
-.fx-top-item{opacity:0;transform:translateY(16px);transition:opacity 0.55s cubic-bezier(.34,1.56,.64,1),transform 0.55s cubic-bezier(.34,1.56,.64,1)}
-.fx-top-item.fx-in{opacity:1;transform:translateY(0)}
-@media(max-width:720px){.fx-logos{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:420px){.fx-logos{grid-template-columns:1fr 1fr;gap:0.7rem}.fx-logo-item{padding:1.4rem 0.8rem}}
-</style>
-
-<footer class="fx">
-  <div class="fx-top">
-    <div class="fx-logo-ring fx-top-item">
-      <img src="./src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo"/>
-    </div>
-    <p class="fx-brand fx-top-item">SUN-X Concrete</p>
-    <p class="fx-tagline fx-top-item">Strength · Mining · Ready-Mix</p>
-    <p class="fx-desc fx-top-item">SUN-X Group Is An Established Concrete Supplier In TamilNadu, Karnataka And AndhraPradesh With A Strong Foothold In Mining And Ready-Mix Concrete.</p>
-    <div class="fx-socials fx-top-item">
-      <a href="#" class="fx-soc">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-      <a href="#" class="fx-soc">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-      </a>
-      <a href="#" class="fx-soc">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      </a>
-      <a href="#" class="fx-soc">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      </a>
-    </div>
-  </div>
-
-  <div class="fx-sub">
-    <div class="fx-sub-label fx-top-item">Subsidiary of</div>
-    <div class="fx-logos">
-      <div class="fx-logo-item">
-        <img src="./src/assets/images/sun-x.png" alt="SUNX Holdings"/>
+      <div class="fx2-col">
+        <p class="fx2-col-title">Quick Links</p>
+        <ul class="fx2-links">
+          <li><a href="#">Our Products</a></li>
+          <li><a href="#">Our Projects</a></li>
+          <li><a href="#">Our Plants</a></li>
+        </ul>
       </div>
-      <div class="fx-logo-item">
-        <img src="./src/assets/images/sun-x.png" alt="Suntech Civil Services"/>
+
+      <div class="fx2-col">
+        <p class="fx2-col-title">About Us</p>
+        <ul class="fx2-links">
+          <li><a href="index.html" class="fx2-muted">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
       </div>
-      <div class="fx-logo-item">
-        <img src="./src/assets/images/sun-x.png" alt="SUN-X"/>
-      </div>
-      <div class="fx-logo-item">
-        <img src="./src/assets/images/sun-x.png" alt="Alturas Infrastructure"/>
-      </div>
-    </div>
-  </div>
-</footer>
 
-<script>
-(function(){
-  const topItems = document.querySelectorAll('.fx-top-item');
-  const logoItems = document.querySelectorAll('.fx-logo-item');
-
-  const fxObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('fx-in');
-        fxObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-
-  topItems.forEach((el, i) => {
-    el.style.transitionDelay = (i * 0.08) + 's';
-    fxObs.observe(el);
-  });
-
-  logoItems.forEach((el, i) => {
-    el.style.transitionDelay = (i * 0.1) + 's';
-    fxObs.observe(el);
-  });
-})();
-</script>
-
-<style>
-.fx2{font-family:'Inter Variable',Inter,Arial,sans-serif;background:#fff;padding:4rem 5vw 0;border-top:1px solid #e8e8e8}
-.fx2-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:3rem;padding-bottom:3.5rem}
-.fx2-col-title{font-family:'Inter Variable',Inter,Arial,sans-serif;font-size:1rem;font-weight:700;color:#1a2744;margin-bottom:1.4rem}
-.fx2-info-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:1.2rem}
-.fx2-info-icon{width:18px;height:18px;flex-shrink:0;color:#1a2744;margin-top:2px}
-.fx2-info-text{font-size:0.84rem;color:#555;line-height:1.7}
-.fx2-info-text a{color:#555;text-decoration:none}
-.fx2-info-text a:hover{color:#1a2744}
-.fx2-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem}
-.fx2-links li a{font-family:'Inter Variable',Inter,Arial,sans-serif;font-size:0.84rem;color:#555;text-decoration:none;transition:color 0.2s,padding-left 0.2s}
-.fx2-links li a:hover{color:#1a2744;padding-left:4px}
-.fx2-links li a.fx2-muted{color:#aaa}
-.fx2-links li a.fx2-muted:hover{color:#1a2744}
-.fx2-bottom{background:#111;margin:0 -5vw;padding:1.1rem 5vw;display:flex;align-items:center;justify-content:center}
-.fx2-bottom-right{font-family:'Inter Variable',Inter,Arial,sans-serif;font-size:0.88rem;color:rgb(255, 255, 255);letter-spacing:0.3px}
-.fx2-col{opacity:0;transform:translateY(22px);transition:opacity 0.6s cubic-bezier(.34,1.56,.64,1),transform 0.6s cubic-bezier(.34,1.56,.64,1)}
-.fx2-col.fx-in{opacity:1;transform:translateY(0)}
-@media(max-width:900px){.fx2-grid{grid-template-columns:1fr 1fr;gap:2.5rem}}
-@media(max-width:560px){.fx2-grid{grid-template-columns:1fr;gap:2rem}.fx2-bottom{flex-direction:column;align-items:center;gap:0.3rem}}
-</style>
-
-<footer class="fx2">
-  <div class="fx2-grid">
-
-    <div class="fx2-col">
-      <p class="fx2-col-title">Head Office</p>
-      <div class="fx2-info-item">
-        <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-        </svg>
-        <span class="fx2-info-text">No 11, Ramaniyam Isha, Old Mahabalipuram Road, Okkiyam Thoraipakkam, Chennai – 600097</span>
-      </div>
-      <div class="fx2-info-item">
-        <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-        </svg>
-        <span class="fx2-info-text">
-          +91 9940400050<br/>+91 88071 47050
-        </span>
-      </div>
-      <div class="fx2-info-item">
-        <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-        </svg>
-        <span class="fx2-info-text"><a href="mailto:info@sunxconcrete.org">info@sunxconcrete.org</a></span>
+      <div class="fx2-col">
+        <p class="fx2-col-title">Resources &amp; Insights</p>
+        <ul class="fx2-links">
+          <li><a href="#">Logistics Supervisor</a></li>
+          <li><a href="#">Accounts Executive</a></li>
+          <li><a href="#">Footing Foundation – Velacherry Project</a></li>
+          <li><a href="#">Bangalore Development Authority Project</a></li>
+        </ul>
       </div>
     </div>
 
-    <div class="fx2-col">
-      <p class="fx2-col-title">Quick Links</p>
-      <ul class="fx2-links">
-        <li><a href="#">Our Products</a></li>
-        <li><a href="#">Our Projects</a></li>
-        <li><a href="#">Our Plants</a></li>
-      </ul>
+    <div class="fx2-bottom">
+      <span class="fx2-bottom-right">All Rights Reserved © 2026 | Sun-X Concrete Pvt Ltd.</span>
     </div>
+  </footer>
 
-    <div class="fx2-col">
-      <p class="fx2-col-title">About Us</p>
-      <ul class="fx2-links">
-        <li><a href="#" class="fx2-muted">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Services</a></li>
-        <li><a href="#">Our Team</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <div class="fx2-col">
-      <p class="fx2-col-title">Resources &amp; Insights</p>
-      <ul class="fx2-links">
-        <li><a href="#">Logistics Supervisor</a></li>
-        <li><a href="#">Accounts Executive</a></li>
-        <li><a href="#">Footing Foundation – Velacherry Project</a></li>
-        <li><a href="#">Bangalore Development Authority Project</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="fx2-bottom">
-    <span class="fx2-bottom-right">All Rights Reserved © 2026 | Sun-X Concrete Pvt Ltd.</span>
-  </div>
-</footer>
-
-<script>
-(function(){
-  const cols = document.querySelectorAll('.fx2-col');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('fx-in');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-  cols.forEach((el, i) => {
-    el.style.transitionDelay = (i * 0.1) + 's';
-    obs.observe(el);
-  });
-})();
-</script>
-
+  <script src="src/js/index.js"></script>
+  <script src="src/js/index2.js"></script>
+  <script src="src/js/index3.js"></script>
   <script type="module" src="src/js/comman.js" defer></script>
-  <script>
-    // ══════════════════════════════════════
-    // SLIDER
-    // ══════════════════════════════════════
-    let currentSlide = 0, isPaused = false, slideTimer;
-    const slides   = document.querySelectorAll('.slide');
-    const tabs     = document.querySelectorAll('.tab');
-    const pauseBtn = document.getElementById('pauseBtn');
 
-    function animateSlideText(slide) {
-      const c = slide.querySelector('.slide-content');
-      if (!c) return;
-      c.classList.remove('text-animate');
-      void c.offsetWidth;
-      c.classList.add('text-animate');
-    }
-
-    function showSlide(index) {
-      slides.forEach((s, i) => {
-        s.classList.toggle('active', i === index);
-        if (i === index) setTimeout(() => animateSlideText(s), 200);
-        else { const c = s.querySelector('.slide-content'); if (c) c.classList.remove('text-animate'); }
-      });
-      tabs.forEach((t, i) => t.classList.toggle('active', i === index));
-      currentSlide = index;
-    }
-
-    function startAutoSlide() {
-      clearInterval(slideTimer);
-      slideTimer = setInterval(() => { if (!isPaused) showSlide((currentSlide + 1) % slides.length); }, 5000);
-    }
-
-    tabs.forEach((tab, i) => tab.addEventListener('click', () => { showSlide(i); startAutoSlide(); }));
-    pauseBtn.addEventListener('click', () => { isPaused = !isPaused; pauseBtn.textContent = isPaused ? '▶' : '⏸'; });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') { showSlide((currentSlide + 1) % slides.length); startAutoSlide(); }
-      if (e.key === 'ArrowLeft')  { showSlide((currentSlide - 1 + slides.length) % slides.length); startAutoSlide(); }
-    });
-
-    let touchStartX = 0;
-    document.getElementById('slidesWrapper').addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-    document.getElementById('slidesWrapper').addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].screenX;
-      if (Math.abs(diff) > 50) { showSlide(diff > 0 ? (currentSlide+1)%slides.length : (currentSlide-1+slides.length)%slides.length); startAutoSlide(); }
-    }, { passive: true });
-
-    showSlide(0);
-    startAutoSlide();
-
-    // ══════════════════════════════════════
-    // STAT COUNTER
-    // ══════════════════════════════════════
-    const countEls = document.querySelectorAll('[data-count]');
-    let countStarted = false;
-    const statsObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !countStarted) {
-          countStarted = true;
-          countEls.forEach(el => {
-            const target = parseInt(el.getAttribute('data-count'));
-            let count = 0;
-            const inc = target / 60;
-            const timer = setInterval(() => {
-              count += inc;
-              if (count >= target) { count = target; clearInterval(timer); }
-              el.textContent = Math.floor(count);
-            }, 1400 / 60);
-          });
-        }
-      });
-    }, { threshold: 0, rootMargin: '0px 0px -50px 0px' });
-    statsObserver.observe(document.getElementById('statsSection'));
-
-    // ══════════════════════════════════════
-    // SCROLL ANIMATIONS
-    // ══════════════════════════════════════
-    const aboutObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.anim-left, .anim-right, .anim-up').forEach(el => aboutObserver.observe(el));
-
-    const valuedObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0.08 });
-    valuedObserver.observe(document.getElementById('valuedSection'));
-
-    const videoObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.va-top, .va-thumb').forEach(el => videoObserver.observe(el));
-
-    const advObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
-    document.querySelectorAll('#advCards .adv-card').forEach(el => advObserver.observe(el));
-
-    const advLeftObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
-    const advLeftContent = document.querySelector('.adv-left-content');
-    if (advLeftContent) advLeftObserver.observe(advLeftContent);
-
-    // ══════════════════════════════════════
-    // PROJECTS SECTION SCROLL ANIMATIONS
-    // ══════════════════════════════════════
-    const projObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
-    document.querySelectorAll('#projCards .proj-card').forEach(el => projObserver.observe(el));
-
-    const projHeader = document.getElementById('projHeader');
-    if (projHeader) projObserver.observe(projHeader);
-
-    // ══════════════════════════════════════
-    // NEWS & PLANTS SCROLL ANIMATIONS
-    // ══════════════════════════════════════
-    const pageObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
-
-    ['newsHeader','newsFeatured','plantsLeft',
-     'plantsImgMain','plantsText','plantsImgSecondary','plantsBottomText'
-    ].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) pageObserver.observe(el);
-    });
-    // ══════════════════════════════════════
-// SX FEATURES SECTION SCROLL ANIMATIONS
-// ══════════════════════════════════════
-const sxObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-}, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
-
-const sxHeader = document.querySelector('.sx-header');
-if (sxHeader) sxObserver.observe(sxHeader);
-
-document.querySelectorAll('.sx-card').forEach((el, i) => {
-  el.style.transitionDelay = (i * 0.13) + 's';
-  sxObserver.observe(el);
-});
-
-
-    // ── Experience banner, Features, Contact ──
-    ['expInner','featHeader'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) pageObserver.observe(el);
-    });
-    ['feat1','feat2','feat3'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) pageObserver.observe(el);
-    });
-    // ══════════════════════════════════════
-    const heroVideo        = document.getElementById('heroVideo');
-    const videoThumb       = document.getElementById('videoThumb');
-    const vtfCenterPlay    = document.getElementById('vtfCenterPlay');
-    const vtfPlayBtn       = document.getElementById('vtfPlayBtn');
-    const vtfPlayIcon      = document.getElementById('vtfPlayIcon');
-    const vtfMuteBtn       = document.getElementById('vtfMuteBtn');
-    const vtfVolIcon       = document.getElementById('vtfVolIcon');
-    const vtfVolSlider     = document.getElementById('vtfVolSlider');
-    const vtfProgressTrack = document.getElementById('vtfProgressTrack');
-    const vtfProgressFill  = document.getElementById('vtfProgressFill');
-    const vtfProgressBuf   = document.getElementById('vtfProgressBuf');
-    const vtfTimeCurrent   = document.getElementById('vtfTimeCurrent');
-    const vtfTimeTotal     = document.getElementById('vtfTimeTotal');
-    const vtfFullscreenBtn = document.getElementById('vtfFullscreenBtn');
-    const vtfFsIcon        = document.getElementById('vtfFsIcon');
-    const vtfMenuBtn       = document.getElementById('vtfMenuBtn');
-    const vtfMenuDropdown  = document.getElementById('vtfMenuDropdown');
-    const menuAutoplay     = document.getElementById('menuAutoplay');
-    const menuLoop         = document.getElementById('menuLoop');
-    const menuPip          = document.getElementById('menuPip');
-    const menuDownload     = document.getElementById('menuDownload');
-    const autoplayLabel    = document.getElementById('autoplayLabel');
-    const loopLabel        = document.getElementById('loopLabel');
-
-    const ICON_PAUSE = `<rect x="5"  y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/>`;
-    const ICON_PLAY  = `<polygon points="5,3 19,12 5,21"/>`;
-    const ICON_VOL_MUTED = `<path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>`;
-    const ICON_VOL_LOW   = `<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>`;
-    const ICON_VOL_HIGH  = `<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>`;
-    const ICON_FS_ENTER  = `<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>`;
-    const ICON_FS_EXIT   = `<path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/>`;
-
-    function fmtTime(s) {
-      if (isNaN(s) || s < 0) return '0:00';
-      const m = Math.floor(s / 60);
-      const sec = Math.floor(s % 60);
-      return m + ':' + String(sec).padStart(2, '0');
-    }
-
-    function syncPlayState() {
-      const playing = !heroVideo.paused && !heroVideo.ended;
-      videoThumb.classList.toggle('playing', playing);
-      videoThumb.classList.toggle('paused',  !playing);
-      vtfCenterPlay.classList.toggle('visible', !playing);
-      vtfPlayIcon.innerHTML = playing ? ICON_PAUSE : ICON_PLAY;
-    }
-
-    function syncVolIcon() {
-      if (heroVideo.muted || heroVideo.volume === 0) {
-        vtfVolIcon.innerHTML = ICON_VOL_MUTED;
-      } else if (heroVideo.volume < 0.5) {
-        vtfVolIcon.innerHTML = ICON_VOL_LOW;
-      } else {
-        vtfVolIcon.innerHTML = ICON_VOL_HIGH;
-      }
-      vtfVolSlider.value = heroVideo.muted ? 0 : heroVideo.volume;
-    }
-
-    heroVideo.addEventListener('play',  syncPlayState);
-    heroVideo.addEventListener('pause', syncPlayState);
-    heroVideo.addEventListener('ended', syncPlayState);
-
-    heroVideo.addEventListener('timeupdate', () => {
-      if (!heroVideo.duration) return;
-      const pct = (heroVideo.currentTime / heroVideo.duration) * 100;
-      vtfProgressFill.style.width = pct + '%';
-      vtfTimeCurrent.textContent  = fmtTime(heroVideo.currentTime);
-    });
-
-    heroVideo.addEventListener('loadedmetadata', () => {
-      vtfTimeTotal.textContent = fmtTime(heroVideo.duration);
-      syncVolIcon();
-    });
-
-    heroVideo.addEventListener('progress', () => {
-      if (!heroVideo.duration || !heroVideo.buffered.length) return;
-      const bufPct = (heroVideo.buffered.end(heroVideo.buffered.length - 1) / heroVideo.duration) * 100;
-      vtfProgressBuf.style.width = bufPct + '%';
-    });
-
-    heroVideo.addEventListener('loadeddata', syncPlayState);
-    heroVideo.addEventListener('volumechange', syncVolIcon);
-
-    function togglePlay(e) {
-      if (e) e.stopPropagation();
-      if (heroVideo.paused || heroVideo.ended) {
-        heroVideo.play().catch(() => {});
-      } else {
-        heroVideo.pause();
-      }
-    }
-
-    vtfPlayBtn.addEventListener('click', togglePlay);
-    vtfCenterPlay.addEventListener('click', togglePlay);
-    videoThumb.addEventListener('click', e => {
-      if (e.target.closest('.vtf-controls')) return;
-      togglePlay(e);
-    });
-
-    vtfMuteBtn.addEventListener('click', e => {
-      e.stopPropagation();
-      heroVideo.muted = !heroVideo.muted;
-      if (!heroVideo.muted && heroVideo.volume === 0) heroVideo.volume = 0.5;
-      syncVolIcon();
-    });
-
-    vtfVolSlider.addEventListener('input', e => {
-      e.stopPropagation();
-      heroVideo.volume = parseFloat(vtfVolSlider.value);
-      heroVideo.muted  = heroVideo.volume === 0;
-      syncVolIcon();
-    });
-    vtfVolSlider.addEventListener('click', e => e.stopPropagation());
-
-    function seekTo(clientX) {
-      const rect = vtfProgressTrack.getBoundingClientRect();
-      const pct  = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-      if (heroVideo.duration) {
-        heroVideo.currentTime = pct * heroVideo.duration;
-        vtfTimeCurrent.textContent = fmtTime(heroVideo.currentTime);
-      }
-      vtfProgressFill.style.width = (pct * 100) + '%';
-    }
-
-    vtfProgressTrack.addEventListener('click', e => { e.stopPropagation(); seekTo(e.clientX); });
-    let isDragging = false;
-    vtfProgressTrack.addEventListener('mousedown', e => { e.stopPropagation(); isDragging = true; seekTo(e.clientX); });
-    document.addEventListener('mousemove', e => { if (isDragging) seekTo(e.clientX); });
-    document.addEventListener('mouseup', () => { isDragging = false; });
-
-    let isTouchScrubbing = false;
-    vtfProgressTrack.addEventListener('touchstart', e => { e.stopPropagation(); isTouchScrubbing = true; seekTo(e.touches[0].clientX); }, { passive: true });
-    vtfProgressTrack.addEventListener('touchmove',  e => { if (!isTouchScrubbing) return; e.stopPropagation(); e.preventDefault(); seekTo(e.touches[0].clientX); }, { passive: false });
-    vtfProgressTrack.addEventListener('touchend',   e => { e.stopPropagation(); isTouchScrubbing = false; }, { passive: true });
-
-    vtfFullscreenBtn.addEventListener('click', e => {
-      e.stopPropagation();
-      const el = videoThumb;
-      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
-      } else {
-        (document.exitFullscreen || document.webkitExitFullscreen).call(document);
-      }
-    });
-
-    document.addEventListener('fullscreenchange', () => {
-      vtfFsIcon.innerHTML = document.fullscreenElement ? ICON_FS_EXIT : ICON_FS_ENTER;
-    });
-    document.addEventListener('webkitfullscreenchange', () => {
-      vtfFsIcon.innerHTML = document.webkitFullscreenElement ? ICON_FS_EXIT : ICON_FS_ENTER;
-    });
-
-    vtfMenuBtn.addEventListener('click', e => {
-      e.stopPropagation();
-      vtfMenuDropdown.classList.toggle('open');
-    });
-    document.addEventListener('click', () => vtfMenuDropdown.classList.remove('open'));
-    vtfMenuDropdown.addEventListener('click', e => e.stopPropagation());
-
-    let autoplayEnabled = true;
-    menuAutoplay.addEventListener('click', () => {
-      autoplayEnabled = !autoplayEnabled;
-      autoplayLabel.textContent = autoplayEnabled ? 'On' : 'Off';
-    });
-
-    menuLoop.addEventListener('click', () => {
-      heroVideo.loop = !heroVideo.loop;
-      loopLabel.textContent = heroVideo.loop ? 'On' : 'Off';
-    });
-
-    menuPip.addEventListener('click', () => {
-      if (document.pictureInPictureElement) {
-        document.exitPictureInPicture().catch(() => {});
-      } else if (heroVideo.requestPictureInPicture) {
-        heroVideo.requestPictureInPicture().catch(() => {});
-      }
-      vtfMenuDropdown.classList.remove('open');
-    });
-
-    menuDownload.addEventListener('click', () => {
-      const a = document.createElement('a');
-      a.href = heroVideo.src;
-      a.download = 'sunx-ad.mp4';
-      a.click();
-      vtfMenuDropdown.classList.remove('open');
-    });
-
-    const vidInViewObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && autoplayEnabled) {
-          heroVideo.play().catch(() => {});
-        } else {
-          heroVideo.pause();
-        }
-      });
-    }, { threshold: 0.3 });
-    vidInViewObserver.observe(videoThumb);
-
-    heroVideo.addEventListener('error', () => {
-      heroVideo.style.display = 'none';
-      const fallback = document.createElement('img');
-      fallback.src = './src/assets/images/Poonamallee%20Plant.jpg';
-      fallback.alt = 'SUN-X Plant';
-      fallback.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
-      videoThumb.prepend(fallback);
-      syncPlayState();
-    });
-
-    syncPlayState();
-    syncVolIcon();
-  </script>
 </body>
+
 </html>
