@@ -4,16 +4,27 @@
 const navbar = document.getElementById('navbar');
 const hero   = document.getElementById('hero');
 let lastScrollY = window.scrollY;
+let navTicking = false;
+let heroHeight = hero.offsetHeight;
+
+window.addEventListener('resize', () => { heroHeight = hero.offsetHeight; }, { passive: true });
 
 function updateNav() {
   const currentScrollY = window.scrollY;
-  const heroBottom = hero.getBoundingClientRect().bottom;
+  const heroBottom = heroHeight - currentScrollY;
   navbar.classList.toggle('nav-hidden', currentScrollY > lastScrollY && currentScrollY > 80);
   if (currentScrollY <= lastScrollY) navbar.classList.remove('nav-hidden');
   navbar.classList.toggle('scrolled', heroBottom <= 80);
   lastScrollY = currentScrollY;
+  navTicking = false;
 }
-window.addEventListener('scroll', updateNav, { passive: true });
+
+window.addEventListener('scroll', () => {
+  if (!navTicking) {
+    navTicking = true;
+    requestAnimationFrame(updateNav);
+  }
+}, { passive: true });
 updateNav();
 
 // ══════════════════════════════════════

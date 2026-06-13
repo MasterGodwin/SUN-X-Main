@@ -20,7 +20,7 @@ body {
     position: relative;
     height: 60vh;
     min-height: 420px;
-    background-image: url('../assets/images/Poonamallee\ Plant.jpg');
+    background-image: url('../assets/images/PoonamalleePlant.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -319,26 +319,23 @@ body {
 .anim-right,
 .anim-up {
     transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-        filter 0.75s ease;
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
 }
 
 .anim-left {
     opacity: 0;
     transform: translateX(-50px);
-    filter: blur(4px);
 }
 
 .anim-right {
     opacity: 0;
     transform: translateX(50px);
-    filter: blur(4px);
 }
 
 .anim-up {
     opacity: 0;
     transform: translateY(36px);
-    filter: blur(4px);
 }
 
 .anim-left.in-view,
@@ -346,29 +343,23 @@ body {
 .anim-up.in-view {
     opacity: 1;
     transform: translate(0);
-    filter: blur(0);
 }
 
 /* Hero text — immediate load animation (no observer needed) */
 .about-hero-content {
-    animation: heroSlideIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+    animation: heroSlideIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+    will-change: opacity, transform;
 }
 
 @keyframes heroSlideIn {
     from {
         opacity: 0;
         transform: translateX(-50px);
-        filter: blur(6px) brightness(0.3);
-    }
-
-    60% {
-        filter: blur(2px) brightness(0.7);
     }
 
     to {
         opacity: 1;
         transform: translateX(0);
-        filter: blur(0) brightness(1);
     }
 }
 
@@ -1752,8 +1743,6 @@ WHO WE ARE — REDESIGNED SECTION
         padding: 1.1rem;
     }
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap');
 
 .fx {
     font-family: 'Instrument Sans', sans-serif;

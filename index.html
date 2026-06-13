@@ -5,13 +5,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SUN-X</title>
+  <meta name="description" content="SUN-X Group is a leading Ready-Mix Concrete (RMC) supplier across Tamil Nadu, Karnataka and Andhra Pradesh — quality concrete solutions backed by 25+ batching plants and 650+ skilled professionals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Barlow+Condensed:wght@500;600;700&display=swap"
     rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="preload" as="image" href="./src/assets/images/HO.jpg" fetchpriority="high" />
   <link rel="stylesheet" href="src/css/comman.css" />
   <link rel="stylesheet" href="src/css/index.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="/Nav-Dropdown.css" />
+  <style>
+    .valued-carousel { overflow: hidden; width: 100%; position: relative; }
+    .valued-carousel::before, .valued-carousel::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+    }
+    .valued-carousel::before { left: 0; background: linear-gradient(to right, #0a0a0a, transparent); }
+    .valued-carousel::after { right: 0; background: linear-gradient(to left, #0a0a0a, transparent); }
+    .valued-track {
+      display: flex; align-items: center; gap: 0;
+      width: max-content;
+      animation: valued-scroll 30s linear infinite;
+    }
+    .vc-cell {
+      flex: 0 0 220px; height: 110px;
+      display: flex; align-items: center; justify-content: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      padding: 1rem 1.5rem;
+    }
+    .vc-img {
+      max-width: 100%; max-height: 60px; object-fit: contain;
+      filter: grayscale(100%) brightness(1.6);
+      opacity: 0.7;
+      transition: filter 0.3s, opacity 0.3s;
+    }
+    .vc-cell:hover .vc-img {
+      filter: none;
+      opacity: 1;
+    }
+    .valued-carousel:hover .valued-track { animation-play-state: paused; }
+    @keyframes valued-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @media (max-width: 600px) {
+      .vc-cell { flex: 0 0 160px; height: 90px; }
+      .vc-img { max-height: 44px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -19,7 +64,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-left">
       <a href="#" class="logo">
-        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" />
+        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" width="160" height="71" />
       </a>
     </div>
     <div class="main-nav">
@@ -71,7 +116,7 @@
   <div class="drawer-overlay" id="drawerOverlay"></div>
   <div class="drawer" id="drawer">
     <div class="drawer-header">
-      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" />
+      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" width="108" height="48" />
       <button class="drawer-close" id="drawerClose">&#x2715;</button>
     </div>
     <nav class="drawer-nav">
@@ -119,7 +164,7 @@
   <section class="hero" id="hero">
     <div class="slides-wrapper" id="slidesWrapper">
 
-      <div class="slide active" style="background-image: url('./src/assets/images/MDVPlant.webp')">
+      <div class="slide active" style="background-image: url('./src/assets/images/PoonamalleePlant.webp')">
         <div class="slide-content">
           <div class="slide-eyebrow">
             <div class="eyebrow-line"></div>
@@ -135,7 +180,7 @@
         </div>
       </div>
 
-      <div class="slide" style="background-image: url('./src/assets/images/PoonamalleePlant.webp')">
+      <div class="slide" style="background-image: url('./src/assets/images/SiruseriPlant.webp')">
         <div class="slide-content">
           <div class="slide-eyebrow">
             <div class="eyebrow-line"></div>
@@ -151,7 +196,7 @@
         </div>
       </div>
 
-      <div class="slide" style="background-image: url('./src/assets/images/SiruseriPlant.webp')">
+      <div class="slide" style="background-image: url('./src/assets/images/MDVPlant.webp')">
         <div class="slide-content">
           <div class="slide-eyebrow">
             <div class="eyebrow-line"></div>
@@ -225,7 +270,7 @@
 
       <div class="about-center anim-up">
         <div class="about-img-wrap">
-          <img src="./src/assets/images/290-What-is-RMC-1024x683.webp" alt="Construction site" />
+          <img loading="lazy" decoding="async" src="./src/assets/images/290-What-is-RMC-1024x683.webp" alt="Construction site" />
         </div>
       </div>
 
@@ -241,7 +286,7 @@
               </text>
             </svg>
             <div class="about-circle-logo">
-              <img src="./src/assets/images/sun-x.png" alt="SUN-X" />
+              <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.png" alt="SUN-X" width="60" height="27" />
             </div>
           </div>
         </div>
@@ -267,15 +312,22 @@
       <h2 class="valued-title">Valued Relationships</h2>
       <p class="valued-subtitle">We're proud to work with a broad spectrum of industry leaders.</p>
     </div>
-    <div class="valued-grid-outer">
-      <div class="valued-grid-track">
-        <div class="vg-cell r1"><img src="./src/assets/images/client/1-1(1).png" alt="Client 1" class="vg-img"
+    <div class="valued-carousel">
+      <div class="valued-track">
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/1-1(1).png" alt="Client 1" class="vc-img"
             style="background-color: #fff;" /></div>
-        <div class="vg-cell r1"><img src="./src/assets/images/client/1-1.png" alt="Client 2" class="vg-img" /></div>
-        <div class="vg-cell r1"><img src="./src/assets/images/client/2-1.png" alt="Client 3" class="vg-img" /></div>
-        <div class="vg-cell r2"><img src="./src/assets/images/client/3-1.png" alt="Client 4" class="vg-img" /></div>
-        <div class="vg-cell r2"><img src="./src/assets/images/client/4-1.png" alt="Client 5" class="vg-img" /></div>
-        <div class="vg-cell r2"><img src="./src/assets/images/client/5-1.png" alt="Client 6" class="vg-img" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/1-1.png" alt="Client 2" class="vc-img" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/2-1.png" alt="Client 3" class="vc-img" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/3-1.png" alt="Client 4" class="vc-img" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/4-1.png" alt="Client 5" class="vc-img" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/5-1.png" alt="Client 6" class="vc-img" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/1-1(1).png" alt="Client 1" class="vc-img"
+            style="background-color: #fff;" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/1-1.png" alt="Client 2" class="vc-img" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/2-1.png" alt="Client 3" class="vc-img" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/3-1.png" alt="Client 4" class="vc-img" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/4-1.png" alt="Client 5" class="vc-img" /></div>
+        <div class="vc-cell"><img loading="lazy" decoding="async" src="./src/assets/images/client/5-1.png" alt="Client 6" class="vc-img" /></div>
       </div>
     </div>
   </section>
@@ -433,11 +485,11 @@
 
         <div class="proj-card">
           <div class="proj-card-img">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80"
+            <img loading="lazy" decoding="async" src="src/assets/images/Projects/Footing_Project.webp"
               alt="Footing Foundation – Velacherry Project" />
           </div>
           <div class="proj-card-body">
-            <p class="proj-card-title">Footing Foundation –<br>Velacherry Project</p>
+            <p class="proj-card-title">Footing Foundation –Velacherry Project</p>
             <a href="our-projects.html" class="proj-card-link">
               View Project
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -451,11 +503,11 @@
 
         <div class="proj-card">
           <div class="proj-card-img">
-            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80"
+            <img loading="lazy" decoding="async" src="src/assets/images/Projects/Banglore_Project.webp"
               alt="Bangalore Development Authority Project" />
           </div>
           <div class="proj-card-body">
-            <p class="proj-card-title">Bangalore Development<br>Authority Project</p>
+            <p class="proj-card-title">Bangalore Development Authority Project</p>
             <a href="our-projects.html" class="proj-card-link">
               View Project
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -469,11 +521,11 @@
 
         <div class="proj-card">
           <div class="proj-card-img">
-            <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=700&q=80"
+            <img loading="lazy" decoding="async" src="src/assets/images/Projects/High_Strength_Concrete.webp"
               alt="High strength concrete for Foundation" />
           </div>
           <div class="proj-card-body">
-            <p class="proj-card-title">High strength concrete for<br>Foundation</p>
+            <p class="proj-card-title">High strength concrete for Foundation</p>
             <a href="our-projects.html" class="proj-card-link">
               View Project
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -485,6 +537,18 @@
           </div>
         </div>
 
+      </div>
+
+      <div class="proj-header" id="projHeader">
+         
+        <a href="our-projects.html" class="proj-btn">
+          See Our Projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -505,7 +569,7 @@
       <!-- Featured article card -->
       <div class="news-featured" id="newsFeatured">
         <div class="news-feat-img">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="Mining Expo" />
+          <img loading="lazy" decoding="async" src="src/assets/images/Expo.jpg" alt="Mining Expo" />
         </div>
         <div class="news-feat-body">
           <h3 class="news-feat-title">Quarry owners urged to take up 'responsible mining'</h3>
@@ -549,7 +613,7 @@
       <div class="plants-right">
 
         <div class="plants-img-main" id="plantsImgMain">
-          <img src="./src/assets/images/Poonamallee%20Plant.jpg"
+          <img loading="lazy" decoding="async" src="./src/assets/images/Poonamallee%20Plant.jpg"
             onerror="this.src='https://images.unsplash.com/photo-1567942712661-82b9b407abbf?w=700&q=80'"
             alt="SUN-X Concrete Plant" />
         </div>
@@ -561,7 +625,7 @@
         </div>
 
         <div class="plants-img-secondary" id="plantsImgSecondary">
-          <img src="./src/assets/images/MDV%20Plant.jpg"
+          <img loading="lazy" decoding="async" src="./src/assets/images/MDV%20Plant.jpg"
             onerror="this.src='https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=700&q=80'"
             alt="SUN-X Concrete Mixer" />
         </div>
@@ -687,7 +751,7 @@
   <footer class="fx">
     <div class="fx-top">
       <div class="fx-logo-ring fx-top-item">
-        <img src="./src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo" />
+        <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo" width="118" height="52" />
       </div>
       <p class="fx-brand fx-top-item">SUN-X Concrete</p>
       <p class="fx-tagline fx-top-item">Strength · Mining · Ready-Mix</p>
@@ -729,18 +793,18 @@
       <div class="fx-sub-label fx-top-item">Subsidiary of</div>
       <div class="fx-logos">
         <div class="fx-logo-item">
-          <img src="./src/assets/images/sunxholding.png" alt="SUNX Holdings"
+          <img loading="lazy" decoding="async" src="./src/assets/images/sunxholding.png" alt="SUNX Holdings"
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
         <div class="fx-logo-item">
-          <img src="./src/assets/images/sunxtech.png" alt="Suntech Civil Services"
+          <img loading="lazy" decoding="async" src="./src/assets/images/sunxtech.png" alt="Suntech Civil Services"
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
         <div class="fx-logo-item">
-          <img src="./src/assets/images/sun-x.png" alt="SUN-X" />
+          <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.png" alt="SUN-X" width="104" height="46" />
         </div>
         <div class="fx-logo-item">
-          <img src="./src/assets/images/alturus.png" alt="Alturas Infrastructure"
+          <img loading="lazy" decoding="async" src="./src/assets/images/alturus.png" alt="Alturas Infrastructure"
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
       </div>

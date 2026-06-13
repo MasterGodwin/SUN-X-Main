@@ -68,6 +68,7 @@ body {
   opacity: 0;
   transform: translateX(-40px);
   transition: none;
+  will-change: opacity, transform, filter;
 }
 
 .slide-content.text-animate {
@@ -95,17 +96,11 @@ body {
   from {
     opacity: 0;
     transform: translateX(-50px);
-    filter: blur(8px) brightness(0.2);
-  }
-
-  60% {
-    filter: blur(2px) brightness(0.7);
   }
 
   to {
     opacity: 1;
     transform: translateX(0);
-    filter: blur(0px) brightness(1);
   }
 }
 
@@ -527,6 +522,7 @@ body {
   color: #555;
   line-height: 1.85;
   margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .about-desc strong {
@@ -554,6 +550,7 @@ body {
   font-size: 0.84rem;
   color: #666;
   line-height: 1.8;
+  text-align: justify;
 }
 
 .about-center {
@@ -668,6 +665,7 @@ body {
   color: #666;
   line-height: 1.8;
   padding-left: 26px;
+  text-align: justify;
 }
 
 /* scroll animations */
@@ -1563,7 +1561,7 @@ body {
 
 .adv-left {
   position: relative;
-  background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80') center/cover no-repeat;
+  background: url('src/assets/images/TransitMixer.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   padding: 5rem 4rem 5rem 5vw;

@@ -39,7 +39,13 @@
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translate(-50%, 10px);
+  /* No vertical gap between the nav item and the dropdown box:
+     the hidden state shifts UP (toward the link) instead of down,
+     so the visible state lands flush at top:100% with zero dead-zone.
+     This prevents the dropdown from losing :hover while the cursor
+     travels from the link down into the menu. */
+  transform: translateX(-50%) translateY(-8px);
+  transform-origin: top center;
   min-width: 230px;
   background: #1a2744;
   border-radius: 10px;
@@ -49,6 +55,7 @@
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  will-change: opacity, transform;
   z-index: 999;
 }
 
@@ -57,7 +64,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translate(-50%, 4px);
+  transform: translateX(-50%) translateY(0);
 }
 
 .nav-dropdown a {
