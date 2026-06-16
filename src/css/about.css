@@ -343,6 +343,7 @@ body {
 .anim-up.in-view {
     opacity: 1;
     transform: translate(0);
+    text-align: justify;
 }
 
 /* Hero text — immediate load animation (no observer needed) */

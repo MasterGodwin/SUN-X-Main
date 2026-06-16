@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quality Assurance — SUN-X Capabilities</title>
+    <meta name="description"
+        content="SUN-X Group's rigorous quality assurance processes ensure every batch of Ready-Mix Concrete meets the highest standards across Tamil Nadu, Karnataka and Andhra Pradesh." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Barlow+Condensed:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../src/css/comman.css" />
+    <link rel="stylesheet" href="../src/css/about.css" />
+    <link rel="stylesheet" href="../Nav-Dropdown.css" />
+    <style>
+        :root {
+            --red: #e63329;
+            --navy: #1a2744;
+        }
+
+        /* ── BREADCRUMB ── */
+        .breadcrumb {
+            background: #f5f4f2;
+            padding: 0.75rem 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            color: #888;
+            margin-top: 92px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .breadcrumb a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--navy);
+        }
+
+        .breadcrumb .sep {
+            color: #ccc;
+        }
+
+        .breadcrumb .current {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        /* ── CAPABILITY HERO ── */
+        .cap-hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            background: linear-gradient(135deg, #0e1829 0%, #1a2744 60%, #2a3d6e 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 2.5rem;
+            overflow: hidden;
+        }
+
+        .cap-hero::before {
+            content: attr(data-ghost);
+            position: absolute;
+            right: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(8rem, 18vw, 18rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.04);
+            letter-spacing: -4px;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .cap-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+        }
+
+        .cap-hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 1.2rem;
+        }
+
+        .cap-hero-tag::before {
+            content: '';
+            width: 20px;
+            height: 1.5px;
+            background: var(--red);
+            display: block;
+        }
+
+        .cap-hero-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 1.2rem;
+        }
+
+        .cap-hero-title span {
+            color: var(--red);
+        }
+
+        .cap-hero-subtitle {
+            font-size: 0.96rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.75;
+            max-width: 540px;
+        }
+
+        .cap-hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cap-stat-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .cap-stat-num span {
+            color: var(--red);
+        }
+
+        .cap-stat-label {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        /* ── MAIN CONTENT ── */
+        .cap-section {
+            padding: 5rem 2.5rem;
+            background: #fff;
+        }
+
+        .cap-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ── TWO-COL INTRO ── */
+        .cap-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+            margin-bottom: 5rem;
+        }
+
+        .cap-intro-text h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--navy);
+            line-height: 1.05;
+            margin-bottom: 1.2rem;
+        }
+
+        .cap-intro-text p {
+            font-size: 0.94rem;
+            color: #666;
+            line-height: 1.85;
+            margin-bottom: 1rem;
+        }
+
+        .cap-intro-img {
+            border-radius: 4px;
+            overflow: hidden;
+            background: #f0ede8;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cap-intro-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ── PROCESS CARDS ── */
+        .cap-process {
+            background: #f5f4f2;
+            padding: 5rem 2.5rem;
+        }
+
+        .cap-process .cap-inner {}
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-head .eyebrow {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-head .eyebrow::before,
+        .section-head .eyebrow::after {
+            content: '';
+            width: 20px;
+            height: 1.5px;
+            background: var(--red);
+            display: block;
+        }
+
+        .section-head h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .process-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem 1.8rem;
+            border: 1px solid #eee;
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s, border-color 0.3s;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .process-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .process-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+            border-color: var(--red);
+        }
+
+        .process-card-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.05);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: -1.2rem;
+        }
+
+        .process-card-icon {
+            width: 48px;
+            height: 48px;
+            background: #fdecea;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            color: var(--red);
+            font-size: 1.4rem;
+        }
+
+        .process-card h3 {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.6rem;
+        }
+
+        .process-card p {
+            font-size: 0.83rem;
+            color: #777;
+            line-height: 1.75;
+        }
+
+        /* ── STANDARDS DARK BAND ── */
+        .cap-standards {
+            background: #0e1829;
+            padding: 5rem 2.5rem;
+        }
+
+        .standards-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .standards-left h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+        }
+
+        .standards-left h2 span {
+            color: var(--red);
+        }
+
+        .standards-left p {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.85;
+        }
+
+        .standards-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .standards-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            font-size: 0.86rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.6;
+            transition: background 0.25s, border-color 0.25s;
+        }
+
+        .standards-list li:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(230, 51, 41, 0.4);
+        }
+
+        .std-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--red);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+
+        .std-label {
+            font-weight: 700;
+            color: #fff;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* ── CTA ── */
+        .cap-cta {
+            background: var(--red);
+            padding: 4rem 2.5rem;
+            text-align: center;
+        }
+
+        .cap-cta h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+
+        .cap-cta p {
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 520px;
+            margin: 0 auto 1.8rem;
+            line-height: 1.75;
+        }
+
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            color: var(--red);
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 0.85rem 2.2rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width: 900px) {
+            .cap-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .standards-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .cap-hero-stats {
+                gap: 1.5rem;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .breadcrumb {
+                padding: 0.75rem 1.2rem;
+            }
+
+            .cap-hero {
+                padding: 0 1.2rem;
+            }
+
+            .cap-section,
+            .cap-process,
+            .cap-standards,
+            .cap-cta {
+                padding: 3.5rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════ NAVBAR ══════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <a href="../index.html" class="logo">
+                <img src="../src/assets/images/sun-x.png" alt="SUN-X Logo" class="logo-img" width="160" height="71" />
+            </a>
+        </div>
+        <div class="main-nav">
+            <a href="../index.html">Home</a>
+            <div class="nav-item">
+                <a href="../about.html">About Us</a>
+                <div class="nav-dropdown">
+                    <a href="../about.html">About Sunx Concrete</a>
+                    <a href="../about-sunx-uae.html">About Sunx UAE</a>
+                    <a href="../team.html">Our Team</a>
+                    <a href="../careers.html">Careers</a>
+                </div>
+            </div>
+            <a href="../services.html">Services</a>
+            <div class="nav-item">
+                <a href="#" class="active">Capabilities</a>
+                <div class="nav-dropdown">
+                    <a href="quality-assurance.html">Quality Assurance</a>
+                    <a href="production-facilities.html">Production Facilities</a>
+                    <a href="fleet-management.html">Fleet Management</a>
+                    <a href="batching-plant.html">Batching Plant</a>
+                    <a href="product-portfolio.html">Product Portfolio</a>
+                    <a href="certifications.html">Certifications</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#">Our Works</a>
+                <div class="nav-dropdown">
+                    <a href="../our-projects.html">Our Projects</a>
+                    <a href="../our-plants.html">Our Plants</a>
+                    <a href="../our-products.html">Our Products</a>
+                </div>
+            </div>
+            <a href="../careers.html">Careers</a>
+            <a href="../contact.html">Contact Us</a>
+        </div>
+        <div class="nav-right">
+            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <img src="../src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" width="108" height="48" />
+            <button class="drawer-close" id="drawerClose">&#x2715;</button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="../index.html">Home</a>
+            <details>
+                <summary>About Us</summary>
+                <div class="drawer-subnav">
+                    <a href="../about.html">About Us</a>
+                    <a href="../about-sunx-uae.html">About Sunx UAE</a>
+                    <a href="../team.html">Our Team</a>
+                </div>
+            </details>
+            <a href="../services.html">Services</a>
+            <details open>
+                <summary>Capabilities</summary>
+                <div class="drawer-subnav">
+                    <a href="quality-assurance.html">Quality Assurance</a>
+                    <a href="production-facilities.html">Production Facilities</a>
+                    <a href="fleet-management.html">Fleet Management</a>
+                    <a href="batching-plant.html">Batching Plant</a>
+                    <a href="product-portfolio.html">Product Portfolio</a>
+                    <a href="certifications.html">Certifications</a>
+                </div>
+            </details>
+            <details>
+                <summary>Our Works</summary>
+                <div class="drawer-subnav">
+                    <a href="../our-projects.html">Our Projects</a>
+                    <a href="../our-plants.html">Our Plants</a>
+                    <a href="../our-products.html">Our Products</a>
+                </div>
+            </details>
+            <a href="../careers.html">Careers</a>
+            <a href="../contact.html">Contact Us</a>
+        </nav>
+        <div class="drawer-footer">© 2026 Sun-X</div>
+    </div>
+
+    <!-- ══════════ BREADCRUMB ══════════ -->
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="#">Capabilities</a>
+        <span class="sep">›</span>
+        <span class="current">Quality Assurance</span>
+    </div>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="cap-hero" id="hero" data-ghost="QUALITY">
+        <div class="cap-hero-content">
+            <div class="cap-hero-tag">Capabilities · SUN-X Group</div>
+            <h1 class="cap-hero-title">QUALITY <span>ASSURANCE</span></h1>
+            <p class="cap-hero-subtitle">Every batch tested. Every delivery certified. Our multi-stage quality control
+                process ensures that SUN-X concrete meets — and exceeds — Indian Standard specifications on every pour.
+            </p>
+            <div class="cap-hero-stats">
+                <div>
+                    <div class="cap-stat-num">100<span>%</span></div>
+                    <div class="cap-stat-label">Batch Testing</div>
+                </div>
+                <div>
+                    <div class="cap-stat-num">IS<span>:</span>456</div>
+                    <div class="cap-stat-label">Code Compliant</div>
+                </div>
+                <div>
+                    <div class="cap-stat-num">25<span>+</span></div>
+                    <div class="cap-stat-label">Years Practice</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ INTRO ══════════ -->
+    <section class="cap-section" id="quality-assurance">
+        <div class="cap-inner">
+            <div class="cap-intro-grid">
+                <div class="cap-intro-text anim-up">
+                    <div class="section-eyebrow" style="margin-bottom:1rem;">
+                        <div class="eyebrow-line"></div>
+                        <span>Our Commitment</span>
+                    </div>
+                    <h2>Built on Precision,<br>Delivered with Confidence</h2>
+                    <p>At SUN-X, quality assurance is not a checkpoint — it is embedded into every stage of production.
+                        From raw material selection to final discharge, our QA engineers monitor mix design parameters,
+                        aggregate grading, water-cement ratios, and admixture dosage with meticulous accuracy.</p>
+                    <p>Our on-site laboratories are equipped with compression testing machines, slump-flow apparatus,
+                        and fresh-concrete analysis tools that allow real-time decision-making before any truck leaves
+                        the plant.</p>
+                    <p>We follow IS:456, IS:10262, and project-specific mix design briefs endorsed by structural
+                        consultants — so every cubic metre dispatched carries the full confidence of a traceable quality
+                        record.</p>
+                </div>
+                <div class="cap-intro-img anim-up delay-2">
+                    <img src="../src/assets/images/PoonamalleePlant.webp" alt="SUN-X Quality Lab" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ PROCESS ══════════ -->
+    <section class="cap-process">
+        <div class="cap-inner">
+            <div class="section-head anim-up">
+                <div class="eyebrow">How We Do It</div>
+                <h2>Our QA Process</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-card-num">01</div>
+                    <div class="process-card-icon">🧪</div>
+                    <h3>Raw Material Inspection</h3>
+                    <p>Every incoming aggregate, cement and admixture shipment is sampled and tested for gradation,
+                        specific gravity, moisture content and deleterious matter before being accepted into the plant.
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="process-card-num">02</div>
+                    <div class="process-card-icon">⚗️</div>
+                    <h3>Mix Design Validation</h3>
+                    <p>Mix designs are prepared to IS:10262 and verified with trial mixes before production. Target mean
+                        strength accounts for standard deviation history from our own plant records.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-card-num">03</div>
+                    <div class="process-card-icon">🔬</div>
+                    <h3>Fresh Concrete Testing</h3>
+                    <p>Slump, temperature, air content, and unit weight are measured on every truck at departure. Any
+                        non-conforming batch is rejected before dispatch — not after delivery.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-card-num">04</div>
+                    <div class="process-card-icon">🏗️</div>
+                    <h3>Cube Sampling & Curing</h3>
+                    <p>Cube samples are cast, cured and tested at 7-day and 28-day intervals. Results are logged against
+                        each batch ticket and shared with the client's site engineer on request.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-card-num">05</div>
+                    <div class="process-card-icon">📋</div>
+                    <h3>Delivery Documentation</h3>
+                    <p>Each delivery comes with a batch ticket showing mix code, design strength, w/c ratio, admixture
+                        type, plant departure time, and the name of the QA engineer who signed off the batch.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-card-num">06</div>
+                    <div class="process-card-icon">📊</div>
+                    <h3>Statistical Analysis & Review</h3>
+                    <p>Monthly QA reports track characteristic strength trends, coefficient of variation, and
+                        non-conformance rates. Data feeds back into mix design refinements to continually raise our
+                        performance baseline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ STANDARDS ══════════ -->
+    <section class="cap-standards">
+        <div class="standards-inner">
+            <div class="standards-left anim-left">
+                <h2>Standards We <span>Uphold</span></h2>
+                <p>Our quality management system is aligned with recognised Indian and international construction
+                    standards — ensuring your project meets statutory, structural and contractual requirements.</p>
+            </div>
+            <ul class="standards-list anim-up">
+                <li>
+                    <div class="std-dot"></div>
+                    <div><span class="std-label">IS:456 — Plain & Reinforced Concrete</span>Code of practice for the use
+                        of structural concrete in all exposure conditions.</div>
+                </li>
+                <li>
+                    <div class="std-dot"></div>
+                    <div><span class="std-label">IS:10262 — Concrete Mix Design</span>Guidelines for proportioning
+                        concrete mixes to achieve specified strength and durability.</div>
+                </li>
+                <li>
+                    <div class="std-dot"></div>
+                    <div><span class="std-label">IS:516 — Cube Testing</span>Methods of testing compressive strength of
+                        concrete specimens at 7 and 28 days.</div>
+                </li>
+                <li>
+                    <div class="std-dot"></div>
+                    <div><span class="std-label">IS:383 — Coarse & Fine Aggregates</span>Specifications for natural
+                        aggregates used in concrete, including grading and impurity limits.</div>
+                </li>
+                <li>
+                    <div class="std-dot"></div>
+                    <div><span class="std-label">IS:9103 — Admixtures for Concrete</span>Specification for chemical
+                        admixtures ensuring compatibility with cement and mix stability.</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ══════════ CTA ══════════ -->
+    <section class="cap-cta">
+        <h2>Require a Quality Plan for Your Project?</h2>
+        <p>Our QA engineers can prepare a project-specific quality control plan, including testing frequency, cube
+            sampling schedules and reporting formats aligned with your consultant's requirements.</p>
+        <a href="../contact.html" class="btn-white">
+            Talk to Our QA Team
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" width="13" height="13">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+            </svg>
+        </a>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer class="fx">
+        <div class="fx-top">
+            <img src="../src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo fx-top-item" />
+            <div class="fx-brand fx-top-item">SUN-X Group</div>
+            <div class="fx-tagline fx-top-item">Built on Trust · Powered by Technology</div>
+            <p class="fx-desc fx-top-item">SUN-X Group is a building materials company specializing in high-quality
+                Ready-Mix Concrete (RMC), aggregates, and allied solutions — with a strong presence across Tamil Nadu,
+                Karnataka and Andhra Pradesh, and a growing international footprint in the UAE.</p>
+            <div class="fx-socials fx-top-item">
+                <a href="#" class="fx-soc"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg></a>
+                <a href="#" class="fx-soc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                        <path
+                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                    </svg></a>
+                <a href="#" class="fx-soc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg></a>
+                <a href="#" class="fx-soc"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg></a>
+            </div>
+        </div>
+        <div class="fx-sub">
+            <div class="fx-sub-label fx-top-item">Subsidiary of</div>
+            <div class="fx-logos">
+                <div class="fx-logo-item"><img loading="lazy" src="../src/assets/images/sunxholding.png"
+                        alt="SUNX Holdings" style="max-height:68px;max-width:219px;" /></div>
+                <div class="fx-logo-item"><img loading="lazy" src="../src/assets/images/sunxtech.png"
+                        alt="Suntech Civil Services" style="max-height:68px;max-width:219px;" /></div>
+                <div class="fx-logo-item"><img loading="lazy" src="../src/assets/images/sun-x.png" alt="SUN-X"
+                        width="104" height="46" /></div>
+                <div class="fx-logo-item"><img loading="lazy" src="../src/assets/images/alturus.png"
+                        alt="Alturas Infrastructure" style="max-height:68px;max-width:219px;" /></div>
+            </div>
+        </div>
+    </footer>
+    <footer class="fx2">
+        <div class="fx2-grid">
+            <div class="fx2-col">
+                <p class="fx2-col-title">Head Office</p>
+                <div class="fx2-info-item">
+                    <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span class="fx2-info-text">No 11, Ramaniyam Isha, Old Mahabalipuram Road, Okkiyam Thoraipakkam,
+                        Chennai – 600097</span>
+                </div>
+                <div class="fx2-info-item">
+                    <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span class="fx2-info-text">+91 9940400050<br />+91 88071 47050</span>
+                </div>
+                <div class="fx2-info-item">
+                    <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span class="fx2-info-text"><a href="mailto:info@sunxconcrete.org">info@sunxconcrete.org</a></span>
+                </div>
+            </div>
+            <div class="fx2-col">
+                <p class="fx2-col-title">Capabilities</p>
+                <ul class="fx2-links">
+                    <li><a href="quality-assurance.html">Quality Assurance</a></li>
+                    <li><a href="production-facilities.html">Production Facilities</a></li>
+                    <li><a href="fleet-management.html">Fleet Management</a></li>
+                    <li><a href="batching-plant.html">Batching Plant</a></li>
+                    <li><a href="product-portfolio.html">Product Portfolio</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                </ul>
+            </div>
+            <div class="fx2-col">
+                <p class="fx2-col-title">Company</p>
+                <ul class="fx2-links">
+                    <li><a href="../index.html" class="fx2-muted">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../services.html">Our Services</a></li>
+                    <li><a href="../team.html">Our Team</a></li>
+                    <li><a href="../careers.html">Careers</a></li>
+                    <li><a href="../contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="fx2-col">
+                <p class="fx2-col-title">Our Works</p>
+                <ul class="fx2-links">
+                    <li><a href="../our-projects.html">Our Projects</a></li>
+                    <li><a href="../our-plants.html">Our Plants</a></li>
+                    <li><a href="../our-products.html">Our Products</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fx2-bottom">
+            <span class="fx2-bottom-right">All Rights Reserved © 2026 | Sun-X Concrete Pvt Ltd.</span>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar
+        const navbar = document.getElementById('navbar');
+        const hero = document.getElementById('hero');
+        let lastScrollY = window.scrollY, navTicking = false;
+        let heroHeight = hero.offsetHeight;
+        window.addEventListener('resize', () => { heroHeight = hero.offsetHeight; }, { passive: true });
+        function updateNav() {
+            const s = window.scrollY;
+            navbar.classList.toggle('nav-hidden', s > lastScrollY && s > 80);
+            if (s <= lastScrollY) navbar.classList.remove('nav-hidden');
+            navbar.classList.toggle('scrolled', (heroHeight - s) <= 80);
+            lastScrollY = s; navTicking = false;
+        }
+        window.addEventListener('scroll', () => { if (!navTicking) { navTicking = true; requestAnimationFrame(updateNav); } }, { passive: true });
+        updateNav();
+
+        // Drawer
+        const hamburger = document.getElementById('hamburger');
+        const drawer = document.getElementById('drawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+        const drawerClose = document.getElementById('drawerClose');
+        const openDrawer = () => { drawer.classList.add('open'); drawerOverlay.classList.add('open'); hamburger.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+        const closeDrawer = () => { drawer.classList.remove('open'); drawerOverlay.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+        hamburger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+        drawerClose.addEventListener('click', closeDrawer);
+        drawerOverlay.addEventListener('click', closeDrawer);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+        document.querySelectorAll('.drawer-nav a').forEach(l => l.addEventListener('click', closeDrawer));
+
+        // Scroll animations
+        const animEls = document.querySelectorAll('.anim-left, .anim-right, .anim-up');
+        const animObs = new IntersectionObserver(entries => {
+            entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
+        }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+        animEls.forEach(el => animObs.observe(el));
+
+        // Process cards stagger
+        const cards = document.querySelectorAll('.process-card');
+        const cardObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); cardObs.unobserve(e.target); } });
+        }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+        cards.forEach((c, i) => { c.style.transitionDelay = (i * 0.08) + 's'; c.style.transition = 'opacity 0.6s cubic-bezier(.34,1.56,.64,1), transform 0.6s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s, border-color 0.3s'; cardObs.observe(c); });
+
+        // Footer animations
+        const fxObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('fx-in'); fxObs.unobserve(e.target); } }); }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.fx-top-item').forEach((el, i) => { el.style.transitionDelay = (i * 0.08) + 's'; fxObs.observe(el); });
+        document.querySelectorAll('.fx-logo-item').forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; fxObs.observe(el); });
+        const fx2Obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('fx-in'); fx2Obs.unobserve(e.target); } }); }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.fx2-col').forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; fx2Obs.observe(el); });
+    </script>
+</body>
+
+</html>

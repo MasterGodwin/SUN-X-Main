@@ -1,7 +1,7 @@
     .fx {
       font-family: 'Instrument Sans', sans-serif;
       background: #fff;
-      padding: 4rem 5vw 0;
+      padding: 2rem 2vw 0;
       border-top: 1px solid #eeede8
     }
 
@@ -69,7 +69,7 @@
     }
 
     .fx-sub {
-      padding: 2.8rem 0 2.5rem
+      padding: 1.8rem 0 1.5rem
     }
 
     .fx-sub-label {
@@ -155,7 +155,8 @@
 
     .fx-top-item.fx-in {
       opacity: 1;
-      transform: translateY(0)
+      transform: translateY(0);
+      text-align: justify;
     }
 
     @media(max-width:720px) {
@@ -183,7 +184,7 @@
     .fx2 {
       font-family: 'Inter Variable', Inter, Arial, sans-serif;
       background: #fff;
-      padding: 4rem 5vw 0;
+      padding: 2rem 3vw 0;
       border-top: 1px solid #e8e8e8
     }
 
@@ -265,7 +266,7 @@
     .fx2-bottom {
       background: #111;
       margin: 0 -5vw;
-      padding: 1.1rem 5vw;
+      padding: 0.8rem 2vw;;
       display: flex;
       align-items: center;
       justify-content: center
