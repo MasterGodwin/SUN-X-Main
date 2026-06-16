@@ -66,114 +66,10 @@
       filter: blur(0);
     }
 
-    .srv-hero {
-      position: relative;
-      height: 62vh;
-      min-height: 440px;
-      background-image: url('./src/assets/images/Poonamallee%20Plant.jpg');
-      background-size: cover;
-      background-position: center 40%;
-      display: flex;
-      align-items: center;
-      padding: 0 5vw;
-      overflow: hidden;
-    }
-
-    .srv-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.82) 40%, rgba(0, 0, 0, 0.25) 100%),
-        linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, transparent 55%);
-    }
-
-    .srv-hero::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 420px;
-      height: 100%;
-      background: linear-gradient(120deg, transparent 40%, rgba(192, 57, 43, 0.12) 100%);
-      pointer-events: none;
-    }
-
-    .srv-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-      margin-top: 64px;
-      animation: heroIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
-    }
-
-    @keyframes heroIn {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-        filter: blur(6px) brightness(0.3);
-      }
-
-      60% {
-        filter: blur(2px) brightness(0.7);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-        filter: blur(0) brightness(1);
-      }
-    }
-
-    .srv-eb {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 1.2rem;
-    }
-
-    .srv-eb-line {
-      width: 40px;
-      height: 2px;
-      background: #c0392b;
-      flex-shrink: 0;
-    }
-
-    .srv-eb-text {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.65);
-    }
-
-    .srv-hero-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(3rem, 7.5vw, 3.8rem);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-      letter-spacing: -0.5px;
-    }
-
-    .srv-hero-title .red {
-      color: #c0392b;
-    }
-
-    .srv-hero-sub {
-      font-size: clamp(0.9rem, 1.5vw, 1rem);
-      color: rgba(255, 255, 255, 0.72);
-      max-width: 520px;
-      line-height: 1.75;
-    }
-
     /* =====================================================
        SERVICES MAIN — ONE SECTION
-       Top: left headline + right quote/promises
-       Bottom: 3 service cards (white bg)
     ===================================================== */
 
-    /* shared button */
     .srv-btn-red {
       display: inline-flex;
       align-items: center;
@@ -199,18 +95,15 @@
       height: 14px;
     }
 
-    /* ── WRAPPER ── */
     .srv-main {
       overflow: hidden;
     }
 
-    /* ── TOP: white bg, centered, with image ── */
     .srv-main-top {
       background: #fff;
       padding: 6rem 5vw 0;
     }
 
-    /* eyebrow + heading block — centered */
     .smt-head {
       text-align: center;
       max-width: 1160px;
@@ -257,7 +150,6 @@
       margin: 0 auto 2rem;
     }
 
-    /* 4 promise pills — centered row */
     .smt-pills {
       display: flex;
       flex-wrap: wrap;
@@ -294,7 +186,6 @@
       flex-shrink: 0;
     }
 
-    /* cta row centered */
     .smt-cta {
       display: flex;
       justify-content: center;
@@ -325,7 +216,6 @@
       transform: translateY(-2px);
     }
 
-    /* image — full width, clipped bottom */
     .smt-img-wrap {
       position: relative;
       width: 100%;
@@ -349,7 +239,6 @@
       transform: scale(1.03);
     }
 
-    /* overlay strip at bottom of image */
     .smt-img-wrap::after {
       content: '';
       position: absolute;
@@ -358,7 +247,6 @@
       pointer-events: none;
     }
 
-    /* quote overlay on image */
     .smt-img-quote {
       position: absolute;
       bottom: 2rem;
@@ -434,7 +322,6 @@
       }
     }
 
-    /* ── SERVICE CARDS (white bg, below top split) ── */
     .srv-cards-wrap {
       background: #f5f5f5;
       padding: 5rem 5vw 6rem;
@@ -445,7 +332,6 @@
       margin: 0 auto;
     }
 
-    /* section label row */
     .sc-label-row {
       display: flex;
       align-items: center;
@@ -478,7 +364,6 @@
       white-space: nowrap;
     }
 
-    /* 3-column card grid */
     .sc-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -513,7 +398,6 @@
       border-color: rgba(192, 57, 43, 0.25);
     }
 
-    /* top accent bar sweeps on hover */
     .sc-card::before {
       content: '';
       position: absolute;
@@ -563,20 +447,6 @@
     }
 
     @media (max-width: 960px) {
-      .srv-main-top {
-        grid-template-columns: 1fr;
-      }
-
-      .smt-left {
-        padding: 4rem 5vw;
-      }
-
-      .smt-right {
-        padding: 3.5rem 5vw;
-        border-left: none;
-        border-top: 1px solid #e8e8e8;
-      }
-
       .sc-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -587,12 +457,336 @@
         grid-template-columns: 1fr;
       }
 
-      .smt-pills {
-        grid-template-columns: 1fr;
-      }
-
       .srv-cards-wrap {
         padding: 3.5rem 5vw 4rem;
+      }
+    }
+
+    /* =====================================================
+       FLEET MANAGEMENT (new — from Company Profile)
+    ===================================================== */
+    .srv-fleet {
+      background: #fff;
+      padding: 6rem 5vw;
+      overflow: hidden;
+    }
+
+    .srv-fleet-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .srv-fleet-text .smt-tag {
+      margin-bottom: 1.2rem;
+    }
+
+    .srv-fleet-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #1a2744;
+      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.2rem;
+    }
+
+    .srv-fleet-desc {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.9;
+      margin-bottom: 1.8rem;
+    }
+
+    .srv-fleet-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 1.4rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .srv-fleet-stat {
+      border-left: 2px solid #c0392b;
+      padding-left: 0.9rem;
+    }
+
+    .srv-fleet-stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #1a2744;
+      line-height: 1;
+    }
+
+    .srv-fleet-stat-label {
+      font-size: 0.72rem;
+      color: #888;
+      line-height: 1.5;
+      margin-top: 0.3rem;
+    }
+
+    .srv-fleet-quote {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #1a2744;
+      border-left: 3px solid #c0392b;
+      padding-left: 1rem;
+      line-height: 1.7;
+    }
+
+    .srv-fleet-img-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      position: relative;
+    }
+
+    .srv-fleet-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .srv-fleet-img-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 900px) {
+      .srv-fleet-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .srv-fleet-img-wrap {
+        aspect-ratio: 16/9;
+      }
+
+      .srv-fleet {
+        padding: 4rem 5vw;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .srv-fleet-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* =====================================================
+       QUALITY ASSURANCE (new — from Company Profile)
+    ===================================================== */
+    .srv-qa {
+      background: #6e0f0f;
+      padding: 6rem 5vw;
+      overflow: hidden;
+    }
+
+    .srv-qa-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .srv-qa-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 1.2rem;
+    }
+
+    .srv-qa-eline {
+      width: 28px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.4);
+      flex-shrink: 0;
+    }
+
+    .srv-qa-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.2rem;
+    }
+
+    .srv-qa-desc {
+      font-size: 0.87rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.9;
+      margin-bottom: 1.6rem;
+    }
+
+    .srv-qa-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem 1.4rem;
+    }
+
+    .srv-qa-list li {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.6;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .srv-qa-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #f0c040;
+    }
+
+    .srv-qa-img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+
+    .srv-qa-img-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+      aspect-ratio: 1/1;
+    }
+
+    @media (max-width: 900px) {
+      .srv-qa-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .srv-qa {
+        padding: 4rem 5vw;
+      }
+
+      .srv-qa-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =====================================================
+       CERTIFICATIONS (new — from Company Profile)
+    ===================================================== */
+    .srv-cert {
+      background: #f5f5f5;
+      padding: 6rem 5vw;
+      overflow: hidden;
+    }
+
+    .srv-cert-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .srv-cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .srv-cert-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+    }
+
+    .srv-cert-card:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      border-color: rgba(192, 57, 43, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .srv-cert-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #1a2744;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.4rem;
+    }
+
+    .srv-cert-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .srv-cert-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #1a2744;
+      margin-bottom: 0.6rem;
+    }
+
+    .srv-cert-desc {
+      font-size: 0.82rem;
+      color: #777;
+      line-height: 1.75;
+    }
+
+    .srv-cert-foot {
+      margin-top: 2.6rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    .srv-cert-foot strong {
+      color: #1a2744;
+    }
+
+    @media (max-width: 900px) {
+      .srv-cert-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .srv-cert {
+        padding: 4rem 5vw;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .srv-cert-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -600,7 +794,7 @@
        HOW WE WORK
     ===================================================== */
     .srv-process {
-      background: #f5f5f5;
+      background: #fff;
       padding: 6rem 5vw;
       overflow: hidden;
     }
@@ -768,7 +962,7 @@
        CTA
     ===================================================== */
     .srv-cta {
-      background: #6e0f0f;
+      background: #1a2744;
       padding: 5.5rem 5vw;
       text-align: center;
       position: relative;
@@ -986,32 +1180,11 @@
     </div>
   </section>
 
-  <!-- <section class="srv-hero" id="hero">
-    <div class="srv-hero-overlay"></div>
-    <div class="srv-hero-content">
-      <div class="srv-eb">
-        <div class="srv-eb-line"></div>
-        <span class="srv-eb-text">Our Services · Sun-X Concrete</span>
-      </div>
-      <h1 class="srv-hero-title">
-        BUILT ON 
-        <span class="red">QUALITY.</span> DELIVERED<br>
-        WITH PRECISION.
-      </h1>
-      <p class="srv-hero-sub">
-        From Ready-Mix Concrete and Technical Support to on-site Concrete Placement —
-        SUN-X offers a single source for all your construction material needs across
-        Tamil Nadu, Karnataka &amp; Andhra Pradesh.
-      </p>
-    </div>
-  </section> -->
-
   <section class="srv-main">
 
     <!-- TOP: white bg, centered content + image -->
     <div class="srv-main-top">
 
-      <!-- Centered heading block -->
       <div class="smt-head anim-up">
         <span class="smt-tag">Our Services · Sun-X Concrete</span>
         <h2 class="smt-title">
@@ -1025,7 +1198,6 @@
           a standard we hold ourselves to every single day.
         </p>
 
-        <!-- Promise pills -->
         <div class="smt-pills">
           <div class="smt-pill"><span class="smt-pill-dot"></span>Full-focused project approach</div>
           <div class="smt-pill"><span class="smt-pill-dot"></span>Unmatched Efficiency</div>
@@ -1033,7 +1205,6 @@
           <div class="smt-pill"><span class="smt-pill-dot"></span>Building Supplies in Tamilnadu</div>
         </div>
 
-        <!-- CTAs -->
         <div class="smt-cta">
           <a href="#" class="srv-btn-red">
             Request a Quote
@@ -1047,7 +1218,6 @@
         </div>
       </div>
 
-      <!-- Full-width image -->
       <div class="smt-img-wrap anim-up" style="transition-delay:0.18s;">
         <img src="./src/assets/images/Poonamallee%20Plant.jpg"
           onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=85'"
@@ -1075,7 +1245,6 @@
 
         <div class="sc-grid">
 
-          <!-- Card 1 -->
           <div class="sc-card" id="scard1">
             <div class="sc-body">
               <div class="sc-tag">Engineering · Planning</div>
@@ -1086,7 +1255,6 @@
             </div>
           </div>
 
-          <!-- Card 2 -->
           <div class="sc-card" id="scard2">
             <div class="sc-body">
               <div class="sc-tag">Support · Materials</div>
@@ -1098,7 +1266,6 @@
             </div>
           </div>
 
-          <!-- Card 3 -->
           <div class="sc-card" id="scard3">
             <div class="sc-body">
               <div class="sc-tag">Ready-Mix · Foundation</div>
@@ -1112,6 +1279,129 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- ══════════ FLEET MANAGEMENT (new — from Company Profile) ══════════ -->
+  <section class="srv-fleet">
+    <div class="srv-fleet-inner">
+      <div class="srv-fleet-text anim-left">
+        <span class="smt-tag">Operational Capability</span>
+        <h2 class="srv-fleet-title">Fleet Management</h2>
+        <p class="srv-fleet-desc">
+          At SUN-X Group, our robust fleet management system is a key pillar of operational efficiency, enabling
+          seamless production, transportation, and delivery of concrete solutions across project sites. We own and
+          operate a modern, well-maintained fleet — ensuring reliability, flexibility, and complete control over
+          project timelines.
+        </p>
+        <div class="srv-fleet-stats">
+          <div class="srv-fleet-stat">
+            <div class="srv-fleet-stat-num">30+</div>
+            <div class="srv-fleet-stat-label">Transit Mixers, 8–12 m³ capacity</div>
+          </div>
+          <div class="srv-fleet-stat">
+            <div class="srv-fleet-stat-num">7+</div>
+            <div class="srv-fleet-stat-label">Boom Pumps, 36–63 m reach</div>
+          </div>
+          <div class="srv-fleet-stat">
+            <div class="srv-fleet-stat-num">10+</div>
+            <div class="srv-fleet-stat-label">Tippers for aggregate movement</div>
+          </div>
+          <div class="srv-fleet-stat">
+            <div class="srv-fleet-stat-num">2</div>
+            <div class="srv-fleet-stat-label">Shovels for plant operations</div>
+          </div>
+        </div>
+        <p class="srv-fleet-quote">"Our fleet is the backbone of our operations — built for reliability, managed for
+          excellence."</p>
+      </div>
+      <div class="srv-fleet-img-wrap anim-right">
+        <img src="src/assets/images/sunx_truck.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80'"
+          alt="SUN-X Concrete Fleet" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ QUALITY ASSURANCE (new — from Company Profile) ══════════ -->
+  <section class="srv-qa">
+    <div class="srv-qa-inner">
+      <div class="anim-left">
+        <div class="srv-qa-eyebrow"><span class="srv-qa-eline"></span>Quality Assurance</div>
+        <h2 class="srv-qa-title">Quality In Every Batch</h2>
+        <p class="srv-qa-desc">
+          We implement a comprehensive quality management system to ensure consistent, reliable and
+          specification-compliant concrete for every project. Our production and testing procedures comply with
+          BS, BS EN 206, ASTM, ACI and Dubai Municipality requirements.
+        </p>
+        <ul class="srv-qa-list">
+          <li>Approved &amp; tested raw materials</li>
+          <li>Laboratory trial mixes &amp; mix design</li>
+          <li>Automated, calibrated batching</li>
+          <li>Continuous temperature control</li>
+          <li>Fresh concrete testing at plant &amp; site</li>
+          <li>Full batch traceability &amp; documentation</li>
+        </ul>
+      </div>
+      <div class="srv-qa-img-grid anim-right">
+        <img src="src/assets/images/qa1.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1581091870622-1c6f5d837ce4?w=500&q=80'"
+          alt="Quality lab testing" />
+        <img src="src/assets/images/qa2.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&q=80'"
+          alt="Concrete strength testing" />
+        <img src="src/assets/images/qa3.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&q=80'"
+          alt="Permeability tester" />
+        <img src="src/assets/images/qa4.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&q=80'"
+          alt="Lab technician at work" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CERTIFICATIONS (new — from Company Profile) ══════════ -->
+  <section class="srv-cert">
+    <div class="srv-cert-inner">
+      <div class="srv-sec-hdr anim-up">
+        <div class="srv-sec-eyebrow">
+          <span class="srv-sec-eline"></span>Plant &amp; Fleet Certification<span class="srv-sec-eline"></span>
+        </div>
+        <h2 class="srv-sec-title">Certifications &amp; Standards</h2>
+      </div>
+      <div class="srv-cert-grid">
+        <div class="srv-cert-card anim-up">
+          <div class="srv-cert-icon"><svg viewBox="0 0 24 24">
+              <path d="M12 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" />
+              <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" />
+            </svg></div>
+          <div class="srv-cert-name">ISO 9001:2015</div>
+          <p class="srv-cert-desc">Quality Management System — ensuring consistent product quality, process control
+            and customer satisfaction.</p>
+        </div>
+        <div class="srv-cert-card anim-up" style="transition-delay:0.1s;">
+          <div class="srv-cert-icon"><svg viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" />
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg></div>
+          <div class="srv-cert-name">ISO 14001:2015</div>
+          <p class="srv-cert-desc">Environmental Management System — committed to environmental protection and
+            sustainable resource use.</p>
+        </div>
+        <div class="srv-cert-card anim-up" style="transition-delay:0.2s;">
+          <div class="srv-cert-icon"><svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg></div>
+          <div class="srv-cert-name">ISO 45001:2018</div>
+          <p class="srv-cert-desc">Occupational Health &amp; Safety Management — providing a safe and healthy
+            workplace for employees, clients and partners.</p>
+        </div>
+      </div>
+      <p class="srv-cert-foot">
+        Our batching plants and transit mixers have successfully completed <strong>NRMCA</strong> inspection and
+        auditing in accordance with international ready-mix industry requirements — ensuring reliable production,
+        safe delivery and consistent concrete quality.
+      </p>
+    </div>
   </section>
 
   <section class="srv-process">
@@ -1204,8 +1494,6 @@
       border-bottom: 1px solid #eeede8
     }
 
-    /* .fx-logo-ring{width:88px;height:88px;border-radius:50%;border:1.5px solid #e8e6e0;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:transform 0.4s cubic-bezier(.34,1.56,.64,1),border-color 0.3s}
-.fx-logo-ring:hover{transform:scale(1.08) rotate(-4deg);border-color:#1a2744} */
     .fx-main-logo {
       height: 52px;
       object-fit: contain

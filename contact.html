@@ -384,6 +384,157 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb-bar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.6rem 5vw 0;
+      font-size: 0.82rem;
+      color: #888;
+    }
+
+    .breadcrumb-bar a {
+      color: #888;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: #1a2744;
+    }
+
+    .breadcrumb-bar .crumb-sep {
+      color: #ccc;
+    }
+
+    .breadcrumb-bar .crumb-current {
+      color: #1a2744;
+      font-weight: 600;
+    }
+
+    /* ── ADDRESS / PLANT LOCATIONS ── */
+    .address-section {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 5vw 5rem;
+    }
+
+    .region-title-wrap {
+      text-align: left;
+      margin: 3rem 0 1.2rem;
+    }
+
+    .region-title-wrap:first-child {
+      margin-top: 0;
+    }
+
+    .region-title-wrap h3 {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a2744;
+      position: relative;
+      padding-bottom: 8px;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+
+    .region-title-wrap h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 36px;
+      height: 3px;
+      background: #c0392b;
+      border-radius: 2px;
+    }
+
+    .address-cards-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .address-cards-grid.col-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .address-cards-grid.col-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .address-card {
+      background: #fafafa;
+      border: 1.5px solid #ebebeb;
+      border-radius: 10px;
+      padding: 1.2rem 1.1rem;
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+    }
+
+    .address-card:hover {
+      box-shadow: 0 10px 28px rgba(26, 39, 68, 0.08);
+      border-color: #d8d8d8;
+      transform: translateY(-2px);
+    }
+
+    .address-card.featured {
+      border-left: 3px solid #c0392b;
+      background: #fff;
+    }
+
+    .address-card .card-icon {
+      width: 38px;
+      height: 38px;
+      background: #fff;
+      border: 1px solid #e8e0d8;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .address-card .card-icon svg {
+      width: 17px;
+      height: 17px;
+      stroke: #c0392b;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .address-card .card-body h5 {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin: 0 0 4px;
+    }
+
+    .address-card .card-body p {
+      font-size: 0.78rem;
+      color: #777;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      .address-cards-grid.col-2,
+      .address-cards-grid.col-3 {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -503,6 +654,12 @@
   </section>
 
   <script type="module" src="src/js/comman.js" defer></script>
+
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="crumb-sep">/</span>
+    <span class="crumb-current">Contact Us</span>
+  </nav>
 
   <div class="contact-page">
 
@@ -660,6 +817,177 @@
         </div>
 
       </div>
+    </div>
+
+    <!-- ===== PLANT & OFFICE LOCATIONS ===== -->
+    <div class="address-section">
+
+      <!-- ===== TAMIL NADU ===== -->
+      <div class="region-title-wrap">
+        <h3>Tamil Nadu</h3>
+      </div>
+
+      <div class="address-cards-grid col-2" style="margin-bottom: 1rem;">
+        <div class="address-card featured">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Head Office</h5>
+            <p>No 11, Ramaniyam Isha, Old Mahabalipuram Road,<br>Okkiyam Thoraipakkam, Chennai – 600097</p>
+          </div>
+        </div>
+        <div class="address-card featured">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Poonamallee Plant</h5>
+            <p>Survey No. 32/1, 32/2A, 32/2B, 33, 46/3, Poonamallee Bypass Rd,<br>Thiruvallur District, Chennai – 600 056</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="address-cards-grid col-3">
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Koyambedu Plant</h5>
+            <p>Survey No.1/1, Part of Koyambedu Village, Block 64,<br>SAF Games Village Scheme, Koyambedu, Chennai – 600107</p>
+          </div>
+        </div>
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Velachery Plant</h5>
+            <p>No.415, 200 Feet Road, Viduthalai Nagar,<br>S.Kolathur, Kovilambakkam, Chennai – 603103</p>
+          </div>
+        </div>
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Oragadam Plant</h5>
+            <p>No.630/2, Ezhichur Road, Kandigai, Oragadam,<br>Kancheepuram Dist, Chennai – 631604</p>
+          </div>
+        </div>
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Guindy Plant</h5>
+            <p>No.21/22, Olympia Cyberspace Project,<br>Alandur Road, Guindy Taluk, Chennai – 600032</p>
+          </div>
+        </div>
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Madhavaram Plant</h5>
+            <p>Door No.95/7, GNT Road, Kamatchiamman Nagar,<br>Puzhal Cycle Shop, Madhavaram, Chennai – 600060</p>
+          </div>
+        </div>
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Siruseri Plant</h5>
+            <p>Survey No.268/11, OMR Road, Kazhipattur Village,<br>Kanchipuram District, Chennai – 603103</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== TAMIL NADU – TUTICORIN ===== -->
+      <div class="region-title-wrap">
+        <h3>Tamil Nadu – Tuticorin</h3>
+      </div>
+
+      <div class="address-cards-grid col-2">
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Tuticorin</h5>
+            <p>SF # 19/2B, Mela Arasaradi Village,<br>Ottapidaram Taluk, Ettayapuram Road, Tuticorin – 628002</p>
+          </div>
+        </div>
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Udangudi Plant</h5>
+            <p>Geo Foundations &amp; Structurals Pvt Ltd, Udangudi Thermal Power<br>Plant Project, Kallamozhi Village, Udangudi – 628203</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== COIMBATORE + TIRUNELVELI ===== -->
+      <div class="address-cards-grid col-2" style="margin-top: 3rem;">
+        <div class="region-title-wrap" style="margin-top: 0; margin-bottom: 1.2rem;">
+          <h3>Tamil Nadu – Coimbatore</h3>
+        </div>
+        <div class="region-title-wrap" style="margin-top: 0; margin-bottom: 1.2rem;">
+          <h3>Tamil Nadu – Tirunelveli</h3>
+        </div>
+      </div>
+
+      <div class="address-cards-grid col-2">
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Coimbatore</h5>
+            <p>Survey No 60/2C &amp; 60/2D, Andakkapalayam,<br>Vellanaipatti Village, Coimbatore North Taluk, Coimbatore – 641048</p>
+          </div>
+        </div>
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Tirunelveli</h5>
+            <p>Survey No – 1088, Anaiyarkulam Village, Palayamkottai – 627007</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ANDHRA PRADESH / KARNATAKA ===== -->
+      <div class="region-title-wrap">
+        <h3>Andhra Pradesh &amp; Karnataka</h3>
+      </div>
+
+      <div class="address-cards-grid col-2">
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Krishnapattinam</h5>
+            <p>GEO Foundations &amp; Structures Pvt Ltd, Power Plant Near<br>Krishnapattinam Nellore Port, Andhra Pradesh – 524344</p>
+          </div>
+        </div>
+        <div class="address-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <div class="card-body">
+            <h5>Karnataka – Mysore Road</h5>
+            <p>Survey No:40/41, Kaniminike Village, Kengeri Hobli,<br>Bangalore South, Bengaluru, Karnataka 560074</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
