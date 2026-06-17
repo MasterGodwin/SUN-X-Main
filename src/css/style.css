@@ -1563,7 +1563,7 @@ body {
 
 .adv-left {
   position: relative;
-  background: url('../assets/images/TransitMixer.jpg') center/cover no-repeat;
+  background: url('../assets/images/TransitMixer.webp') center/cover no-repeat;
   display: flex;
   align-items: center;
   padding: 5rem 4rem 5rem 5vw;
