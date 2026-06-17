@@ -9,526 +9,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="/Nav-Dropdown.css">
+  <link rel="stylesheet" href="src/css/Nav-Dropdown.css">
   <link rel="stylesheet" href="src/css/about.css">
-  <style>
-    :root {
-      --red: #c0392b;
-      --navy: #1a2744;
-      --bg: #f5f4f2;
-      --bg-white: #ffffff;
-      --bg-dark: #1c1c1e;
-      --text: #1a1a1a;
-      --muted: #6e6e73;
-      --light-border: rgba(0, 0, 0, 0.08);
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg-white);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    /* ────────────────────────────────
-       SECTION 0 — HERO
-    ──────────────────────────────── */
-    .hero {
-      position: relative;
-      background: #e8e6e1;
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      overflow: hidden;
-    }
-
-    /* Ghost text background */
-    .hero-ghost {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .hero-ghost-text {
-      font-size: clamp(10rem, 22vw, 22rem);
-      font-weight: 900;
-      color: rgba(0, 0, 0, 0.055);
-      line-height: 0.85;
-      letter-spacing: -8px;
-      white-space: nowrap;
-      user-select: none;
-    }
-
-    /* Left: text */
-    .hero-left {
-      position: relative;
-      z-index: 2;
-      padding: 8rem 5vw 7rem 7vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.8rem, 5.5vw, 5.6rem);
-      font-weight: 800;
-      line-height: 1.0;
-      letter-spacing: -2.5px;
-      color: var(--text);
-      margin-bottom: 1.6rem;
-    }
-
-    .hero-title .accent {
-      color: var(--red);
-    }
-
-    .hero-desc {
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: var(--muted);
-      line-height: 1.85;
-      max-width: 400px;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-desc-sub {
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.6;
-      max-width: 360px;
-      margin-bottom: 2.5rem;
-      padding-left: 1rem;
-      border-left: 2px solid var(--red);
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--text);
-      color: #fff;
-      text-decoration: none;
-      padding: 0.75rem 1.8rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      border-radius: 100px;
-      transition: background 0.25s, transform 0.2s;
-    }
-
-    .hero-cta:hover {
-      background: var(--red);
-      transform: translateY(-2px);
-    }
-
-    /* Right: big image */
-    .hero-right {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 4vw;
-    }
-
-    .hero-img-wrap {
-      width: 100%;
-      max-width: 520px;
-      aspect-ratio: 1/1;
-      border-radius: 24px;
-      overflow: hidden;
-    }
-
-    .hero-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* count pill */
-    .hero-count {
-      position: absolute;
-      bottom: 3rem;
-      left: 7vw;
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      z-index: 3;
-    }
-
-    .hero-count-num {
-      font-size: 4rem;
-      font-weight: 900;
-      color: var(--red);
-      line-height: 1;
-      letter-spacing: -3px;
-    }
-
-    .hero-count-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    @media (max-width: 860px) {
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-
-      .hero-left {
-        padding: 7rem 5vw 3rem;
-      }
-
-      .hero-right {
-        padding: 2rem 5vw 5rem;
-      }
-
-      .hero-count {
-        bottom: 2rem;
-      }
-    }
-
-
-
-    /* TYPE C — light gray, centered editorial */
-    .prod-c {
-      background: var(--bg);
-      position: relative;
-      overflow: hidden;
-      padding: 3rem 7vw;
-    }
-
-    .prod-c-inner {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .prod-c-image {
-      border-radius: 16px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-    }
-
-    .prod-c-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .prod-c-image:hover img {
-      transform: scale(1.04);
-    }
-
-    .prod-c-ghost {
-      position: absolute;
-      bottom: -0.2em;
-      right: -0.02em;
-      font-size: clamp(7rem, 16vw, 16rem);
-      font-weight: 900;
-      color: rgba(0, 0, 0, 0.04);
-      line-height: 1;
-      letter-spacing: -5px;
-      pointer-events: none;
-      user-select: none;
-      white-space: nowrap;
-    }
-
-    /* ── SHARED CONTENT TYPOGRAPHY ── */
-    .prod-num {
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 0.7rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .prod-num::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 1.5px;
-      background: var(--red);
-      flex-shrink: 0;
-    }
-
-    .prod-title {
-      font-size: clamp(1.8rem, 3.5vw, 3rem);
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -1px;
-      color: var(--text);
-      margin-bottom: 1.2rem;
-    }
-
-    .prod-b .prod-title {
-      color: #fff;
-    }
-
-    .prod-desc {
-      font-size: 0.88rem;
-      font-weight: 400;
-      color: var(--muted);
-      line-height: 1.85;
-      margin-bottom: 2rem;
-      max-width: 400px;
-    }
-
-    .prod-b .prod-desc {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    /* Details two-col */
-    .prod-details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem 1.8rem;
-      padding-top: 1.6rem;
-      border-top: 1px solid var(--light-border);
-    }
-
-    .prod-b .prod-details {
-      border-top-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .pd-label {
-      font-size: 0.58rem;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 0.6rem;
-    }
-
-    .pd-list {
-      list-style: none;
-    }
-
-    .pd-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.6;
-      padding: 0.22rem 0;
-    }
-
-    .prod-b .pd-list li {
-      color: rgba(255, 255, 255, 0.45);
-    }
-
-    .pd-dot {
-      width: 4px;
-      height: 4px;
-      background: var(--red);
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
-
-    /* Tags row */
-    .prod-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 1.6rem;
-    }
-
-    .p-tag {
-      font-size: 0.58rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 4px 11px;
-      background: rgba(192, 57, 43, 0.08);
-      color: var(--red);
-      border: 1px solid rgba(192, 57, 43, 0.18);
-      border-radius: 100px;
-    }
-
-    .prod-b .p-tag {
-      background: rgba(255, 255, 255, 0.08);
-      color: rgba(255, 255, 255, 0.6);
-      border-color: rgba(255, 255, 255, 0.12);
-    }
-
-    /* ── IMAGE overlay badge ── */
-    .img-badge {
-      position: absolute;
-      top: 1.5rem;
-      left: 1.5rem;
-      background: var(--red);
-      color: #fff;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      padding: 4px 12px;
-      z-index: 2;
-    }
-
-    /* Responsive */
-    @media (max-width: 860px) {
-      .prod-c-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .prod-c {
-        padding: 4rem 5vw;
-      }
-
-      .prod-c-inner {
-        gap: 2.5rem;
-      }
-
-      .prod-details {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ────────────────────────────────
-       SCROLL ANIMATIONS
-    ──────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(44px);
-      filter: blur(4px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        filter 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-      filter: none;
-    }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-44px);
-      filter: blur(4px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        filter 0.8s ease;
-    }
-
-    .reveal-left.visible {
-      opacity: 1;
-      transform: none;
-      filter: none;
-    }
-
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(44px);
-      filter: blur(4px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        filter 0.8s ease;
-    }
-
-    .reveal-right.visible {
-      opacity: 1;
-      transform: none;
-      filter: none;
-    }
-
-    /* ────────────────────────────────
-       CTA FOOTER STRIP
-    ──────────────────────────────── */
-    .cta-strip {
-      background: var(--navy);
-      padding: 5rem 7vw;
-      text-align: center;
-    }
-
-    .cta-strip h2 {
-      font-size: clamp(1.8rem, 4vw, 3.2rem);
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -1px;
-      line-height: 1.1;
-      margin-bottom: 0.8rem;
-    }
-
-    .cta-strip h2 em {
-      font-style: normal;
-      color: #f0c040;
-    }
-
-    .cta-strip p {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.45);
-      margin-bottom: 2.5rem;
-    }
-
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--red);
-      color: #fff;
-      text-decoration: none;
-      padding: 0.85rem 2.2rem;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      border-radius: 100px;
-      transition: background 0.25s, transform 0.2s;
-    }
-
-    .cta-btn:hover {
-      background: #a93226;
-      transform: translateY(-2px);
-    }
-
-    .cta-btn svg {
-      width: 14px;
-      height: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="src/css/index.css" />
+  <link rel="stylesheet" href="src/css/our-products.css" />
 </head>
 
 <body>
@@ -536,7 +20,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-left">
       <a href="#" class="logo">
-        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" />
+        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" width="160" height="71" />
       </a>
     </div>
     <div class="main-nav">
@@ -546,9 +30,8 @@
         <a href="#">About Us</a>
         <div class="nav-dropdown">
           <a href="about.html">About Sunx Concrete</a>
-          <a href="#">About Sunx UAE</a>
+          <a href="about-sunx-uae.html">About Sunx UAE</a>
           <a href="team.html">Our Team</a>
-          <a href="careers.html">Careers</a>
         </div>
       </div>
 
@@ -557,12 +40,10 @@
       <div class="nav-item">
         <a href="#">Capabilities</a>
         <div class="nav-dropdown">
-          <a href="#">Quality Assurance</a>
-          <a href="#">Production Facilities</a>
-          <a href="#">Fleet Management</a>
-          <a href="#">Batching Plant</a>
-          <a href="#">Product Portfolio</a>
-          <a href="#">Certifications</a>
+          <a href="quality-assurance.html">Quality Assurance</a>
+          <a href="production-facilities.html">Production Facilities</a>
+          <a href="fleet-management.html">Fleet Management</a>
+          <a href="batching-plant.html">Batching Plant</a>
         </div>
       </div>
 
@@ -575,7 +56,7 @@
         </div>
       </div>
 
-      <a href="careers.html">Carrers</a>
+      <a href="careers.html">Careers</a>
 
       <a href="contact.html">Contact Us</a>
     </div>
@@ -588,7 +69,7 @@
   <div class="drawer-overlay" id="drawerOverlay"></div>
   <div class="drawer" id="drawer">
     <div class="drawer-header">
-      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" />
+      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" width="108" height="48" />
       <button class="drawer-close" id="drawerClose">&#x2715;</button>
     </div>
     <nav class="drawer-nav">
@@ -598,8 +79,8 @@
         <summary>About Us</summary>
         <div class="drawer-subnav">
           <a href="about.html">About Us</a>
+          <a href="about-sunx-uae.html">About Sunx UAE</a>
           <a href="team.html">Our Team</a>
-          <a href="careers.html">Careers</a>
         </div>
       </details>
 
@@ -608,12 +89,10 @@
       <details>
         <summary>Capabilities</summary>
         <div class="drawer-subnav">
-          <a href="#">Quality Assurance</a>
-          <a href="#">Production Facilities</a>
-          <a href="#">Fleet Management</a>
-          <a href="#">Batching Plant</a>
-          <a href="#">Product Portfolio</a>
-          <a href="#">Certifications</a>
+          <a href="quality-assurance.html">Quality Assurance</a>
+          <a href="production-facilities.html">Production Facilities</a>
+          <a href="fleet-management.html">Fleet Management</a>
+          <a href="batching-plant.html">Batching Plant</a>
         </div>
       </details>
 
@@ -626,14 +105,14 @@
         </div>
       </details>
 
-      <a href="careers.html">Carrers</a>
+      <a href="careers.html">Careers</a>
 
       <a href="contact.html">Contact Us</a>
     </nav>
     <div class="drawer-footer">© 2026 Sun-X</div>
   </div>
 
-   <section class="about-hero" id="hero">
+  <section class="about-hero4" id="hero">
     <div class="about-hero-overlay"></div>
     <div class="about-hero-content">
       <div class="slide-eyebrow">
@@ -659,7 +138,7 @@
       </div>
       <div class="reveal-right">
         <div class="prod-num">01 · Temperature Controlled</div>
-        <h2 class="prod-title">Temperature Controlled Concrete</h2>
+        <h2 class="prod-title">Temperature Controlled <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Mass Concrete</span>
           <span class="p-tag">High Durability</span>
@@ -695,12 +174,11 @@
     <div class="prod-c-inner" style="direction:rtl;">
       <div class="prod-c-image reveal-right" style="position:relative;direction:ltr;">
         <div class="img-badge">02 · Self Compacting</div>
-        <img src="src/assets/images/Products/SelfCompactedConcrete.webp"
-          alt="Self Compacting Concrete" />
+        <img src="src/assets/images/Products/SelfCompactedConcrete.webp" alt="Self Compacting Concrete" />
       </div>
       <div class="reveal-left" style="direction:ltr;">
         <div class="prod-num">02 · Self Compacting</div>
-        <h2 class="prod-title">Self Compacting Concrete</h2>
+        <h2 class="prod-title">Self Compacting <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">SCC</span>
           <span class="p-tag">No Vibration</span>
@@ -736,12 +214,11 @@
     <div class="prod-c-inner">
       <div class="prod-c-image reveal-left" style="position:relative;">
         <div class="img-badge">03 · Green Building</div>
-        <img src="src/assets/images/Products/GreenBuildingconcrete.webp"
-          alt="Green Building Concrete" />
+        <img src="src/assets/images/Products/GreenBuildingconcrete.webp" alt="Green Building Concrete" />
       </div>
       <div class="reveal-right">
         <div class="prod-num">03 · Green Building</div>
-        <h2 class="prod-title">Green Building Concrete</h2>
+        <h2 class="prod-title">Green Building <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Sustainable</span>
           <span class="p-tag">Low CO₂</span>
@@ -776,12 +253,11 @@
     <div class="prod-c-inner" style="direction:rtl;">
       <div class="prod-c-image reveal-right" style="position:relative;direction:ltr;">
         <div class="img-badge">04 · High Density</div>
-        <img src="src/assets/images/Products/Highdensityconcrete.webp"
-          alt="High Density Concrete" />
+        <img src="src/assets/images/Products/Highdensityconcrete.webp" alt="High Density Concrete" />
       </div>
       <div class="reveal-left" style="direction:ltr;">
         <div class="prod-num">04 · High Density</div>
-        <h2 class="prod-title">High Density Concrete</h2>
+        <h2 class="prod-title">High Density <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Radiation Shield</span>
           <span class="p-tag">5200 kg/m³</span>
@@ -816,12 +292,11 @@
     <div class="prod-c-inner">
       <div class="prod-c-image reveal-left" style="position:relative;">
         <div class="img-badge">05 · High Strength</div>
-        <img src="src/assets/images/Products/HighStrengthConcrete.webp"
-          alt="High Strength Concrete" />
+        <img src="src/assets/images/Products/HighStrengthConcrete.webp" alt="High Strength Concrete" />
       </div>
       <div class="reveal-right">
         <div class="prod-num">05 · High Strength</div>
-        <h2 class="prod-title">High Strength Concrete</h2>
+        <h2 class="prod-title">High Strength <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">200 MPa</span>
           <span class="p-tag">High Rise</span>
@@ -856,12 +331,11 @@
     <div class="prod-c-inner" style="direction:rtl;">
       <div class="prod-c-image reveal-right" style="position:relative;direction:ltr;">
         <div class="img-badge">06 · Early Strength</div>
-        <img src="src/assets/images/Products/EarlyStrengthconcrete.webp"
-          alt="Early Strength Concrete" />
+        <img src="src/assets/images/Products/EarlyStrengthconcrete.webp" alt="Early Strength Concrete" />
       </div>
       <div class="reveal-left" style="direction:ltr;">
         <div class="prod-num">06 · Early Strength</div>
-        <h2 class="prod-title">Early Strength Concrete</h2>
+        <h2 class="prod-title">Early Strength <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">&gt;60 MPa at 28d</span>
           <span class="p-tag">High Performance</span>
@@ -896,12 +370,11 @@
     <div class="prod-c-inner">
       <div class="prod-c-image reveal-left" style="position:relative;">
         <div class="img-badge">07 · Light Weight</div>
-        <img src="src/assets/images/Products/LightWeightConcrete.webp"
-          alt="Light Weight Concrete" />
+        <img src="src/assets/images/Products/LightWeightConcrete.webp" alt="Light Weight Concrete" />
       </div>
       <div class="reveal-right">
         <div class="prod-num">07 · Light Weight</div>
-        <h2 class="prod-title">Light Weight Concrete</h2>
+        <h2 class="prod-title">Light Weight <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Thermal</span>
           <span class="p-tag">Fire Resistant</span>
@@ -938,12 +411,11 @@
     <div class="prod-c-inner" style="direction:rtl;">
       <div class="prod-c-image reveal-right" style="position:relative;direction:ltr;">
         <div class="img-badge">08 · Water Permeable</div>
-        <img src="src/assets/images/Products/WaterPermeableconcrete.webp"
-          alt="Water Permeable Concrete" />
+        <img src="src/assets/images/Products/WaterPermeableconcrete.webp" alt="Water Permeable Concrete" />
       </div>
       <div class="reveal-left" style="direction:ltr;">
         <div class="prod-num">08 · Water Permeable</div>
-        <h2 class="prod-title">Water Permeable Concrete</h2>
+        <h2 class="prod-title">Water Permeable <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Pervious</span>
           <span class="p-tag">Groundwater Recharge</span>
@@ -978,12 +450,11 @@
     <div class="prod-c-inner">
       <div class="prod-c-image reveal-left" style="position:relative;">
         <div class="img-badge">09 · Colour Stamp</div>
-        <img src="src/assets/images/Products/ColourStampConcrete.webp"
-          alt="Colour Stamp Concrete" />
+        <img src="src/assets/images/Products/ColourStampConcrete.webp" alt="Colour Stamp Concrete" />
       </div>
       <div class="reveal-right">
         <div class="prod-num">09 · Colour Stamp</div>
-        <h2 class="prod-title">Colour Stamp Concrete</h2>
+        <h2 class="prod-title">Colour Stamp <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Decorative</span>
           <span class="p-tag">Durable</span>
@@ -1018,12 +489,11 @@
     <div class="prod-c-inner" style="direction:rtl;">
       <div class="prod-c-image reveal-right" style="position:relative;direction:ltr;">
         <div class="img-badge">10 · Shotcrete</div>
-        <img src="src/assets/images/Products/ShotcreteConcrete.webp"
-          alt="Shotcrete Concrete" />
+        <img src="src/assets/images/Products/ShotcreteConcrete.webp" alt="Shotcrete Concrete" />
       </div>
       <div class="reveal-left" style="direction:ltr;">
         <div class="prod-num">10 · Shotcrete</div>
-        <h2 class="prod-title">Shotcrete Concrete</h2>
+        <h2 class="prod-title">Shotcrete <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Sprayed</span>
           <span class="p-tag">High Strength</span>
@@ -1058,12 +528,11 @@
     <div class="prod-c-inner">
       <div class="prod-c-image reveal-left" style="position:relative;">
         <div class="img-badge">11 · Under Water</div>
-        <img src="src/assets/images/Products/UnderWaterConcrete.webp"
-          alt="Under Water Concrete" />
+        <img src="src/assets/images/Products/UnderWaterConcrete.webp" alt="Under Water Concrete" />
       </div>
       <div class="reveal-right">
         <div class="prod-num">11 · Under Water / Anti Washout</div>
-        <h2 class="prod-title">Under Water Concrete</h2>
+        <h2 class="prod-title">Under Water <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Anti-Washout</span>
           <span class="p-tag">Marine</span>
@@ -1098,12 +567,11 @@
     <div class="prod-c-inner" style="direction:rtl;">
       <div class="prod-c-image reveal-right" style="position:relative;direction:ltr;">
         <div class="img-badge">12 · Foam Concrete</div>
-        <img src="src/assets/images/Products/FoamConcrete.webp"
-          alt="Foam Concrete" />
+        <img src="src/assets/images/Products/FoamConcrete.webp" alt="Foam Concrete" />
       </div>
       <div class="reveal-left" style="direction:ltr;">
         <div class="prod-num">12 · Foam Concrete</div>
-        <h2 class="prod-title">Foam Concrete</h2>
+        <h2 class="prod-title">Foam <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Lightweight</span>
           <span class="p-tag">Insulation</span>
@@ -1138,12 +606,11 @@
     <div class="prod-c-inner">
       <div class="prod-c-image reveal-left" style="position:relative;">
         <div class="img-badge">13 · Fiber Concrete</div>
-        <img src="src/assets/images/Products/FiberConcrete.webp"
-          alt="Fiber Concrete" />
+        <img src="src/assets/images/Products/FiberConcrete.webp" alt="Fiber Concrete" />
       </div>
       <div class="reveal-right">
         <div class="prod-num">13 · Fiber Concrete</div>
-        <h2 class="prod-title">Fiber Concrete</h2>
+        <h2 class="prod-title">Fiber <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Reinforced</span>
           <span class="p-tag">Crack Resistant</span>
@@ -1178,12 +645,11 @@
     <div class="prod-c-inner" style="direction:rtl;">
       <div class="prod-c-image reveal-right" style="position:relative;direction:ltr;">
         <div class="img-badge">14 · No Fines Concrete</div>
-        <img src="src/assets/images/Products/NoFinesConcrete.webp"
-          alt="No Fines Concrete" />
+        <img src="src/assets/images/Products/NoFinesConcrete.webp" alt="No Fines Concrete" />
       </div>
       <div class="reveal-left" style="direction:ltr;">
         <div class="prod-num">14 · No Fines Concrete</div>
-        <h2 class="prod-title">No Fines Concrete</h2>
+        <h2 class="prod-title">No Fines <span style="color: #fec403;">Concrete</span></h2>
         <div class="prod-tags">
           <span class="p-tag">Pervious</span>
           <span class="p-tag">Eco-Friendly</span>
@@ -1225,11 +691,11 @@
       </svg>
     </a>
   </section>
-
   <footer class="fx">
     <div class="fx-top">
       <div class="fx-logo-ring fx-top-item">
-        <img src="./src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo" />
+        <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo"
+          width="118" height="52" />
       </div>
       <p class="fx-brand fx-top-item">SUN-X Concrete</p>
       <p class="fx-tagline fx-top-item">Strength · Mining · Ready-Mix</p>
@@ -1237,19 +703,19 @@
         Ready-Mix Concrete (RMC), aggregates, and allied solutions — with a strong presence across Tamil Nadu,
         Karnataka and Andhra Pradesh, and a growing international footprint in the UAE.</p>
       <div class="fx-socials fx-top-item">
-        <a href="#" class="fx-soc">
+        <a href="https://www.facebook.com/SunXGroup/" class="fx-soc">
           <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
           </svg>
         </a>
-        <a href="#" class="fx-soc">
+        <a href="https://x.com/sunxconcrete" class="fx-soc">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" width="14" height="14">
             <path
               d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
           </svg>
         </a>
-        <a href="#" class="fx-soc">
+        <a href="https://www.instagram.com/sunxgroup/" class="fx-soc">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" width="14" height="14">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -1257,7 +723,7 @@
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
           </svg>
         </a>
-        <a href="#" class="fx-soc">
+        <a href="https://www.linkedin.com/company/sun-x-concrete-india-pvt-ltd/?originalSubdomain=in" class="fx-soc">
           <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
             <rect x="2" y="9" width="4" height="12" />
@@ -1271,18 +737,19 @@
       <div class="fx-sub-label fx-top-item">Subsidiary of</div>
       <div class="fx-logos">
         <div class="fx-logo-item">
-          <img src="./src/assets/images/sunxholding.png" alt="SUNX Holdings"
+          <img loading="lazy" decoding="async" src="./src/assets/images/sunxholding.png" alt="SUNX Holdings"
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
         <div class="fx-logo-item">
-          <img src="./src/assets/images/sunxtech.png" alt="Suntech Civil Services"
+          <img loading="lazy" decoding="async" src="./src/assets/images/sunxtech.png" alt="Suntech Civil Services"
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
         <div class="fx-logo-item">
-          <img src="./src/assets/images/sun-x.png" alt="SUN-X" />
+          <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.png" alt="SUN-X" width="104"
+            height="46" />
         </div>
         <div class="fx-logo-item">
-          <img src="./src/assets/images/alturus.png" alt="Alturas Infrastructure"
+          <img loading="lazy" decoding="async" src="./src/assets/images/alturus.png" alt="Alturas Infrastructure"
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
       </div>
@@ -1300,8 +767,9 @@
             <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          <span class="fx2-info-text">No 11, Ramaniyam Isha, Old Mahabalipuram Road, Okkiyam Thoraipakkam, Chennai –
-            600097</span>
+          <span class="fx2-info-text"><a href="https://maps.app.goo.gl/Lc2wkWbB8LF5WUsU6" target="_blank">No 11,
+              Ramaniyam Isha, Old Mahabalipuram Road, Okkiyam Thoraipakkam, Chennai –
+              600097</a></span>
         </div>
         <div class="fx2-info-item">
           <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1309,9 +777,14 @@
             <path
               d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
-          <span class="fx2-info-text">
-            +91 9940400050<br />+91 88071 47050
-          </span>
+          <div class="footer-phonenumber">
+            <span class="fx2-info-text">
+              <a href="tel:+919940400050">+91 9940400050</a>
+            </span>
+            <span class="fx2-info-text">
+              <a href="tel:+918807147050">+91 88071 47050</a>
+            </span>
+          </div>
         </div>
         <div class="fx2-info-item">
           <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1326,16 +799,16 @@
       <div class="fx2-col">
         <p class="fx2-col-title">Quick Links</p>
         <ul class="fx2-links">
-          <li><a href="#">Our Products</a></li>
-          <li><a href="#">Our Projects</a></li>
-          <li><a href="#">Our Plants</a></li>
+          <li><a href="our-products.html" class="fx2-muted">Our Products</a></li>
+          <li><a href="our-projects.html">Our Projects</a></li>
+          <li><a href="our-plants.html">Our Plants</a></li>
         </ul>
       </div>
 
       <div class="fx2-col">
         <p class="fx2-col-title">About Us</p>
         <ul class="fx2-links">
-          <li><a href="index.html" class="fx2-muted">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Our Services</a></li>
           <li><a href="team.html">Our Team</a></li>
@@ -1347,10 +820,10 @@
       <div class="fx2-col">
         <p class="fx2-col-title">Resources &amp; Insights</p>
         <ul class="fx2-links">
-          <li><a href="#">Logistics Supervisor</a></li>
-          <li><a href="#">Accounts Executive</a></li>
-          <li><a href="#">Footing Foundation – Velacherry Project</a></li>
-          <li><a href="#">Bangalore Development Authority Project</a></li>
+          <li><a href="careers.html">Logistics Supervisor</a></li>
+          <li><a href="careers.html">Accounts Executive</a></li>
+          <li><a href="our-projects.html">Footing Foundation – Velacherry Project</a></li>
+          <li><a href="our-projects.html">Bangalore Development Authority Project</a></li>
         </ul>
       </div>
     </div>
@@ -1365,16 +838,7 @@
   <script src="src/js/index3.js"></script>
   <script type="module" src="src/js/comman.js" defer></script>
 
-  <script>
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-        else e.target.classList.remove('visible');
-      });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
-  </script>
+  <script src="src/js/our-products.js"></script>
 </body>
 
 </html>

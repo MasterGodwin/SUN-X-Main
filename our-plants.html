@@ -9,725 +9,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="/Nav-Dropdown.css">
+  <link rel="stylesheet" href="src/css/Nav-Dropdown.css">
   <link rel="stylesheet" href="src/css/about.css">
   <link rel="stylesheet" href="src/css/index.css" />
-  <style>
-    :root {
-      --red: #c0392b;
-      --navy: #1a2744;
-      --bg: #f5f4f2;
-      --bg-white: #ffffff;
-      --text: #1a1a1a;
-      --muted: #6e6e73;
-      --light-border: rgba(0, 0, 0, 0.08);
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg-white);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    /* ────────────────────────────────
-       HERO  (same split style as products/projects)
-    ──────────────────────────────── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .hero-left {
-      position: relative;
-      z-index: 2;
-      padding: 8rem 5vw 7rem 7vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    /* Red left-border title block (matches screenshot exactly) */
-    .hero-title-wrap {
-      border-left: 4px solid var(--red);
-      padding-left: 1.4rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.2rem, 4.5vw, 4rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      color: var(--navy);
-    }
-
-    .hero-desc {
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: var(--muted);
-      line-height: 1.85;
-      max-width: 420px;
-    }
-
-    /* Hero count pill */
-    .hero-count {
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      margin-top: 2.5rem;
-    }
-
-    .hero-count-num {
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: var(--red);
-      line-height: 1;
-      letter-spacing: -3px;
-    }
-
-    .hero-count-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* Hero right — full-bleed image */
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-right img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    @media (max-width: 860px) {
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-
-      .hero-left {
-        padding: 7rem 5vw 3rem;
-      }
-
-      .hero-right {
-        height: 55vw;
-      }
-    }
-
-    /* ────────────────────────────────
-       REGION SECTIONS
-    ──────────────────────────────── */
-
-    /* Alternating split: image | content  /  content | image */
-    .region {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 380px;
-    }
-
-    .region-img {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .region-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .region:hover .region-img img {
-      transform: scale(1.04);
-    }
-
-    .region-content {
-      background: var(--bg);
-      padding: 3.5rem 4vw 3.5rem 5vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    /* Region heading with red left border */
-    .region-heading {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .region-heading::before {
-      content: '';
-      display: block;
-      width: 4px;
-      height: 2.4rem;
-      background: var(--red);
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-
-    .region-heading h2 {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: -1px;
-      color: var(--navy);
-    }
-
-    /* Plants 2-col grid */
-    .plants-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .plant-card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 1rem 1.2rem 1.2rem;
-      border: 1px solid var(--light-border);
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-
-    .plant-card:hover {
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      transform: translateY(-2px);
-    }
-
-    .plant-name {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.55rem;
-      line-height: 1.3;
-    }
-
-    .plant-addr {
-      font-size: 0.74rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    /* Single-plant (full width inside grid) */
-    .plant-card.full {
-      grid-column: 1 / -1;
-    }
-
-    /* For regions with image on RIGHT */
-    .region.reverse .region-img {
-      order: 2;
-    }
-
-    .region.reverse .region-content {
-      order: 1;
-    }
-
-    @media (max-width: 860px) {
-      .region {
-        grid-template-columns: 1fr;
-      }
-
-      .region.reverse .region-img {
-        order: 0;
-      }
-
-      .region.reverse .region-content {
-        order: 0;
-      }
-
-      .region-img {
-        height: 55vw;
-      }
-
-      .region-content {
-        padding: 2.5rem 5vw;
-      }
-
-      .plants-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ────────────────────────────────
-       REACH US STRIP
-    ──────────────────────────────── */
-    .reach-strip {
-      background: var(--navy);
-      padding: 4rem 7vw;
-      display: flex;
-      align-items: center;
-      gap: 4vw;
-      flex-wrap: wrap;
-    }
-
-    .reach-label {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 800;
-      color: #fff;
-      white-space: nowrap;
-      min-width: 140px;
-    }
-
-    .reach-form {
-      display: flex;
-      gap: 1rem;
-      flex: 1;
-      flex-wrap: wrap;
-    }
-
-    .reach-form input {
-      flex: 1;
-      min-width: 160px;
-      padding: 0.8rem 1.1rem;
-      border: none;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 0.82rem;
-      color: var(--text);
-      background: #f0f0f0;
-      outline: none;
-      transition: background 0.2s;
-    }
-
-    .reach-form input:focus {
-      background: #fff;
-    }
-
-    .reach-form input::placeholder {
-      color: #aaa;
-    }
-
-    .reach-btn {
-      padding: 0.8rem 1.8rem;
-      background: #2196f3;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 0.82rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      white-space: nowrap;
-    }
-
-    .reach-btn:hover {
-      background: #1976d2;
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 640px) {
-      .reach-strip {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-      }
-
-      .reach-form {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .reach-form input {
-        width: 100%;
-      }
-    }
-
-    /* ────────────────────────────────
-       SCROLL ANIMATIONS
-    ──────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(44px);
-      filter: blur(4px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        filter 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-      filter: none;
-    }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-44px);
-      filter: blur(4px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        filter 0.8s ease;
-    }
-
-    .reveal-left.visible {
-      opacity: 1;
-      transform: none;
-      filter: none;
-    }
-
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(44px);
-      filter: blur(4px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        filter 0.8s ease;
-    }
-
-    .reveal-right.visible {
-      opacity: 1;
-      transform: none;
-      filter: none;
-    }
-
-    /* Stagger plant cards */
-    .plant-card:nth-child(1) {
-      transition-delay: 0s;
-    }
-
-    .plant-card:nth-child(2) {
-      transition-delay: 0.07s;
-    }
-
-    .plant-card:nth-child(3) {
-      transition-delay: 0.14s;
-    }
-
-    .plant-card:nth-child(4) {
-      transition-delay: 0.21s;
-    }
-
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap');
-
-    .fx {
-      font-family: 'Instrument Sans', sans-serif;
-      background: #fff;
-      padding: 4rem 5vw 0;
-      border-top: 1px solid #eeede8
-    }
-
-    .fx-top {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid #eeede8
-    }
-
-    .fx-main-logo {
-      height: 52px;
-      object-fit: contain
-    }
-
-    .fx-brand {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: #1a2744;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.3rem
-    }
-
-    .fx-tagline {
-      font-size: 0.65rem;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 1.3rem
-    }
-
-    .fx-desc {
-      font-size: 0.83rem;
-      color: #888;
-      line-height: 1.9;
-      max-width: 460px;
-      margin-bottom: 2rem
-    }
-
-    .fx-socials {
-      display: flex;
-      gap: 0.7rem
-    }
-
-    .fx-soc {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1px solid #e8e6e0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #bbb;
-      text-decoration: none;
-      transition: all 0.35s cubic-bezier(.34, 1.56, .64, 1)
-    }
-
-    .fx-soc:hover {
-      border-color: #1a2744;
-      color: #1a2744;
-      transform: translateY(-5px) scale(1.12)
-    }
-
-    .fx-sub {
-      padding: 2.8rem 0 2.5rem
-    }
-
-    /* .fx-sub-label {
-      font-size: 0.62rem;
-      font-weight: 500;
-      color: #ccc;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 14px
-    } */
-
-    .fx-sub-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #eeede8
-    }
-
-    .fx-logos {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem
-    }
-
-    /* .fx-logo-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.2rem;
-      border: 1px solid #eeede8;
-      border-radius: 16px;
-      cursor: pointer;
-      background: #fff;
-      position: relative;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.55s cubic-bezier(.34, 1.56, .64, 1), transform 0.55s cubic-bezier(.34, 1.56, .64, 1), border-color 0.4s, box-shadow 0.4s
-    } */
-
-    .fx-logo-item.fx-in {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    .fx-logo-item::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 2px;
-      background: #1a2744;
-      border-radius: 2px;
-      transition: width 0.3s
-    }
-
-    .fx-logo-item:hover {
-      border-color: #ddd;
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(26, 39, 68, 0.08)
-    }
-
-    .fx-logo-item:hover::after {
-      width: 40%
-    }
-
-    .fx-logo-item img {
-      max-height: 46px;
-      max-width: 120px;
-      object-fit: contain
-    }
-
-    .fx-top-item {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.55s cubic-bezier(.34, 1.56, .64, 1), transform 0.55s cubic-bezier(.34, 1.56, .64, 1)
-    }
-
-    .fx-top-item.fx-in {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    @media(max-width:720px) {
-      .fx-logos {
-        grid-template-columns: repeat(2, 1fr)
-      }
-    }
-
-    @media(max-width:420px) {
-      .fx-logos {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.7rem
-      }
-
-      .fx-logo-item {
-        padding: 1.4rem 0.8rem
-      }
-    }
-
-    /* .fx2 {
-      font-family: 'Inter', Arial, sans-serif;
-      background: #fff;
-      padding: 4rem 5vw 0;
-      border-top: 1px solid #e8e8e8
-    } */
-
-    .fx2-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
-      gap: 3rem;
-      padding-bottom: 3.5rem
-    }
-
-    .fx2-col-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #1a2744;
-      margin-bottom: 1.4rem
-    }
-
-    .fx2-info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 1.2rem
-    }
-
-    .fx2-info-icon {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      color: #1a2744;
-      margin-top: 2px
-    }
-
-    .fx2-info-text {
-      font-size: 0.84rem;
-      color: #555;
-      line-height: 1.7
-    }
-
-    /* .fx2-info-text a {
-      color: #555;
-      text-decoration: none
-    } */
-
-    .fx2-info-text a:hover {
-      color: #1a2744
-    }
-
-    .fx2-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem
-    }
-
-    /* .fx2-links li a {
-      font-size: 0.84rem;
-      color: #555;
-      text-decoration: none;
-      transition: color 0.2s, padding-left 0.2s
-    } */
-
-    .fx2-links li a:hover {
-      color: #1a2744;
-      padding-left: 4px
-    }
-
-    .fx2-links li a.fx2-muted {
-      color: #aaa
-    }
-
-    .fx2-links li a.fx2-muted:hover {
-      color: #1a2744
-    }
-
-    .fx2-bottom {
-      background: #111;
-      margin: 0 -5vw;
-      padding: 1.1rem 5vw;
-      display: flex;
-      align-items: center;
-      justify-content: center
-    }
-
-    .fx2-bottom-right {
-      font-size: 0.88rem;
-      color: #fff;
-      letter-spacing: 0.3px
-    }
-
-    .fx2-col {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.6s cubic-bezier(.34, 1.56, .64, 1), transform 0.6s cubic-bezier(.34, 1.56, .64, 1)
-    }
-
-    .fx2-col.fx-in {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    @media(max-width:900px) {
-      .fx2-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem
-      }
-    }
-
-    @media(max-width:560px) {
-      .fx2-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem
-      }
-
-      .fx2-bottom {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.3rem
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="src/css/our-plants.css" />
 </head>
 
 <body>
@@ -735,7 +20,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-left">
       <a href="#" class="logo">
-        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" />
+        <img src="./src/assets/images/sun-x.png" alt="Logo" class="logo-img" width="160" height="71" />
       </a>
     </div>
     <div class="main-nav">
@@ -745,9 +30,8 @@
         <a href="#">About Us</a>
         <div class="nav-dropdown">
           <a href="about.html">About Sunx Concrete</a>
-          <a href="#">About Sunx UAE</a>
+          <a href="about-sunx-uae.html">About Sunx UAE</a>
           <a href="team.html">Our Team</a>
-          <a href="careers.html">Careers</a>
         </div>
       </div>
 
@@ -756,12 +40,10 @@
       <div class="nav-item">
         <a href="#">Capabilities</a>
         <div class="nav-dropdown">
-          <a href="#">Quality Assurance</a>
-          <a href="#">Production Facilities</a>
-          <a href="#">Fleet Management</a>
-          <a href="#">Batching Plant</a>
-          <a href="#">Product Portfolio</a>
-          <a href="#">Certifications</a>
+          <a href="quality-assurance.html">Quality Assurance</a>
+          <a href="production-facilities.html">Production Facilities</a>
+          <a href="fleet-management.html">Fleet Management</a>
+          <a href="batching-plant.html">Batching Plant</a>
         </div>
       </div>
 
@@ -774,7 +56,7 @@
         </div>
       </div>
 
-      <a href="careers.html">Carrers</a>
+      <a href="careers.html">Careers</a>
 
       <a href="contact.html">Contact Us</a>
     </div>
@@ -787,7 +69,7 @@
   <div class="drawer-overlay" id="drawerOverlay"></div>
   <div class="drawer" id="drawer">
     <div class="drawer-header">
-      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" />
+      <img src="./src/assets/images/sun-x.png" alt="Logo" class="drawer-logo" width="108" height="48" />
       <button class="drawer-close" id="drawerClose">&#x2715;</button>
     </div>
     <nav class="drawer-nav">
@@ -797,8 +79,8 @@
         <summary>About Us</summary>
         <div class="drawer-subnav">
           <a href="about.html">About Us</a>
+          <a href="about-sunx-uae.html">About Sunx UAE</a>
           <a href="team.html">Our Team</a>
-          <a href="careers.html">Careers</a>
         </div>
       </details>
 
@@ -807,12 +89,10 @@
       <details>
         <summary>Capabilities</summary>
         <div class="drawer-subnav">
-          <a href="#">Quality Assurance</a>
-          <a href="#">Production Facilities</a>
-          <a href="#">Fleet Management</a>
-          <a href="#">Batching Plant</a>
-          <a href="#">Product Portfolio</a>
-          <a href="#">Certifications</a>
+          <a href="quality-assurance.html">Quality Assurance</a>
+          <a href="production-facilities.html">Production Facilities</a>
+          <a href="fleet-management.html">Fleet Management</a>
+          <a href="batching-plant.html">Batching Plant</a>
         </div>
       </details>
 
@@ -825,14 +105,14 @@
         </div>
       </details>
 
-      <a href="careers.html">Carrers</a>
+      <a href="careers.html">Careers</a>
 
       <a href="contact.html">Contact Us</a>
     </nav>
     <div class="drawer-footer">© 2026 Sun-X</div>
   </div>
 
-  <section class="about-hero" id="hero">
+  <section class="about-hero5" id="hero">
     <div class="about-hero-overlay"></div>
     <div class="about-hero-content">
       <div class="slide-eyebrow">
@@ -942,8 +222,7 @@
     </div>
   </section>
 
-
-  <footer class="fx">
+<footer class="fx">
     <div class="fx-top">
       <div class="fx-logo-ring fx-top-item">
         <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo"
@@ -1008,21 +287,7 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const topItems = document.querySelectorAll('.fx-top-item');
-      const logoItems = document.querySelectorAll('.fx-logo-item');
-      const fxObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) { e.target.classList.add('fx-in'); fxObs.unobserve(e.target); }
-        });
-      }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-      topItems.forEach((el, i) => { el.style.transitionDelay = (i * 0.08) + 's'; fxObs.observe(el); });
-      logoItems.forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; fxObs.observe(el); });
-    })();
-  </script>
-
-  <footer class="fx2">
+<footer class="fx2">
     <div class="fx2-grid">
 
       <div class="fx2-col">
@@ -1099,30 +364,7 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const cols = document.querySelectorAll('.fx2-col');
-      const obs2 = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) { e.target.classList.add('fx-in'); obs2.unobserve(e.target); }
-        });
-      }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-      cols.forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; obs2.observe(el); });
-    })();
-  </script>
-
-  <script>
-    /* Scroll reveal */
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-        else e.target.classList.remove('visible');
-      });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
-  </script>
-
+<script src="src/js/our-plants.js"></script>
 </body>
 
 </html>

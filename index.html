@@ -15,96 +15,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
-  <link rel="preload" as="image" href="./src/assets/images/HO.jpg" fetchpriority="high" />
+  <!-- <link rel="preload" as="image" href="./src/assets/images/HO.jpg" fetchpriority="high" /> -->
   <link rel="stylesheet" href="src/css/comman.css" />
   <link rel="stylesheet" href="src/css/index.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="/Nav-Dropdown.css" />
-  <style>
-    .valued-carousel {
-      overflow: hidden;
-      width: 100%;
-      position: relative;
-    }
-
-    .valued-carousel::before,
-    .valued-carousel::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 80px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .valued-carousel::before {
-      left: 0;
-      background: linear-gradient(to right, #0a0a0a, transparent);
-    }
-
-    .valued-carousel::after {
-      right: 0;
-      background: linear-gradient(to left, #0a0a0a, transparent);
-    }
-
-    .valued-track {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      width: max-content;
-      animation: valued-scroll 30s linear infinite;
-    }
-
-    .vc-cell {
-      flex: 0 0 220px;
-      height: 110px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 1rem 1.5rem;
-    }
-
-    .vc-img {
-      max-width: 120%;
-      max-height: 100px;
-      object-fit: contain;
-      /* filter: grayscale(100%) brightness(1.6); */
-      /* opacity: 0.7; */
-      transition: filter 0.3s, opacity 0.3s;
-    }
-
-    .vc-cell:hover .vc-img {
-      filter: none;
-      opacity: 1;
-    }
-
-    .valued-carousel:hover .valued-track {
-      animation-play-state: paused;
-    }
-
-    @keyframes valued-scroll {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .vc-cell {
-        flex: 0 0 160px;
-        height: 90px;
-      }
-
-      .vc-img {
-        max-height: 44px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="stylesheet" href="src/css/Nav-Dropdown.css" />
 </head>
 
 <body>
@@ -606,7 +521,7 @@
           Media
           <span class="news-eyebrow-line"></span>
         </div>
-        <h2 class="news-section-title">News and Press</h2>
+        <h2 class="about-title">News and <span class="about-red">Press</span></h2>
       </div>
 
       <!-- Featured article card -->
@@ -639,7 +554,7 @@
       <!-- Left: text -->
       <div class="plants-left" id="plantsLeft">
         <div class="plants-accent"></div>
-        <h2 class="plants-title">Our Concrete<br>Plants</h2>
+        <h2 class="about-title">Our Concrete<span class="about-red"> Plants</span></h2>
         <p class="plants-desc">Every project we deliver is an opportunity for us to bring our unique thinking to solve
           problems, innovate and collaborate with our clients and beyond.</p>
         <a href="our-plants.html" class="plants-btn">
@@ -712,7 +627,7 @@
           <span class="sx-pill-dot"></span>
           <span class="sx-pill-text">Why Sun-X</span>
         </div>
-        <p class="sx-title">Built on trust,<br>delivered with <em>precision.</em></p>
+        <p class="about-title">Built on trust,<br>delivered with <span class="about-red">precision.</span></p>
       </div>
 
       <div class="sx-grid">

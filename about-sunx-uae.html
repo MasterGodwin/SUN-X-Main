@@ -17,655 +17,10 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="src/css/comman.css" />
   <link rel="stylesheet" href="src/css/about.css" />
-  <link rel="stylesheet" href="/Nav-Dropdown.css" />
+  <link rel="stylesheet" href="src/css/Nav-Dropdown.css" />
   <link rel="stylesheet" href="src/css/index.css" />
-  <style>
-    /* ── UAE-specific overrides & new sections ── */
-
-    .uae-hero {
-      position: relative;
-      height: 92vh;
-      min-height: 540px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: #0a0f1e;
-    }
-
-    .uae-hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, rgba(10, 15, 30, 0.85) 0%, rgba(10, 15, 30, 0.5) 60%, transparent 100%),
-        url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1400&q=80') center/cover no-repeat;
-    }
-
-    .uae-hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 6vw;
-      max-width: 780px;
-    }
-
-    .uae-hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 1.5rem;
-    }
-
-    .uae-hero-eyebrow .eline {
-      width: 36px;
-      height: 2px;
-      background: #e63329;
-    }
-
-    .uae-hero-eyebrow span {
-      font-size: 0.72rem;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.65);
-      font-family: 'Instrument Sans', sans-serif;
-    }
-
-    .uae-hero-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.08;
-      letter-spacing: -0.5px;
-      margin-bottom: 1.4rem;
-    }
-
-    .uae-hero-title .red {
-      color: #e63329;
-    }
-
-    .uae-hero-subtitle {
-      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-      color: rgba(255, 255, 255, 0.75);
-      line-height: 1.8;
-      max-width: 580px;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* ── UAE Intro ── */
-    .uae-intro {
-      padding: 6rem 6vw;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      background: #fff;
-    }
-
-    .uae-intro-text .section-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 1.2rem;
-    }
-
-    .uae-intro-text .section-eyebrow .eyebrow-line {
-      width: 30px;
-      height: 2px;
-      background: #e63329;
-    }
-
-    .uae-intro-text .section-eyebrow span {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #888;
-      font-family: 'Instrument Sans', sans-serif;
-    }
-
-    .uae-intro-text h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 700;
-      color: #111;
-      line-height: 1.12;
-      margin-bottom: 1.4rem;
-    }
-
-    .uae-intro-text h2 .red {
-      color: #e63329;
-    }
-
-    .uae-intro-text p {
-      font-size: 0.93rem;
-      color: #555;
-      line-height: 1.85;
-      margin-bottom: 1rem;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .uae-intro-visual {
-      position: relative;
-    }
-
-    .uae-intro-visual .ui-main {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      border-radius: 16px;
-    }
-
-    .uae-intro-visual .ui-badge {
-      position: absolute;
-      bottom: -24px;
-      left: -24px;
-      background: #e63329;
-      color: #fff;
-      padding: 1.4rem 1.8rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 12px 40px rgba(230, 51, 41, 0.3);
-    }
-
-    .ui-badge .badge-num {
-      display: block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .ui-badge .badge-lbl {
-      font-size: 0.72rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      opacity: 0.9;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* ── UAE Vision / Mission Cards ── */
-    .uae-vm {
-      padding: 6rem 6vw;
-      background: #f7f6f2;
-    }
-
-    .uae-vm-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-
-    .uae-vm-header .sec-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .uae-vm-header .sec-eyebrow .eline {
-      width: 28px;
-      height: 2px;
-      background: #e63329;
-    }
-
-    .uae-vm-header .sec-eyebrow span {
-      font-size: 0.68rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #888;
-      font-family: 'Instrument Sans', sans-serif;
-    }
-
-    .uae-vm-header h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 700;
-      color: #111;
-    }
-
-    .uae-vm-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .uae-vm-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 2.4rem 2rem;
-      border: 1px solid #eeede8;
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
-
-    .uae-vm-card:hover {
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-      transform: translateY(-6px);
-    }
-
-    .uae-vm-card .card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: #fff5f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.4rem;
-    }
-
-    .uae-vm-card .card-icon svg {
-      width: 22px;
-      height: 22px;
-      stroke: #e63329;
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .uae-vm-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #1a2744;
-      margin-bottom: 0.8rem;
-      letter-spacing: 0.3px;
-    }
-
-    .uae-vm-card p {
-      font-size: 0.87rem;
-      color: #666;
-      line-height: 1.85;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* ── UAE Why Section ── */
-    .uae-why {
-      padding: 6rem 6vw;
-      background: #1a2744;
-    }
-
-    .uae-why-inner {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .uae-why-text .sec-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 1.2rem;
-    }
-
-    .uae-why-text .sec-eyebrow .eline {
-      width: 28px;
-      height: 2px;
-      background: #e63329;
-    }
-
-    .uae-why-text .sec-eyebrow span {
-      font-size: 0.68rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.5);
-      font-family: 'Instrument Sans', sans-serif;
-    }
-
-    .uae-why-text h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.1;
-      margin-bottom: 1.4rem;
-    }
-
-    .uae-why-text h2 .red {
-      color: #e63329;
-    }
-
-    .uae-why-text p {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.65);
-      line-height: 1.9;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .uae-why-points {
-      display: flex;
-      flex-direction: column;
-      gap: 1.4rem;
-    }
-
-    .uae-why-point {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.4rem 1.6rem;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: background 0.25s, border-color 0.25s;
-    }
-
-    .uae-why-point:hover {
-      background: rgba(230, 51, 41, 0.1);
-      border-color: rgba(230, 51, 41, 0.3);
-    }
-
-    .uae-why-point .wp-icon {
-      width: 40px;
-      height: 40px;
-      flex-shrink: 0;
-      border-radius: 10px;
-      background: rgba(230, 51, 41, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .uae-why-point .wp-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: #e63329;
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .uae-why-point .wp-body h4 {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.3rem;
-    }
-
-    .uae-why-point .wp-body p {
-      font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.55);
-      line-height: 1.7;
-    }
-
-    /* ── UAE Stats Band ── */
-    .uae-stats {
-      background: #e63329;
-      padding: 4rem 6vw;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      text-align: center;
-    }
-
-    .uae-stat-item .sn {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-    }
-
-    .uae-stat-item .sl {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.8);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-top: 0.4rem;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* ── UAE Services ── */
-    .uae-services {
-      padding: 6rem 6vw;
-      background: #fff;
-    }
-
-    .uae-services-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-
-    .uae-services-header .sec-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .uae-services-header .sec-eyebrow .eline {
-      width: 28px;
-      height: 2px;
-      background: #e63329;
-    }
-
-    .uae-services-header .sec-eyebrow span {
-      font-size: 0.68rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #888;
-      font-family: 'Instrument Sans', sans-serif;
-    }
-
-    .uae-services-header h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 1rem;
-    }
-
-    .uae-services-header p {
-      font-size: 0.9rem;
-      color: #777;
-      max-width: 560px;
-      margin: 0 auto;
-      line-height: 1.8;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .uae-services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.8rem;
-    }
-
-    .uae-svc-card {
-      border: 1px solid #eeede8;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
-
-    .uae-svc-card:hover {
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-      transform: translateY(-6px);
-    }
-
-    .uae-svc-img {
-      height: 200px;
-      background: #f0eeea;
-      overflow: hidden;
-    }
-
-    .uae-svc-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .uae-svc-card:hover .uae-svc-img img {
-      transform: scale(1.06);
-    }
-
-    .uae-svc-body {
-      padding: 1.6rem;
-    }
-
-    .uae-svc-body h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #1a2744;
-      margin-bottom: 0.6rem;
-    }
-
-    .uae-svc-body p {
-      font-size: 0.84rem;
-      color: #666;
-      line-height: 1.75;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* ── UAE CTA ── */
-    .uae-cta {
-      padding: 6rem 6vw;
-      background: #0a0f1e;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .uae-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, rgba(230, 51, 41, 0.12) 0%, transparent 70%);
-    }
-
-    .uae-cta-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .uae-cta h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.1;
-      margin-bottom: 1.2rem;
-    }
-
-    .uae-cta h2 .red {
-      color: #e63329;
-    }
-
-    .uae-cta p {
-      font-size: 0.92rem;
-      color: rgba(255, 255, 255, 0.65);
-      line-height: 1.85;
-      margin-bottom: 2.5rem;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .uae-cta-btns {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #e63329;
-      color: #fff;
-      padding: 0.85rem 2rem;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      font-family: 'Inter', sans-serif;
-      transition: background 0.25s, transform 0.2s;
-    }
-
-    .btn-primary:hover {
-      background: #c0271e;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: #fff;
-      padding: 0.85rem 2rem;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
-      font-family: 'Inter', sans-serif;
-      transition: border-color 0.25s, background 0.25s;
-    }
-
-    .btn-outline:hover {
-      border-color: #fff;
-      background: rgba(255, 255, 255, 0.07);
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 900px) {
-      .uae-intro {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .uae-vm-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .uae-why-inner {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .uae-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .uae-services-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .uae-intro {
-        padding: 4rem 5vw;
-      }
-
-      .uae-vm-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .uae-why {
-        padding: 4rem 5vw;
-      }
-
-      .uae-stats {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 3rem 5vw;
-      }
-
-      .uae-services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .uae-cta {
-        padding: 4rem 5vw;
-      }
-
-      .uae-intro-visual .ui-badge {
-        bottom: -16px;
-        left: 12px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="src/css/about-sunx-uae.css" />
+  <link rel="stylesheet" href="src/css/top-customers.css" />
 </head>
 
 <body>
@@ -772,7 +127,7 @@
         <div class="eline"></div>
         <span>About Us · SUN-X UAE</span>
       </div>
-      <h1 class="uae-hero-title">BUILDING THE<br><span class="red">UAE'S FUTURE</span><br>WITH TRUST</h1>
+      <h1 class="uae-hero-title">BUILDING THE<br>UAE'S FUTURE<br><span class="red" style="color: #fec403;">WITH TRUST</span></h1>
       <p class="uae-hero-subtitle">SUN-X brings its 25+ years of concrete excellence and construction expertise from
         South India to the dynamic UAE market — delivering quality, reliability, and innovation across every project.
       </p>
@@ -798,9 +153,7 @@
         production and logistics.</p>
     </div>
     <div class="uae-intro-visual anim-right">
-      <img class="ui-main" src="https://images.unsplash.com/photo-1606820854416-439b3305ff39?w=900&q=80"
-        alt="SUN-X UAE Construction"
-        onerror="this.src='https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&q=80'" />
+      <img class="ui-main" src="src/assets/images/SunxUAE.webp" alt="SUN-X UAE Construction" />
       <div class="ui-badge">
         <span class="badge-num">25+</span>
         <span class="badge-lbl">Years of<br>Excellence</span>
@@ -816,7 +169,7 @@
         <span>Our Foundation</span>
         <div class="eline"></div>
       </div>
-      <h2>What Drives <span style="color:#e63329;">SUN-X UAE</span></h2>
+      <h2>What Drives <span style="color:#fec403;">SUN-X UAE</span></h2>
     </div>
     <div class="uae-vm-grid">
 
@@ -871,7 +224,7 @@
           <div class="eline"></div>
           <span>Why UAE</span>
         </div>
-        <h2>Why SUN-X Chose<br>The <span class="red">UAE</span></h2>
+        <h2>Why SUN-X Chose The <span class="red">UAE</span></h2>
         <p>The United Arab Emirates is one of the world's most dynamic construction markets, with massive infrastructure
           investment, iconic mega-projects, and a booming real estate sector. SUN-X brings proven South Indian expertise
           into this high-demand environment — offering a heritage of quality that UAE developers and contractors can
@@ -972,7 +325,7 @@
         <span>What We Offer</span>
         <div class="eline"></div>
       </div>
-      <h2>Our Services in the <span style="color:#e63329;">UAE</span></h2>
+      <h2>Our Services in the <span style="color:#fec403;">UAE</span></h2>
       <p>Bringing South India's most trusted concrete and construction material expertise to UAE's world-class projects
         — with the same uncompromising quality and on-time delivery.</p>
     </div>
@@ -980,7 +333,7 @@
 
       <div class="uae-svc-card anim-up delay-1">
         <div class="uae-svc-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80"
+          <img loading="lazy" src="src/assets/images/about/pouring-concrete-as-foundation.jpg"
             alt="Ready-Mix Concrete UAE" />
         </div>
         <div class="uae-svc-body">
@@ -992,7 +345,7 @@
 
       <div class="uae-svc-card anim-up delay-2">
         <div class="uae-svc-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80"
+          <img loading="lazy" src="src/assets/images/about/POMPlant.jpg"
             alt="Aggregates UAE" />
         </div>
         <div class="uae-svc-body">
@@ -1004,7 +357,7 @@
 
       <div class="uae-svc-card anim-up delay-3">
         <div class="uae-svc-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=700&q=80"
+          <img loading="lazy" src="src/assets/images/about/DSC03734.JPG"
             alt="Concrete Supply UAE" />
         </div>
         <div class="uae-svc-body">
@@ -1014,6 +367,85 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+   <section class="lgm-section">
+    <div class="lgm-overlay"></div>
+    <div class="lgm-inner">
+ 
+      <div class="lgm-header">
+        <div class="sec-eyebrow lgm-eyebrow">
+          <div class="eline"></div>
+          <span>Landmark Projects</span>
+        </div>
+        <h2 class="lgm-title">A Legacy of <span class="red">Structural Milestones</span></h2>
+      </div>
+ 
+      <div class="lgm-grid">
+ 
+        <div class="lgm-card anim-up delay-1">
+          <div class="lgm-card-bg" style="background-image:url('src/assets/images/Siniya-Island-2.jpg')"></div>
+          <div class="lgm-card-shade"></div>
+          <div class="lgm-card-content">
+            <div class="lgm-developer">Sobha</div>
+            <div class="lgm-project">Siniya Island</div>
+            <div class="lgm-location">Umm Al Quwain, UAE</div>
+          </div>
+        </div>
+ 
+        <div class="lgm-card anim-up delay-2">
+          <div class="lgm-card-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80')"></div>
+          <div class="lgm-card-shade"></div>
+          <div class="lgm-card-content">
+            <div class="lgm-developer">Sobha</div>
+            <div class="lgm-project">Down Town</div>
+            <div class="lgm-location">Dubai, UAE</div>
+          </div>
+        </div>
+ 
+        <div class="lgm-card anim-up delay-3">
+          <div class="lgm-card-bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80')"></div>
+          <div class="lgm-card-shade"></div>
+          <div class="lgm-card-content">
+            <div class="lgm-developer">Ras Al Khaimah</div>
+            <div class="lgm-project">Narjan Island</div>
+            <div class="lgm-location">Ras Al Khaimah, UAE</div>
+          </div>
+        </div>
+ 
+      </div><!-- /.lgm-grid -->
+ 
+      <p class="lgm-footnote">Each milestone reflects SUN-X UAE's commitment to delivering world-class concrete solutions for the region's most ambitious developments.</p>
+ 
+    </div><!-- /.lgm-inner -->
+  </section>
+
+  <!-- TOP CUSTOMERS -->
+  <section class="tc-section">
+    <div class="tc-header">
+      <div class="sec-eyebrow">
+        <div class="eline"></div>
+        <span>Trusted By</span>
+        <div class="eline"></div>
+      </div>
+      <h2>Top <span style="color:#fec403;">Customers</span></h2>
+      <p>We're proud to partner with some of the most respected names in construction and real estate across the
+        region.</p>
+    </div>
+
+    <div class="tc-carousel">
+      <div class="tc-track" id="tcTrack">
+        <div class="tc-logo"><img src="src/assets/images/TopCustomerLogo/BeamConcrete.png" alt="Client 1" loading="lazy" /></div>
+        <div class="tc-logo"><img src="src/assets/images/TopCustomerLogo/BharathTower.png" alt="Client 2" loading="lazy" /></div>
+        <div class="tc-logo"><img src="src/assets/images/TopCustomerLogo/CityGateBuilding.png" alt="Client 3" loading="lazy" /></div>
+        <div class="tc-logo"><img src="src/assets/images/TopCustomerLogo/FlashBuilding.png" alt="Client 4" loading="lazy" /></div>
+        <div class="tc-logo"><img src="src/assets/images/TopCustomerLogo/FutureGrowth.png" alt="Client 5" loading="lazy" /></div>
+        <div class="tc-logo"><img src="src/assets/images/TopCustomerLogo/KRKBuilding.png" alt="Client 6" loading="lazy" /></div>
+        <div class="tc-logo"><img src="src/assets/images/TopCustomerLogo/NationBuilding.png" alt="Client 7" loading="lazy" /></div>
+        <div class="tc-logo"><img src="src/assets/images/TopCustomerLogo/SolidRock.png" alt="Client 8" loading="lazy" /></div>
+        <div class="tc-logo"><img src="src/assets/images/TopCustomerLogo/TMC.png" alt="Client 8" loading="lazy" /></div>  
+      </div>
     </div>
   </section>
 
@@ -1173,39 +605,11 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const topItems = document.querySelectorAll('.fx-top-item');
-      const logoItems = document.querySelectorAll('.fx-logo-item');
-      const fxObs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('fx-in'); fxObs.unobserve(e.target); } });
-      }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-      topItems.forEach((el, i) => { el.style.transitionDelay = (i * 0.08) + 's'; fxObs.observe(el); });
-      logoItems.forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; fxObs.observe(el); });
-    })();
-  </script>
-
-  <script>
-    (function () {
-      const cols = document.querySelectorAll('.fx2-col');
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('fx-in'); obs.unobserve(e.target); } });
-      }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-      cols.forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; obs.observe(el); });
-    })();
-  </script>
-
-  <script src="src/js/comman.js"></script>
+<script src="src/js/comman.js"></script>
   <script src="src/js/index3.js"></script>
 
-  <script>
-    const animEls = document.querySelectorAll('.anim-left, .anim-right, .anim-up');
-    const animObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
-    animEls.forEach(el => animObserver.observe(el));
-  </script>
-
+<script src="src/js/about-sunx-uae.js"></script>
+  <script src="src/js/top-customers.js"></script>
 </body>
 
 </html>

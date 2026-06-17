@@ -1,0 +1,412 @@
+
+    :root {
+      --red: #700707;
+      --navy: #1a2744;
+      --bg: #f5f4f2;
+      --bg-white: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6e6e73;
+      --light-border: rgba(0, 0, 0, 0.08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg-white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ────────────────────────────────
+       HERO  (same split style as products/projects)
+    ──────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      padding: 8rem 5vw 7rem 7vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Red left-border title block (matches screenshot exactly) */
+    .hero-title-wrap {
+      border-left: 4px solid var(--red);
+      padding-left: 1.4rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--navy);
+    }
+
+    .hero-desc {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 420px;
+    }
+
+    /* Hero count pill */
+    .hero-count {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .hero-count-num {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .hero-count-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Hero right — full-bleed image */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-left {
+        padding: 7rem 5vw 3rem;
+      }
+
+      .hero-right {
+        height: 55vw;
+      }
+    }
+
+    /* ────────────────────────────────
+       REGION SECTIONS
+    ──────────────────────────────── */
+
+    /* Alternating split: image | content  /  content | image */
+    .region {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 380px;
+    }
+
+    .region-img {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .region-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .region:hover .region-img img {
+      transform: scale(1.04);
+    }
+
+    .region-content {
+      background: var(--bg);
+      padding: 3.5rem 4vw 3.5rem 5vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Region heading with red left border */
+    .region-heading {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .region-heading::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 2.4rem;
+      background: var(--red);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .region-heading h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--navy);
+    }
+
+    /* Plants 2-col grid */
+    .plants-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .plant-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem 1.2rem 1.2rem;
+      border: 1px solid var(--light-border);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .plant-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .plant-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #700707;
+      margin-bottom: 0.55rem;
+      line-height: 1.3;
+    }
+
+    .plant-addr {
+      font-size: 0.74rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Single-plant (full width inside grid) */
+    .plant-card.full {
+      grid-column: 1 / -1;
+    }
+
+    /* For regions with image on RIGHT */
+    .region.reverse .region-img {
+      order: 2;
+    }
+
+    .region.reverse .region-content {
+      order: 1;
+    }
+
+    @media (max-width: 860px) {
+      .region {
+        grid-template-columns: 1fr;
+      }
+
+      .region.reverse .region-img {
+        order: 0;
+      }
+
+      .region.reverse .region-content {
+        order: 0;
+      }
+
+      .region-img {
+        height: 55vw;
+      }
+
+      .region-content {
+        padding: 2.5rem 5vw;
+      }
+
+      .plants-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ────────────────────────────────
+       REACH US STRIP
+    ──────────────────────────────── */
+    .reach-strip {
+      background: var(--navy);
+      padding: 4rem 7vw;
+      display: flex;
+      align-items: center;
+      gap: 4vw;
+      flex-wrap: wrap;
+    }
+
+    .reach-label {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
+      min-width: 140px;
+    }
+
+    .reach-form {
+      display: flex;
+      gap: 1rem;
+      flex: 1;
+      flex-wrap: wrap;
+    }
+
+    .reach-form input {
+      flex: 1;
+      min-width: 160px;
+      padding: 0.8rem 1.1rem;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      color: var(--text);
+      background: #f0f0f0;
+      outline: none;
+      transition: background 0.2s;
+    }
+
+    .reach-form input:focus {
+      background: #fff;
+    }
+
+    .reach-form input::placeholder {
+      color: #aaa;
+    }
+
+    .reach-btn {
+      padding: 0.8rem 1.8rem;
+      background: #2196f3;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+
+    .reach-btn:hover {
+      background: #1976d2;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 640px) {
+      .reach-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .reach-form {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .reach-form input {
+        width: 100%;
+      }
+    }
+
+    /* ────────────────────────────────
+       SCROLL ANIMATIONS
+    ──────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(44px);
+      filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-44px);
+      filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.8s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(44px);
+      filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.8s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    /* Stagger plant cards */
+    .plant-card:nth-child(1) {
+      transition-delay: 0s;
+    }
+
+    .plant-card:nth-child(2) {
+      transition-delay: 0.07s;
+    }
+
+    .plant-card:nth-child(3) {
+      transition-delay: 0.14s;
+    }
+
+    .plant-card:nth-child(4) {
+      transition-delay: 0.21s;
+    }
+
+   

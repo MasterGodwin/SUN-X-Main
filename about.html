@@ -15,10 +15,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
-  <link rel="preload" as="image" href="./src/assets/images/PoonamalleePlant.webp" fetchpriority="high" />
+  <!-- <link rel="preload" as="image" href="./src/assets/images/PoonamalleePlant.webp" fetchpriority="high" /> -->
   <link rel="stylesheet" href="src/css/comman.css" />
   <link rel="stylesheet" href="src/css/about.css" />
-  <link rel="stylesheet" href="/Nav-Dropdown.css" />
+  <link rel="stylesheet" href="src/css/Nav-Dropdown.css" />
   <link rel="stylesheet" href="src/css/index.css" />
 </head>
 
@@ -134,7 +134,7 @@
     </div>
   </section>
 
-  <!-- WHO WE ARE -->
+  <!-- WHO WE ARE --> 
   <section class="about-intro">
     <div class="about-intro-inner">
 
@@ -142,7 +142,7 @@
       <div class="about-intro-images anim-left">
         <img loading="lazy" decoding="async" class="ai-img-main" src="./src/assets/images/HO.jpg"
           alt="SUN-X Head Office" />
-        <img loading="lazy" decoding="async" class="ai-img-secondary" src="./src/assets/images/PoonamalleePlant.webp"
+        <img loading="lazy" decoding="async" class="ai-img-secondary" src="./src/assets/images/Oragadamplant.jpg"
           alt="SUN-X Poonamallee Plant" />
 
         <div class="ai-years-badge">
@@ -230,7 +230,7 @@
           <span>Our Infrastructure</span>
         </div>
 
-        <h2 class="facility-title">Our <span class="red">Facility</span></h2>
+        <h2 class="facility-title" style="color: #fff;">Our <span style="color: #fec403;">Facility</span></h2>
 
         <p class="facility-desc">
           To achieve excellence in delivery standards and service level in the industry, the
@@ -323,18 +323,17 @@
           </li>
         </ul>
 
-        <a href="#" class="btn-primary anim-up" style="margin-top:2rem; transition-delay:0.45s; display:inline-block;">
+        <a href="our-plants.html" class="btn-primary anim-up" style="margin-top:2rem; transition-delay:0.45s; display:inline-block;">
           View Our Plants &nbsp;→
         </a>
 
-
-      </div>
+</div>
 
       <!-- RIGHT: Stacked images -->
       <div class="facility-images anim-right">
 
         <div class="fi-img-top">
-          <img loading="lazy" decoding="async" src="./src/assets/images/Poonamallee Plant.jpg"
+          <img loading="lazy" decoding="async" src="./src/assets/images/transitmixer2.jpg"
             onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80'"
             alt="SUN-X Computerised Plant" />
           <div class="fi-badge">
@@ -348,21 +347,17 @@
         </div>
 
         <div class="fi-img-bottom">
-          <img loading="lazy" decoding="async" src="./src/assets/images/MDV Plant.jpg"
+          <img loading="lazy" decoding="async" src="./src/assets/images/TransitMixer.jpg"
             onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80'"
             alt="SUN-X Fleet" />
           <div class="fi-img-caption">Tamil Nadu &amp; Karnataka Operations</div>
         </div>
-
       </div>
 
     </div>
   </section>
 
-
-
-
-  <section class="fleet-section">
+<section class="fleet-section">
 
     <!-- TOP: gray background with eyebrow, title, vehicle images -->
     <div class="fleet-top">
@@ -411,8 +406,7 @@
       </div>
     </div><!-- /.fleet-top -->
 
-
-    <!-- BOTTOM: white background with stats -->
+<!-- BOTTOM: white background with stats -->
     <div class="fleet-bottom">
       <div class="fleet-grid">
 
@@ -463,154 +457,143 @@
   </section>
 
   <section class="ps">
+    <div class="ps-inner">
 
-    <div class="ps-rule"></div>
-
-    <div class="ps-head">
-      <div>
-        <div class="ps-label">Testimonials</div>
-        <h2 class="ps-title">From Our Valuable Partners</h2>
+      <div class="ps-head">
+        <div>
+          <div class="ps-label">
+            <div class="ps-eline"></div>
+            <span>Testimonials</span>
+          </div>
+          <h2 class="ps-title">From Our Valuable <span class="red">Partners</span></h2>
+        </div>
+        <div class="ps-count" id="ctr">01 — 04</div>
       </div>
-      <div class="ps-count" id="ctr">01 — 04</div>
-    </div>
 
-    <div class="ps-slides" id="slides">
+      <div class="ps-slides" id="slides">
 
-      <!-- Slide 1 -->
-      <div class="ps-slide active">
-        <div class="ps-num">01</div>
-        <div class="ps-body">
-          <p class="ps-quote">
-            "We experience an excellent professional support from your team.
-            Seamless co-ordination, effective communication and sincere dedicated
-            efforts to deliver results has been your strength. Continue to serve
-            the industry without any compromise on these ideals."
-          </p>
-          <div class="ps-divider"></div>
-          <div class="ps-person">
-            <img loading="lazy" decoding="async" class="ps-avatar" src="./src/assets/images/partners/gangatharan.jpg"
-              alt="K Gangatharan" onerror="this.src='https://placehold.co/48x48/eee/888?text=KG'" />
-            <div>
-              <div class="ps-name">K Gangatharan</div>
-              <div class="ps-role">MD, Harinarayanan Structurals Pvt. Ltd.</div>
+        <!-- Slide 1 -->
+        <div class="ps-slide active">
+          <div class="ps-card">
+            <div class="ps-quote-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9.5 7C6.5 7 4 9.5 4 12.7c0 2.6 1.8 4.6 4.2 4.6.9 0 1.7-.3 2.3-.9-.1 2.2-1.8 3.9-4 4.6l.6 1.6c3.4-1 5.9-3.8 5.9-7.8C13 10 11.7 7 9.5 7zm9.8 0c-3 0-5.5 2.5-5.5 5.7 0 2.6 1.8 4.6 4.2 4.6.9 0 1.7-.3 2.3-.9-.1 2.2-1.8 3.9-4 4.6l.6 1.6c3.4-1 5.9-3.8 5.9-7.8 0-2.8-1.3-5.8-3.5-7.8z"/></svg>
+            </div>
+            <div class="ps-body">
+              <p class="ps-quote">
+                "We experience an excellent professional support from your team.
+                Seamless co-ordination, effective communication and sincere dedicated
+                efforts to deliver results has been your strength. Continue to serve
+                the industry without any compromise on these ideals."
+              </p>
+              <div class="ps-divider"></div>
+              <div class="ps-person">
+                <img loading="lazy" decoding="async" class="ps-avatar" src="./src/assets/images/partners/gangatharan.jpg"
+                  alt="K Gangatharan" onerror="this.src='https://placehold.co/52x52/1a2744/f0c040?text=KG'" />
+                <div>
+                  <div class="ps-name">K Gangatharan</div>
+                  <div class="ps-role">MD, Harinarayanan Structurals Pvt. Ltd.</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Slide 2 -->
-      <div class="ps-slide">
-        <div class="ps-num">02</div>
-        <div class="ps-body">
-          <p class="ps-quote">
-            "When it comes to quality and service, SUN-X stands the best and
-            their immense support during massive concreting is flawless,
-            wishing the team a great support and blessing."
-          </p>
-          <div class="ps-divider"></div>
-          <div class="ps-person">
-            <img loading="lazy" decoding="async" class="ps-avatar" src="./src/assets/images/partners/uttam-kochar.jpg"
-              alt="Mr. Uttam Kochar" onerror="this.src='https://placehold.co/48x48/eee/888?text=UK'" />
-            <div>
-              <div class="ps-name">Mr. Uttam Kochar</div>
-              <div class="ps-role">MD, Kochar Homes Pvt Limited</div>
+        <!-- Slide 2 -->
+        <div class="ps-slide">
+          <div class="ps-card">
+            <div class="ps-quote-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9.5 7C6.5 7 4 9.5 4 12.7c0 2.6 1.8 4.6 4.2 4.6.9 0 1.7-.3 2.3-.9-.1 2.2-1.8 3.9-4 4.6l.6 1.6c3.4-1 5.9-3.8 5.9-7.8C13 10 11.7 7 9.5 7zm9.8 0c-3 0-5.5 2.5-5.5 5.7 0 2.6 1.8 4.6 4.2 4.6.9 0 1.7-.3 2.3-.9-.1 2.2-1.8 3.9-4 4.6l.6 1.6c3.4-1 5.9-3.8 5.9-7.8 0-2.8-1.3-5.8-3.5-7.8z"/></svg>
+            </div>
+            <div class="ps-body">
+              <p class="ps-quote">
+                "When it comes to quality and service, SUN-X stands the best and
+                their immense support during massive concreting is flawless,
+                wishing the team a great support and blessing."
+              </p>
+              <div class="ps-divider"></div>
+              <div class="ps-person">
+                <img loading="lazy" decoding="async" class="ps-avatar" src="./src/assets/images/partners/uttam-kochar.jpg"
+                  alt="Mr. Uttam Kochar" onerror="this.src='https://placehold.co/52x52/1a2744/f0c040?text=UK'" />
+                <div>
+                  <div class="ps-name">Mr. Uttam Kochar</div>
+                  <div class="ps-role">MD, Kochar Homes Pvt Limited</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Slide 3 -->
-      <div class="ps-slide">
-        <div class="ps-num">03</div>
-        <div class="ps-body">
-          <p class="ps-quote">
-            "Sun-X is being immensely valued and successful vendor partner in
-            our growth. Their unconditional support and seamless deliverables
-            with highest quality and on time supplies have immensely contributed
-            to our successful delivery of quality projects. Sun-X is an
-            epitome of quality and on time deliveries."
-          </p>
-          <div class="ps-divider"></div>
-          <div class="ps-person">
-            <img loading="lazy" decoding="async" class="ps-avatar" src="./src/assets/images/partners/sk-peter.jpg"
-              alt="S.K. Peter" onerror="this.src='https://placehold.co/48x48/eee/888?text=SP'" />
-            <div>
-              <div class="ps-name">S.K. Peter</div>
-              <div class="ps-role">MD &amp; CEO, Ocean Lifespaces India Pvt. Ltd.</div>
+        <!-- Slide 3 -->
+        <div class="ps-slide">
+          <div class="ps-card">
+            <div class="ps-quote-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9.5 7C6.5 7 4 9.5 4 12.7c0 2.6 1.8 4.6 4.2 4.6.9 0 1.7-.3 2.3-.9-.1 2.2-1.8 3.9-4 4.6l.6 1.6c3.4-1 5.9-3.8 5.9-7.8C13 10 11.7 7 9.5 7zm9.8 0c-3 0-5.5 2.5-5.5 5.7 0 2.6 1.8 4.6 4.2 4.6.9 0 1.7-.3 2.3-.9-.1 2.2-1.8 3.9-4 4.6l.6 1.6c3.4-1 5.9-3.8 5.9-7.8 0-2.8-1.3-5.8-3.5-7.8z"/></svg>
+            </div>
+            <div class="ps-body">
+              <p class="ps-quote">
+                "Sun-X is being immensely valued and successful vendor partner in
+                our growth. Their unconditional support and seamless deliverables
+                with highest quality and on time supplies have immensely contributed
+                to our successful delivery of quality projects. Sun-X is an
+                epitome of quality and on time deliveries."
+              </p>
+              <div class="ps-divider"></div>
+              <div class="ps-person">
+                <img loading="lazy" decoding="async" class="ps-avatar" src="./src/assets/images/partners/sk-peter.jpg"
+                  alt="S.K. Peter" onerror="this.src='https://placehold.co/52x52/1a2744/f0c040?text=SP'" />
+                <div>
+                  <div class="ps-name">S.K. Peter</div>
+                  <div class="ps-role">MD &amp; CEO, Ocean Lifespaces India Pvt. Ltd.</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Slide 4 -->
-      <div class="ps-slide">
-        <div class="ps-num">04</div>
-        <div class="ps-body">
-          <p class="ps-quote">
-            "Mr. Ayyappan has been pivotal to our RMC supply for a decade.
-            Under Sun-X Brand, his on time delivery, commitment to quality
-            and steadfast customer support remain the same."
-          </p>
-          <div class="ps-divider"></div>
-          <div class="ps-person">
-            <img loading="lazy" decoding="async" class="ps-avatar" src="./src/assets/images/partners/v-jagannath.jpg"
-              alt="V Jagannath" onerror="this.src='https://placehold.co/48x48/eee/888?text=VJ'" />
-            <div>
-              <div class="ps-name">V Jagannath</div>
-              <div class="ps-role">MD, Ramaniyam Real Estates LTD.</div>
+        <!-- Slide 4 -->
+        <div class="ps-slide">
+          <div class="ps-card">
+            <div class="ps-quote-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9.5 7C6.5 7 4 9.5 4 12.7c0 2.6 1.8 4.6 4.2 4.6.9 0 1.7-.3 2.3-.9-.1 2.2-1.8 3.9-4 4.6l.6 1.6c3.4-1 5.9-3.8 5.9-7.8C13 10 11.7 7 9.5 7zm9.8 0c-3 0-5.5 2.5-5.5 5.7 0 2.6 1.8 4.6 4.2 4.6.9 0 1.7-.3 2.3-.9-.1 2.2-1.8 3.9-4 4.6l.6 1.6c3.4-1 5.9-3.8 5.9-7.8 0-2.8-1.3-5.8-3.5-7.8z"/></svg>
+            </div>
+            <div class="ps-body">
+              <p class="ps-quote">
+                "Mr. Ayyappan has been pivotal to our RMC supply for a decade.
+                Under Sun-X Brand, his on time delivery, commitment to quality
+                and steadfast customer support remain the same."
+              </p>
+              <div class="ps-divider"></div>
+              <div class="ps-person">
+                <img loading="lazy" decoding="async" class="ps-avatar" src="./src/assets/images/partners/v-jagannath.jpg"
+                  alt="V Jagannath" onerror="this.src='https://placehold.co/52x52/1a2744/f0c040?text=VJ'" />
+                <div>
+                  <div class="ps-name">V Jagannath</div>
+                  <div class="ps-role">MD, Ramaniyam Real Estates LTD.</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+      </div><!-- /.ps-slides -->
+
+      <div class="ps-bottom">
+        <div class="ps-dots">
+          <button class="ps-dot active" data-i="0" aria-label="Slide 1"></button>
+          <button class="ps-dot" data-i="1" aria-label="Slide 2"></button>
+          <button class="ps-dot" data-i="2" aria-label="Slide 3"></button>
+          <button class="ps-dot" data-i="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="ps-nav">
+          <button class="ps-btn" id="prev" aria-label="Previous">&#8249;</button>
+          <button class="ps-btn" id="next" aria-label="Next">&#8250;</button>
+        </div>
       </div>
 
-    </div><!-- /.ps-slides -->
-
-    <div class="ps-bottom">
-      <div class="ps-dots">
-        <button class="ps-dot active" data-i="0" aria-label="Slide 1"></button>
-        <button class="ps-dot" data-i="1" aria-label="Slide 2"></button>
-        <button class="ps-dot" data-i="2" aria-label="Slide 3"></button>
-        <button class="ps-dot" data-i="3" aria-label="Slide 4"></button>
-      </div>
-      <div class="ps-nav">
-        <button class="ps-btn" id="prev" aria-label="Previous">&#8249;</button>
-        <button class="ps-btn" id="next" aria-label="Next">&#8250;</button>
-      </div>
-    </div>
-
+    </div><!-- /.ps-inner -->
   </section>
 
-  <script>
-    const slides = document.querySelectorAll('.ps-slide');
-    const dots = document.querySelectorAll('.ps-dot');
-    const ctr = document.getElementById('ctr');
-    const total = slides.length;
-    let cur = 0, timer;
-
-    const pad = n => String(n).padStart(2, '0');
-
-    function goTo(idx) {
-      slides[cur].classList.remove('active');
-      slides[cur].classList.add('out');
-      dots[cur].classList.remove('active');
-      const prev = cur;
-      setTimeout(() => slides[prev].classList.remove('out'), 400);
-      cur = (idx + total) % total;
-      slides[cur].classList.add('active');
-      dots[cur].classList.add('active');
-      ctr.textContent = pad(cur + 1) + ' — ' + pad(total);
-    }
-
-    function resetAuto() { clearInterval(timer); timer = setInterval(() => goTo(cur + 1), 5000); }
-
-    document.getElementById('prev').addEventListener('click', () => { goTo(cur - 1); resetAuto(); });
-    document.getElementById('next').addEventListener('click', () => { goTo(cur + 1); resetAuto(); });
-    dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.i); resetAuto(); }));
-
-    resetAuto();
-  </script>
-
-  <section class="wwa-section">
+<section class="wwa-section">
 
     <div class="wwa-top">
       <div class="anim-left">
@@ -619,16 +602,15 @@
           <span class="wwa-etxt">Who We Are</span>
         </div>
         <h2 class="wwa-headline">
-          There's Much More<br>
-          To Who We Are<br>
-          Than <em>What We Do.</em>
+          There's Much More To Who We Are
+          Than <span class="red">What We Do.</span>
         </h2>
       </div>
-      <p class="wwa-sub anim-right">
+      <!-- <p class="wwa-sub anim-right">
         Our strength isn't just in the concrete we supply or the plants we run —
         it's in the people who lead, the locations we serve, and the legacy we've built
         project by project across South India.
-      </p>
+      </p> -->
     </div>
 
     <div class="wwa-divider"></div>
@@ -704,17 +686,7 @@
 
   </section>
 
-  <script>
-    const projObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
-    document.querySelectorAll('#projCards .proj-card').forEach(el => projObserver.observe(el));
-
-    const projHeader = document.getElementById('projHeader');
-    if (projHeader) projObserver.observe(projHeader);
-  </script>
-
-  <footer class="fx">
+<footer class="fx">
     <div class="fx-top">
       <div class="fx-logo-ring fx-top-item">
         <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.png" alt="SUN-X" class="fx-main-logo"
@@ -856,70 +828,9 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const topItems = document.querySelectorAll('.fx-top-item');
-      const logoItems = document.querySelectorAll('.fx-logo-item');
+<script src="src/js/comman.js"></script>
 
-      const fxObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('fx-in');
-            fxObs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-
-      topItems.forEach((el, i) => {
-        el.style.transitionDelay = (i * 0.08) + 's';
-        fxObs.observe(el);
-      });
-
-      logoItems.forEach((el, i) => {
-        el.style.transitionDelay = (i * 0.1) + 's';
-        fxObs.observe(el);
-      });
-    })();
-  </script>
-
-
-
-  <script>
-    (function () {
-      const cols = document.querySelectorAll('.fx2-col');
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('fx-in');
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-      cols.forEach((el, i) => {
-        el.style.transitionDelay = (i * 0.1) + 's';
-        obs.observe(el);
-      });
-    })();
-  </script>
-
-  <script src="src/js/comman.js"></script>
-
-  <script>
-    const animEls = document.querySelectorAll('.anim-left, .anim-right, .anim-up');
-
-    const animObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
-    animEls.forEach(el => animObserver.observe(el));
-
-
-    const valuedObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0.08 });
-    valuedObserver.observe(document.getElementById('valuedSection'));
-
-  </script>
-
+<script src="src/js/about.js"></script>
 </body>
 
 </html>
