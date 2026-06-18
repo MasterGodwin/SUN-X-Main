@@ -1610,6 +1610,7 @@ body {
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.85;
   margin-bottom: 2.2rem;
+  text-align: justify;
 }
 
 .adv-cta-row {
@@ -1758,6 +1759,7 @@ body {
   color: #777;
   line-height: 1.75;
   max-width: 240px;
+  text-align: justify;
 }
 
 /* ── ADVANTAGES RESPONSIVE ── */
