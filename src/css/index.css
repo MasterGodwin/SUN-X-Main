@@ -508,6 +508,7 @@
       color: #555;
       line-height: 1.8;
       flex: 1;
+      text-align: justify;
     }
 
     .prod-card-link {
