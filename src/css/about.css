@@ -283,6 +283,7 @@ body {
     color: #666;
     line-height: 1.8;
     margin-bottom: 1.8rem;
+    text-align: justify;
 }
 
 .ai-features {
@@ -336,6 +337,7 @@ body {
     font-size: 0.87rem;
     color: #777;
     line-height: 1.65;
+    text-align: justify;
 }
 
 .btn-primary {
@@ -525,7 +527,7 @@ body {
 .fh-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.09);
-    border-top: 3px solid #700707;
+    border-top: 3px solid #fec403;
     padding: 1.2rem 0.9rem 1rem;
     display: flex;
     flex-direction: column;
@@ -536,14 +538,14 @@ body {
 }
 
 .fh-card:hover {
-    background: rgba(230, 51, 41, 0.1);
-    border-color: rgba(230, 51, 41, 0.5);
+    background: rgb(64 68 68);
+    border-color: rgb(254 196 3);
 }
 
 .fh-icon {
     width: 42px;
     height: 42px;
-    background: rgba(230, 51, 41, 0.12);
+    background: rgb(64 68 68);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -571,7 +573,7 @@ body {
 }
 
 .fh-plus {
-    color: #700707;
+    color: #fec403;
     font-size: 0.8em;
 }
 
@@ -605,7 +607,7 @@ body {
 .ff-dot {
     width: 7px;
     height: 7px;
-    background: #700707;
+    background: #fec403;
     border-radius: 50%;
     flex-shrink: 0;
 }
