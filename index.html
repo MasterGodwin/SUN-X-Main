@@ -9,25 +9,42 @@
     content="SUN-X Group is a leading Ready-Mix Concrete (RMC) supplier across Tamil Nadu, Karnataka and Andhra Pradesh — quality concrete solutions backed by 25+ batching plants and 650+ skilled professionals." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
+  <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Barlow+Condensed:wght@500;600;700&display=swap"
-    rel="stylesheet" />
-  <link
+    rel='stylesheet'>
+  <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="src/css/comman.css" media="print" onload="this.media='all'" />
-  <link rel="stylesheet" href="src/css/index.css" media="print" onload="this.media='all'" />
-  <link rel="stylesheet" href="src/css/style.css" media="print" onload="this.media='all'" />
-  <link rel="stylesheet" href="src/css/Nav-Dropdown.css" media="print" onload="this.media='all'" />
+    rel='stylesheet'>
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Barlow+Condensed:wght@500;600;700&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Instrument+Sans:wght@300;400;500&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="src/css/comman.css"  />
+  <link rel="stylesheet" href="src/css/index.css"  />
+  <link rel="stylesheet" href="src/css/style.css"  />
+  <link rel="stylesheet" href="src/css/Nav-Dropdown.css"  />
   <link href="src/assets/images/sun-x(125x55).webp" rel="shortcut icon">
+  <script>
+    
+  </script>
 </head>
 
 <body>
 
+  <!-- <div id="preloader">
+    <div class="preloader-inner">
+      <img src="./src/assets/images/sun-x.webp" alt="SUN-X" class="preloader-logo" />
+      <div class="preloader-ring"></div>
+    </div>
+  </div> -->
+
   <nav class="navbar" id="navbar">
     <div class="nav-left">
       <a href="#" class="logo">
-        <img src="./src/assets/images/sun-x.webp" alt="Logo" class="logo-img" fetchpriority="high" />
+        <img src="./src/assets/images/sun-x.webp" alt="SUN-X Logo" class="logo-img" fetchpriority="high" width="160"
+          height="70" />
       </a>
     </div>
     <div class="main-nav">
@@ -76,7 +93,8 @@
   <div class="drawer-overlay" id="drawerOverlay"></div>
   <div class="drawer" id="drawer">
     <div class="drawer-header">
-      <img src="./src/assets/images/sun-x.webp" alt="Logo" class="drawer-logo" fetchpriority="high" />
+      <img src="./src/assets/images/sun-x.webp" alt="SUN-X Logo" class="drawer-logo" fetchpriority="high" width="130"
+        height="48" />
       <button class="drawer-close" id="drawerClose">&#x2715;</button>
     </div>
     <nav class="drawer-nav">
@@ -123,7 +141,8 @@
     <div class="slides-wrapper" id="slidesWrapper">
 
       <div class="slide active"
-        style="background-image: url('./src/assets/images/PoonamalleePlant.webp'); width: 100%; height: 100%;">
+        style="background-image: url('./src/assets/images/PoonamalleePlant.webp'); width: 100%; height: 100%;"
+        aria-label="Poonamallee Plant slide">
         <div class="slide-content">
           <div class="slide-eyebrow">
             <div class="eyebrow-line"></div>
@@ -140,7 +159,8 @@
       </div>
 
       <div class="slide"
-        style="background-image: url('./src/assets/images/SiruseriPlant.webp'); width: 100%; height: 100%;">
+        style="background-image: url('./src/assets/images/SiruseriPlant.webp'); width: 100%; height: 100%;"
+        aria-label="SiruseriPlant Slide">
         <div class="slide-content">
           <div class="slide-eyebrow">
             <div class="eyebrow-line"></div>
@@ -156,7 +176,8 @@
         </div>
       </div>
 
-      <div class="slide" style="background-image: url('./src/assets/images/MDVPlant.webp'); width: 100%; height: 100%;">
+      <div class="slide" style="background-image: url('./src/assets/images/MDVPlant.webp'); width: 100%; height: 100%;"
+        aria-label="MDV Plant Slide">
         <div class="slide-content">
           <div class="slide-eyebrow">
             <div class="eyebrow-line"></div>
@@ -410,25 +431,23 @@
         </p>
       </div>
 
-      <div class="adv-card">
+      <div class="adv-card" onclick="window.location.href='our-projects.html'">
         <a href="our-projects.html" class="adv-card-title">Our Projects</a>
         <p class="adv-card-desc">Here is a snapshot of our projects across various verticals across 4 states.</p>
       </div>
 
-      <div class="adv-card">
+      <div class="adv-card" onclick="window.location.href='team.html'">
         <a href="team.html" class="adv-card-title">Our Team</a>
         <p class="adv-card-desc">Our management team has a cumulative experience of 100+ years and a proven track record
           of delivering excellence in the industry.</p>
       </div>
 
-      <div class="adv-card">
+      <div class="adv-card" onclick="window.location.href='services.html'">
         <a href="services.html" class="adv-card-title">Our Services</a>
         <p class="adv-card-desc">Our technical expertise is unmatched in the industry. Our fleet of vehicles enable us
           to solve any complex process.</p>
       </div>
-
     </div>
-
   </section>
 
   <section class="proj-section" id="projSection">
@@ -436,10 +455,10 @@
 
       <!-- Centered header -->
       <div class="proj-header" id="projHeader">
-        <div class="proj-eyebrow">
-          <span class="proj-eyebrow-line"></span>
+        <div class="proj-eyebrow" style="color: #fec403;">
+          <span class="proj-eyebrow-line" style="background: #fec403;"></span>
           Our Work
-          <span class="proj-eyebrow-line"></span>
+          <span class="proj-eyebrow-line" style="background: #fec403;"></span>
         </div>
         <h2 class="proj-title">Our Projects</h2>
         <p class="proj-subtitle">Every project we deliver is an opportunity for us to bring our unique thinking to solve
@@ -517,39 +536,368 @@
       </div>
     </div>
   </section>
+ 
+  <section class="products-section" id="productsSection">
+    <div class="products-inner">
 
-  <section class="news-section" id="newsSection">
-    <div class="news-inner">
+      <div class="products-header" id="productsHeader">
 
-      <!-- Centered header -->
-      <div class="news-header" id="newsHeader">
-        <div class="news-eyebrow">
-          <span class="news-eyebrow-line"></span>
-          Media
-          <span class="news-eyebrow-line"></span>
-        </div>
-        <h2 class="about-title">News and <span class="about-red">Press</span></h2>
+        <h2 class="proj-title2">Featured <span style="color:#fec403">Products</span></h2>
       </div>
 
-      <!-- Featured article card -->
-      <div class="news-featured" id="newsFeatured">
-        <div class="news-feat-img">
-          <img loading="lazy" decoding="async" src="src/assets/images/Expo.jpg" alt="Mining Expo" />
+      <div class="prod-carousel-wrap">
+        <button class="prod-nav prod-nav--prev" id="prodPrev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <div class="prod-carousel" id="prodCarousel">
+          <div class="prod-track" id="prodTrack">
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/TemperatureControlledconcrete.webp"
+                alt="Temperature Controlled Concrete" class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Mass Concrete</div>
+              <h3 class="prod-card-title">Temperature Controlled Concrete</h3>
+              <p class="prod-card-desc">Mixed concrete with lower heat of hydration for mass concrete requirements —
+                ensuring lower core temperature and higher durability.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/SelfCompactedConcrete.webp" alt="Self Compacting Concrete"
+                class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">SCC</div>
+              <h3 class="prod-card-title">Self Compacting Concrete</h3>
+              <p class="prod-card-desc">Fresh concrete that flows under its own weight — no external vibration required.
+                Ideal for complex reinforcement configurations.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/GreenBuildingconcrete.webp" alt="Green Building Concrete"
+                class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Sustainable</div>
+              <h3 class="prod-card-title">Green Building Concrete</h3>
+              <p class="prod-card-desc">Extra steps in mix design and placement to ensure a sustainable structure, long
+                life cycle and reduced CO₂ emissions.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/Highdensityconcrete.webp" alt="High Density Concrete"
+                class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Radiation Shield</div>
+              <h3 class="prod-card-title">High Density Concrete</h3>
+              <p class="prod-card-desc">Density up to 5,200 kg/m³ using iron aggregate — absorbs neutron and gamma rays,
+                reducing radiation to a very weak state.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/HighStrengthConcrete.webp" alt="High Strength Concrete"
+                class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">200 MPa</div>
+              <h3 class="prod-card-title">High Strength Concrete</h3>
+              <p class="prod-card-desc">Formulated with reactive powders and high-range water reducers — achieves
+                compressive strengths exceeding 200 MPa.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/EarlyStrengthconcrete.webp" alt="Early Strength Concrete"
+                class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">&gt;60 MPa at 28d</div>
+              <h3 class="prod-card-title">Early Strength Concrete</h3>
+              <p class="prod-card-desc">High compressive strength after 28 days, classified in the high performance
+                group — ideal for earthquake-zone high-rise structures.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/LightWeightConcrete.webp" alt="Light Weight Concrete"
+                class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Thermal</div>
+              <h3 class="prod-card-title">Light Weight Concrete</h3>
+              <p class="prod-card-desc">Significantly reduces dead loads, with improved thermal properties and fire
+                resistance for structural and insulation use.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/WaterPermeableconcrete.webp" alt="Water Permeable Concrete"
+                class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Pervious</div>
+              <h3 class="prod-card-title">Water Permeable Concrete</h3>
+              <p class="prod-card-desc">High porosity flatwork concrete that allows water to pass directly through,
+                reducing runoff and enabling groundwater recharge.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/ColourStampConcrete.webp" alt="Colour Stamp Concrete"
+                class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Decorative</div>
+              <h3 class="prod-card-title">Colour Stamp Concrete</h3>
+              <p class="prod-card-desc">Coloured and patterned concrete offering an aesthetic, durable and
+                cost-effective alternative to brick, tile and natural stone.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/ShotcreteConcrete.webp" alt="Shotcrete Concrete"
+                class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Sprayed</div>
+              <h3 class="prod-card-title">Shotcrete Concrete</h3>
+              <p class="prod-card-desc">Concrete pneumatically projected at high velocity onto a surface — fast,
+                efficient placement for vertical and overhead applications.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/UnderWaterConcrete.webp" alt="Under Water Concrete"
+                class="prod-card-img" loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Anti-Washout</div>
+              <h3 class="prod-card-title">Under Water Concrete</h3>
+              <p class="prod-card-desc">Specially designed for placement underwater without segregation or loss of
+                cement paste, using anti-washout admixtures.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/FoamConcrete.webp" alt="Foam Concrete" class="prod-card-img"
+                loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Lightweight</div>
+              <h3 class="prod-card-title">Foam Concrete</h3>
+              <p class="prod-card-desc">Lightweight, flowable concrete formed using a stable foam — designed for void
+                filling, insulation and non-structural applications.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/FiberConcrete.webp" alt="Fiber Concrete" class="prod-card-img"
+                loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Reinforced</div>
+              <h3 class="prod-card-title">Fiber Concrete</h3>
+              <p class="prod-card-desc">Reinforced with discrete fibers distributed throughout the mix, improving
+                toughness and resisting crack propagation.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+            <div class="prod-card">
+              <img src="src/assets/images/Products/NoFinesConcrete.webp" alt="No Fines Concrete" class="prod-card-img"
+                loading="lazy" decoding="async" />
+              <div class="prod-card-tag">Eco-Friendly</div>
+              <h3 class="prod-card-title">No Fines Concrete</h3>
+              <p class="prod-card-desc">Made with cement, water and coarse aggregate only — no fine sand — for excellent
+                drainage and reduced weight.</p>
+              <a href="our-products.html" class="prod-card-link">View Product <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></a>
+            </div>
+
+          </div>
         </div>
-        <div class="news-feat-body">
-          <h3 class="news-feat-title">Quarry owners urged to take up 'responsible mining'</h3>
-          <p class="news-feat-excerpt">At the International Mining and Mines Safety Expo-Symposium, organised by Stone
-            Quarry, Crusher and Lorry Owners' Association and Mining Engineers Association of India, he said the quarry
-            owners should take measures to minimise environmental degradation due to quarrying.</p>
-          <a href="https://www.thehindu.com" target="_blank" class="news-source-btn">
-            The Hindu
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+        <button class="prod-nav prod-nav--next" id="prodNext" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="prod-dots" id="prodDots"></div>
+
+      <div class="prod-cta-row">
+        <a href="our-products.html" class="proj-btn">
+          See All Products
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section> 
+
+  <section class="cap-index-section" id="capabilitiesSection">
+    <div class="cap-index-inner">
+
+      <div class="cap-index-header">
+        <div class="proj-eyebrow" style="color: #fec403;">
+          <span class="proj-eyebrow-line" style="background: #fec403;"></span>
+          What We Do
+          <span class="proj-eyebrow-line" style="background: #fec403;"></span>
+        </div>
+        <h2 class="proj-title">Our Capabilities</h2>
+        <p class="proj-subtitle">End-to-end concrete production backed by four core operational pillars — ensuring every
+          pour meets the highest standard, from plant to site.</p>
+      </div>
+
+      <div class="cap-index-grid" id="capIndexGrid">
+
+        <a href="quality-assurance.html" class="cap-index-card">
+          <div class="cap-index-num">01</div>
+          <div class="cap-index-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <polyline points="9 12 11 14 15 10" />
+            </svg>
+          </div>
+          <h3 class="cap-index-title">Quality Assurance</h3>
+          <p class="cap-index-desc">100% batch testing, IS:456 compliance, multi-stage QA from raw material to final
+            delivery. Every cubic metre carries a traceable quality record.</p>
+          <div class="cap-index-stats">
+            <span><strong>100%</strong> Batch Tested</span>
+            <span><strong>IS:456</strong> Compliant</span>
+          </div>
+          <div class="cap-index-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
-          </a>
-        </div>
+          </div>
+        </a>
+
+        <a href="production-facilities.html" class="cap-index-card">
+          <div class="cap-index-num">02</div>
+          <div class="cap-index-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+              <line x1="12" y1="12" x2="12" y2="16" />
+              <line x1="10" y1="14" x2="14" y2="14" />
+            </svg>
+          </div>
+          <h3 class="cap-index-title">Production Facilities</h3>
+          <p class="cap-index-desc">Strategically located, fully automated RMC plants across Tamil Nadu, Karnataka &amp;
+            Andhra Pradesh — each producing 60 m³/hr with ±0.5% weighing accuracy.</p>
+          <div class="cap-index-stats">
+            <span><strong>10+</strong> Active Plants</span>
+            <span><strong>3</strong> States</span>
+          </div>
+          <div class="cap-index-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="fleet-management.html" class="cap-index-card">
+          <div class="cap-index-num">03</div>
+          <div class="cap-index-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2" />
+              <path d="M16 8h4l3 4v4h-7V8z" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
+          </div>
+          <h3 class="cap-index-title">Fleet Management</h3>
+          <p class="cap-index-desc">100+ GPS-tracked transit mixers with live dispatch scheduling, preventive
+            maintenance and driver training — guaranteeing on-time delivery to the pour point.</p>
+          <div class="cap-index-stats">
+            <span><strong>100+</strong> Transit Mixers</span>
+            <span><strong>GPS</strong> Tracked Live</span>
+          </div>
+          <div class="cap-index-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="batching-plant.html" class="cap-index-card">
+          <div class="cap-index-num">04</div>
+          <div class="cap-index-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+            </svg>
+          </div>
+          <h3 class="cap-index-title">Batching Plant</h3>
+          <p class="cap-index-desc">SCADA-controlled twin-shaft mixing technology with ±0.5% load cell accuracy. Every
+            batch logged, printed and traceable — from silo to truck in 90 seconds.</p>
+          <div class="cap-index-stats">
+            <span><strong>±0.5%</strong> Accuracy</span>
+            <span><strong>90s</strong> Cycle Time</span>
+          </div>
+          <div class="cap-index-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </div>
+        </a>
+
       </div>
 
     </div>
@@ -597,6 +945,41 @@
             delivery to any location in major cities</p>
         </div>
 
+      </div>
+
+    </div>
+  </section>
+
+  <section class="news-section" id="newsSection">
+    <div class="news-inner">
+ 
+      <div class="news-header" id="newsHeader">
+        <div class="news-eyebrow">
+          <span class="news-eyebrow-line"></span>
+          Media
+          <span class="news-eyebrow-line"></span>
+        </div>
+        <h2 class="about-title">News and <span class="about-red">Press</span></h2>
+      </div>
+ 
+      <div class="news-featured" id="newsFeatured">
+        <div class="news-feat-img">
+          <img loading="lazy" decoding="async" src="src/assets/images/Expo.jpg" alt="Mining Expo" />
+        </div>
+        <div class="news-feat-body">
+          <h3 class="news-feat-title">Quarry owners urged to take up 'responsible mining'</h3>
+          <p class="news-feat-excerpt">At the International Mining and Mines Safety Expo-Symposium, organised by Stone
+            Quarry, Crusher and Lorry Owners' Association and Mining Engineers Association of India, he said the quarry
+            owners should take measures to minimise environmental degradation due to quarrying.</p>
+          <a href="https://www.thehindu.com" target="_blank" class="news-source-btn">
+            The Hindu
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -711,18 +1094,13 @@
   </section>
 
   <footer class="fx">
-    <div class="fx-top">
+    <!-- <div class="fx-top">
       <div class="fx-logo-ring fx-top-item">
         <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.webp" alt="SUN-X" class="fx-main-logo"
           width="118" height="52" />
-      </div>
-      <p class="fx-brand fx-top-item">SUN-X Concrete</p>
-      <p class="fx-tagline fx-top-item" style="font-size: 12px; font-weight: 500; color: black;">Strength · Mining ·
-        Ready-Mix</p>
+      </div> 
       <p class="fx-desc fx-top-item" style="font-size: 14px; font-weight: 500; font-family: sans-serif;color: #474343;">
-        SUN-X Group is a building materials company specializing in high-quality
-        Ready-Mix Concrete (RMC), aggregates, and allied solutions — with a strong presence across Tamil Nadu,
-        Karnataka and Andhra Pradesh, and a growing international footprint in the UAE.</p>
+        SUN-X Group Is An Established Concrete Supplier In TamilNadu, Karnataka And AndhraPradesh With A Strong Foothold In Mining And Ready-Mix Concrete. </p>
       <div class="fx-socials fx-top-item">
         <a href="https://www.facebook.com/SunXGroup/" class="fx-soc" aria-label="Facebook">
           <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
@@ -744,7 +1122,8 @@
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
           </svg>
         </a>
-        <a href="https://www.linkedin.com/company/sun-x-concrete-india-pvt-ltd/?originalSubdomain=in" class="fx-soc" aria-label="LINKEDIN">
+        <a href="https://www.linkedin.com/company/sun-x-concrete-india-pvt-ltd/?originalSubdomain=in" class="fx-soc"
+          aria-label="LINKEDIN">
           <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
             <rect x="2" y="9" width="4" height="12" />
@@ -752,7 +1131,7 @@
           </svg>
         </a>
       </div>
-    </div>
+    </div> -->
 
     <div class="fx-sub">
       <div class="fx-sub-label fx-top-item">Subsidiary of</div>
@@ -858,9 +1237,14 @@
     </div>
   </footer>
 
+  <script>
+    
+  </script>
+
   <script defer src="src/js/index.js"></script>
   <script defer src="src/js/index2.js"></script>
   <script defer src="src/js/index3.js"></script>
+  <script defer src="src/js/index5.js"></script>
   <script type="module" src="src/js/comman.js"></script>
 
 </body>

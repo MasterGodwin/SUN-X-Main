@@ -69,6 +69,7 @@ body {
   transform: translateX(-40px);
   transition: none;
   will-change: opacity, transform, filter;
+  text-align: justify;
 }
 
 .slide-content.text-animate {
@@ -2152,6 +2153,7 @@ body {
   color: #666;
   line-height: 1.85;
   margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .news-source-btn {
@@ -2352,6 +2354,7 @@ body {
   font-size: 0.9rem;
   color: #555;
   line-height: 1.85;
+  text-align: justify;
 }
 
 .plants-img-secondary {
@@ -2774,6 +2777,7 @@ body {
 .sx-card-desc {
   font-size: 0.84rem;
   color: #777;
+  text-align: justify;
   line-height: 1.75;
 }
 

@@ -79,7 +79,7 @@
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--red);
+            color: #fec403;
             margin-bottom: 1.2rem;
         }
 
@@ -87,7 +87,7 @@
             content: '';
             width: 20px;
             height: 1.5px;
-            background: var(--red);
+            background: #fec403;
             display: block;
         }
 
@@ -131,7 +131,7 @@
         }
 
         .cap-stat-num span {
-            color: var(--red);
+            color: #fec403;
         }
 
         .cap-stat-label {
@@ -333,7 +333,7 @@
         }
 
         .standards-left h2 span {
-            color: var(--red);
+            color: #fec403;
         }
 
         .standards-left p {
@@ -371,7 +371,7 @@
         .std-dot {
             width: 8px;
             height: 8px;
-            background: var(--red);
+            background: #fec403;
             border-radius: 50%;
             flex-shrink: 0;
             margin-top: 6px;

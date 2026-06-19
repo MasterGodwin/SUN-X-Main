@@ -570,7 +570,7 @@
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #700707;
+      color: #fec403;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -580,7 +580,7 @@
     .tm-join-label-line {
       width: 24px;
       height: 2px;
-      background: #700707;
+      background: #fec403;
     }
 
     .tm-join-title {
@@ -596,13 +596,14 @@
 
     .tm-join-title em {
       font-style: normal;
-      color: #700707;
+      color: #fec403;
     }
 
     .tm-join-desc {
       font-size: 0.87rem;
       color: rgba(255, 255, 255, 0.55);
       line-height: 1.85;
+      text-align: justify;
     }
 
     /* right: perks + buttons */
@@ -632,7 +633,7 @@
       height: 18px;
       flex-shrink: 0;
       margin-top: 2px;
-      stroke: #700707;
+      stroke: #fec403;
       fill: none;
       stroke-width: 2;
       stroke-linecap: round;

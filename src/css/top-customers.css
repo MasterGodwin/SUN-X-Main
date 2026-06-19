@@ -23,14 +23,14 @@
 .tc-header .sec-eyebrow .eline {
   width: 28px;
   height: 2px;
-  background: #e63329;
+  background: #700707;
 }
 
 .tc-header .sec-eyebrow span {
   font-size: 0.68rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #888;
+  color: #700707;
   font-family: 'Instrument Sans', sans-serif;
 }
 
