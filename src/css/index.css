@@ -63,8 +63,8 @@
     }
 
     .fx-soc:hover {
-      border-color: #1a2744;
-      color: #1a2744;
+      border-color: #fec403;
+      color: #fec403;
       transform: translateY(-5px) scale(1.12)
     }
 
