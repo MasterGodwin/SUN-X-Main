@@ -1585,7 +1585,7 @@ WHO WE ARE — REDESIGNED SECTION
     left: 0;
     width: 0;
     height: 2px;
-    background: #700707;
+    /* background: #700707; */
     transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
