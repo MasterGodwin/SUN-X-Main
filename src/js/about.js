@@ -1,4 +1,4 @@
-    const slides = document.querySelectorAll('.ps-slide');
+const slides = document.querySelectorAll('.ps-slide');
     const dots = document.querySelectorAll('.ps-dot');
     const ctr = document.getElementById('ctr');
     const total = slides.length;
@@ -86,7 +86,10 @@
     animEls.forEach(el => animObserver.observe(el));
 
 
-    const valuedObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
-    }, { threshold: 0.08 });
-    valuedObserver.observe(document.getElementById('valuedSection'));
+    const valuedSection = document.getElementById('valuedSection');
+    if (valuedSection) {
+      const valuedObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
+      }, { threshold: 0.08 });
+      valuedObserver.observe(valuedSection);
+    }

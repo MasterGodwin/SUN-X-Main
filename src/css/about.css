@@ -126,7 +126,7 @@ body {
 }
 
 .about-hero-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: clamp(3rem, 7vw, 5.5rem);
     font-weight: 700;
     color: #fff;
@@ -233,7 +233,7 @@ body {
 }
 
 .ai-years-badge .years-num {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: 3rem;
     font-weight: 700;
     line-height: 1;
@@ -269,7 +269,7 @@ body {
 
 /* --- Right: text --- */
 .about-intro-text h2 {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     line-height: 1.15;
@@ -495,7 +495,7 @@ body {
 
 /* ── Text side ── */
 .facility-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: clamp(2.2rem, 4.5vw, 3.4rem);
     font-weight: 700;
     line-height: 1.1;
@@ -565,7 +565,7 @@ body {
 }
 
 .fh-num {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
     color: #fff;
@@ -862,7 +862,7 @@ body {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-image: url('../assets//images/demo//shillouette2bg.png');
+    background-image: url('../assets/images/demo/shillouette2bg.webp');
     /* swap your image */
     background-size: cover;
     background-position: center;
@@ -971,7 +971,7 @@ body {
 }
 
 .fleet-bign {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: clamp(5.5rem, 11vw, 9.5rem);
     font-weight: 900;
     color: #700707;
@@ -1021,7 +1021,7 @@ body {
 }
 
 .fsc-n {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     font-weight: 700;
     color: #700707;
@@ -1173,7 +1173,7 @@ body {
 }
 
 .ps-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: clamp(2rem, 4.2vw, 3rem);
     font-weight: 700;
     color: #700707;
@@ -1433,7 +1433,7 @@ WHO WE ARE — REDESIGNED SECTION
 }
 
 .wwa-headline {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: clamp(2.6rem, 5.5vw, 4.4rem);
     font-weight: 700;
     color: #700707;
@@ -1559,7 +1559,7 @@ WHO WE ARE — REDESIGNED SECTION
 }
 
 .wwa-card-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.45rem;
     font-weight: 700;
     text-transform: uppercase;

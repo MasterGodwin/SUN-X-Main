@@ -242,7 +242,7 @@
       font-weight: 700;
       letter-spacing: 3.5px;
       text-transform: uppercase;
-      color: #c0392b;
+      color: #700707;
       white-space: nowrap;
     }
 
@@ -334,7 +334,7 @@
       top: 2.8rem;
       bottom: 2.8rem;
       width: 3px;
-      background: #c0392b;
+      background: #700707;
     }
 
     .tm-feat-designation {
@@ -344,7 +344,7 @@
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: #c0392b;
+      color: #700707;
       margin-bottom: 0.75rem;
     }
 
@@ -402,7 +402,7 @@
 
     .tm-card:hover {
       box-shadow: 0 8px 28px rgba(26, 39, 68, 0.09);
-      border-color: #c0392b;
+      border-color: #700707;
     }
 
     /* photo */
@@ -458,7 +458,7 @@
     }
 
     .tm-card:hover .tm-card-body {
-      border-color: #c0392b;
+      border-color: #700707;
     }
 
     .tm-card-role {
@@ -466,7 +466,7 @@
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: #c0392b;
+      color: #700707;
       margin-bottom: 0.4rem;
     }
 

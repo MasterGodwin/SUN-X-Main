@@ -47,7 +47,7 @@
 }
 
 .uae-hero-title {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: clamp(2.8rem, 6vw, 5.5rem);
   font-weight: 700;
   color: #fff;
@@ -100,7 +100,7 @@
 }
 
 .uae-intro-text h2 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 700;
   color: #700707;
@@ -146,7 +146,7 @@
 
 .ui-badge .badge-num {
   display: block;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1;
@@ -193,7 +193,7 @@
 }
 
 .uae-vm-header h2 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 700;
   color: #700707;
@@ -240,7 +240,7 @@
 }
 
 .uae-vm-card h3 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   color: #1a2744;
@@ -291,7 +291,7 @@
 }
 
 .uae-why-text h2 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 700;
   color: #fff;
@@ -379,7 +379,7 @@
 }
 
 .uae-stat-item .sn {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: 3rem;
   font-weight: 700;
   color: #fff;
@@ -428,7 +428,7 @@
 }
 
 .uae-services-header h2 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 700;
   color: #700707;
@@ -484,7 +484,7 @@
 }
 
 .uae-svc-body h3 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   color: #1a2744;
@@ -523,7 +523,7 @@
 }
 
 .uae-cta h2 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 700;
   color: #fff;
@@ -699,7 +699,7 @@
 }
 
 .lgm-title {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   font-size: clamp(2rem, 3.8vw, 3rem);
   font-weight: 700;
   color: #fff;

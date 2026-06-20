@@ -69,7 +69,7 @@ document.querySelectorAll('.drawer-nav a').forEach(l => l.addEventListener('clic
 
 //   function hidePreloader() {
 //     if (hidden) return;
-//     hidden = true;
+//     hidden = true; 
 //     const elapsed = Date.now() - shownAt;
 //     const wait = Math.max(0, MIN_VISIBLE_MS - elapsed);
 //     setTimeout(() => {

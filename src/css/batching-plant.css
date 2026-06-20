@@ -1,5 +1,4 @@
-
-    :root {
+:root {
       --red: #700707;
       --navy: #1a2744;
     }
@@ -90,7 +89,7 @@
     }
 
     .cap-hero-title {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
       font-size: clamp(3rem, 7vw, 5.5rem);
       font-weight: 900;
       color: #fff;
@@ -121,7 +120,7 @@
     }
 
     .cap-stat-num {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
       font-size: 2.6rem;
       font-weight: 900;
       color: #fff;
@@ -159,7 +158,7 @@
     }
 
     .cap-intro-text h2 {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
       font-size: clamp(2rem, 3.5vw, 2.8rem);
       font-weight: 800;
       text-transform: uppercase;
@@ -226,7 +225,7 @@
     }
 
     .section-head h2 {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
       font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 900;
       text-transform: uppercase;
@@ -262,7 +261,7 @@
     }
 
     .process-card-num {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
       font-size: 4.5rem;
       font-weight: 900;
       color: rgba(0, 0, 0, 0.05);
@@ -336,7 +335,7 @@
     }
 
     .seq-num {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
       font-size: 3.5rem;
       font-weight: 900;
       color: #fec403;
@@ -366,7 +365,7 @@
     }
 
     .cap-cta h2 {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 900;
       text-transform: uppercase;
