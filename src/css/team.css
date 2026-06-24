@@ -510,7 +510,7 @@
 
       .tm-feat-photo {
         min-height: 220px;
-        aspect-ratio: 16/9;
+        aspect-ratio: 12/9;
       }
 
       .tm-feat-body::before {
