@@ -159,12 +159,45 @@
         <div class="form-field">
           <label class="form-label">Phone number</label>
           <div class="phone-wrap">
-            <select class="phone-country">
-              <option>🇮🇳 +91</option>
-              <option>🇺🇸 +1</option>
-              <option>🇬🇧 +44</option>
-            </select>
-            <input class="phone-num" type="tel" placeholder="+91 98765 43210" />
+
+            <!-- Custom dropdown -->
+            <div class="custom-phone-select" id="customPhoneSelect">
+              <div class="cps-selected" id="cpsSelected">
+                <img id="flagImg"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA9UlEQVR4nO2UPQ6CQBCF51gUngV6Qi23IKHjGkqhDQewBCw8gLh0VFs/M1sZfzoQx7wveclkt3nfsosIIYQQ8g+gEliKUKCiACjwyNqFQIFq/VKgQGVYwHsPS5ElBZybsN02SNNDSJ43Yc2EgHMTkqTG+ezQtld03RDmON7PKiFLCejJa+G6vqAsTyE69/0t7P28QJoe0bZDKJ5lxxCd9WvonhGB6xuBwYZAnjfoutvLFdI13ft5AecmxPEu3Hk9dX3EOusjHkcDj9h/+I3OWd4vLfCNyDNRsYGlCAUKCoACj6xdKKJAsX6piAKFYQFCCCFEDHIHYAJaJ5T9GcsAAAAASUVORK5CYII="
+                  alt="IN" width="22" height="15" />
+                <span id="cpsCode">+91</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#700707" stroke-width="2.5"
+                  stroke-linecap="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+
+              <div class="cps-dropdown" id="cpsDropdown">
+                <div class="cps-option" data-code="+91"
+                  data-flag="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA9UlEQVR4nO2UPQ6CQBCF51gUngV6Qi23IKHjGkqhDQewBCw8gLh0VFs/M1sZfzoQx7wveclkt3nfsosIIYQQ8g+gEliKUKCiACjwyNqFQIFq/VKgQGVYwHsPS5ElBZybsN02SNNDSJ43Yc2EgHMTkqTG+ezQtld03RDmON7PKiFLCejJa+G6vqAsTyE69/0t7P28QJoe0bZDKJ5lxxCd9WvonhGB6xuBwYZAnjfoutvLFdI13ft5AecmxPEu3Hk9dX3EOusjHkcDj9h/+I3OWd4vLfCNyDNRsYGlCAUKCoACj6xdKKJAsX6piAKFYQFCCCFEDHIHYAJaJ5T9GcsAAAAASUVORK5CYII="
+                  data-alt="IN">
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA9UlEQVR4nO2UPQ6CQBCF51gUngV6Qi23IKHjGkqhDQewBCw8gLh0VFs/M1sZfzoQx7wveclkt3nfsosIIYQQ8g+gEliKUKCiACjwyNqFQIFq/VKgQGVYwHsPS5ElBZybsN02SNNDSJ43Yc2EgHMTkqTG+ezQtld03RDmON7PKiFLCejJa+G6vqAsTyE69/0t7P28QJoe0bZDKJ5lxxCd9WvonhGB6xuBwYZAnjfoutvLFdI13ft5AecmxPEu3Hk9dX3EOusjHkcDj9h/+I3OWd4vLfCNyDNRsYGlCAUKCoACj6xdKKJAsX6piAKFYQFCCCFEDHIHYAJaJ5T9GcsAAAAASUVORK5CYII="
+                    alt="IN" width="22" height="15" />
+                  <span>IN &nbsp;+91</span>
+                </div>
+                <div class="cps-option" data-code="+971"
+                  data-flag="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAY0lEQVR4nO3PsQnEMBAAwavKOPjovj9VahAG5fepQofSexa2gImQJOkfGt+jnny2zxIHQAMogDmABlAA4w2Aq99LHAAdoADmADpAAYw3ADJziQMgAQpgDiABCmDsDJAkKTbsB4q949k7s9xrAAAAAElFTkSuQmCC"
+                  data-alt="AE">
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAY0lEQVR4nO3PsQnEMBAAwavKOPjovj9VahAG5fepQofSexa2gImQJOkfGt+jnny2zxIHQAMogDmABlAA4w2Aq99LHAAdoADmADpAAYw3ADJziQMgAQpgDiABCmDsDJAkKTbsB4q949k7s9xrAAAAAElFTkSuQmCC"
+                    alt="AE" width="22" height="15" />
+                  <span>UAE &nbsp;+971</span>
+                </div>
+              </div>
+
+              <!-- hidden input — emailjs ku ithu use pannuvom -->
+              <input type="hidden" id="phoneCountry" value="+91" />
+            </div>
+
+            <input class="phone-num" type="tel" id="phoneNum" placeholder="98765 43210" inputmode="numeric"
+              maxlength="10" />
           </div>
         </div>
 
@@ -712,6 +745,119 @@
   <script src="src/js/index3.js"></script>
   <script type="module" src="src/js/comman.js" defer></script>
 
-</body>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+  <script>
+    emailjs.init('3Adbq_aKJJjAxFG_-'); 
+
+    const FLAGS = {
+      '+91': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA9UlEQVR4nO2UPQ6CQBCF51gUngV6Qi23IKHjGkqhDQewBCw8gLh0VFs/M1sZfzoQx7wveclkt3nfsosIIYQQ8g+gEliKUKCiACjwyNqFQIFq/VKgQGVYwHsPS5ElBZybsN02SNNDSJ43Yc2EgHMTkqTG+ezQtld03RDmON7PKiFLCejJa+G6vqAsTyE69/0t7P28QJoe0bZDKJ5lxxCd9WvonhGB6xuBwYZAnjfoutvLFdI13ft5AecmxPEu3Hk9dX3EOusjHkcDj9h/+I3OWd4vLfCNyDNRsYGlCAUKCoACj6xdKKJAsX6piAKFYQFCCCFEDHIHYAJaJ5T9GcsAAAAASUVORK5CYII=',
+      '+971': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAY0lEQVR4nO3PsQnEMBAAwavKOPjovj9VahAG5fepQofSexa2gImQJOkfGt+jnny2zxIHQAMogDmABlAA4w2Aq99LHAAdoADmADpAAYw3ADJziQMgAQpgDiABCmDsDJAkKTbsB4q949k7s9xrAAAAAElFTkSuQmCC'
+    };
+
+    const PHONE_CONFIG = {
+      '+91': { placeholder: '98765 43210', maxLength: 10 },
+      '+971': { placeholder: '50 123 4567', maxLength: 9 }
+    };
+
+    const phoneNum = document.getElementById('phoneNum');
+    const phoneHidden = document.getElementById('phoneCountry');
+    const flagImg = document.getElementById('flagImg');
+    const cpsCode = document.getElementById('cpsCode');
+    const cpsSelected = document.getElementById('cpsSelected');
+    const wrapper = document.getElementById('customPhoneSelect');
+    const submitBtn = document.querySelector('.form-submit');
+
+    cpsSelected.addEventListener('click', (e) => {
+      e.stopPropagation();
+      wrapper.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.cps-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const code = opt.dataset.code;
+        const config = PHONE_CONFIG[code];
+
+        flagImg.src = opt.dataset.flag;
+        flagImg.alt = opt.dataset.alt;
+        cpsCode.textContent = code;
+        phoneHidden.value = code;
+        phoneNum.placeholder = config.placeholder;
+        phoneNum.maxLength = config.maxLength;
+        phoneNum.value = '';
+
+        document.querySelectorAll('.cps-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+
+        wrapper.classList.remove('open');
+        phoneNum.focus();
+      });
+    });
+
+    document.addEventListener('click', () => wrapper.classList.remove('open'));
+
+    phoneNum.addEventListener('input', function () {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    document.querySelector('.cps-option[data-code="+91"]').classList.add('selected');
+
+    submitBtn.addEventListener('click', () => {
+      const fname = document.querySelector('input[placeholder="First name"]').value.trim();
+      const lname = document.querySelector('input[placeholder="Last name"]').value.trim();
+      const email = document.querySelector('input[type="email"]').value.trim();
+      const code = phoneHidden.value;
+      const phone = phoneNum.value.trim();
+      const message = document.querySelector('.form-textarea').value.trim();
+      const services = [...document.querySelectorAll('.cb-item input:checked')]
+        .map(cb => cb.closest('.cb-item').querySelector('.cb-text').textContent.trim())
+        .join(', ') || 'None selected';
+      const time = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+
+      if (!fname || !email || !message) {
+        alert('Please fill in all required fields (First name, Email, Message).');
+        return;
+      }
+
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      emailjs.send('service_2bn9cia', 'template_w3fkffs', {
+        name: fname + ' ' + lname,
+        email: email,
+        phone: code + ' ' + phone,
+        services: services,
+        message: message,
+        time: time
+      })
+        .then(() => {
+          submitBtn.textContent = '✓ Message sent!';
+          submitBtn.style.background = '#1a7a3f';
+
+          document.querySelectorAll('.form-input').forEach(i => i.value = '');
+          document.querySelector('.form-textarea').value = '';
+          document.querySelectorAll('.cb-item input').forEach(cb => cb.checked = false);
+          phoneNum.value = '';
+
+          setTimeout(() => {
+            submitBtn.textContent = 'Send message';
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+          }, 4000);
+        })
+        .catch((err) => {
+          console.error('EmailJS error:', err);
+          submitBtn.textContent = 'Failed — try again';
+          submitBtn.style.background = '#c0392b';
+          submitBtn.disabled = false;
+
+          setTimeout(() => {
+            submitBtn.textContent = 'Send message';
+            submitBtn.style.background = '';
+          }, 3000);
+        });
+    });
+  </script>
+
+</body>
 </html>

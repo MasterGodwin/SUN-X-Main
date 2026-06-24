@@ -130,36 +130,89 @@
       min-height: 130px;
     }
 
-    /* phone row */
+    /* phone wrap */
     .phone-wrap {
       display: flex;
       gap: 0;
     }
 
-    .phone-country {
-      padding: 0.7rem 0.8rem;
+    /* custom select container */
+    .custom-phone-select {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    /* selected display box */
+    .cps-selected {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.7rem 0.75rem;
       border: 1.5px solid #d5d5d5;
       border-right: none;
       border-radius: 8px 0 0 8px;
       background: #fff;
-      font-size: 0.85rem;
-      color: #700707;
-      font-family: inherit;
-      outline: none;
       cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #700707;
       white-space: nowrap;
+      user-select: none;
+      min-width: 88px;
       transition: border-color 0.2s;
     }
 
-    .phone-country:focus {
+    .custom-phone-select.open .cps-selected {
       border-color: #1a2744;
     }
 
+    /* dropdown list */
+    .cps-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      background: #fff;
+      border: 1.5px solid #d5d5d5;
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 999;
+      min-width: 140px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .custom-phone-select.open .cps-dropdown {
+      display: block;
+    }
+
+    /* each option row */
+    .cps-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: #111;
+      transition: background 0.15s;
+    }
+
+    .cps-option:hover {
+      background: #f5f5f5;
+    }
+
+    .cps-option.selected {
+      background: #fef9ec;
+      color: #700707;
+      font-weight: 600;
+    }
+
+    .cps-option img {
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* phone number input */
     .phone-num {
       flex: 1;
       padding: 0.7rem 0.95rem;

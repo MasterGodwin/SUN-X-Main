@@ -141,6 +141,7 @@ body {
     max-width: 560px;
     line-height: 1.7;
     margin-top: 1rem;
+    text-align: justify;
 }
 
 .red {

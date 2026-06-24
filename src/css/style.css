@@ -2272,6 +2272,7 @@ body {
   color: #666;
   line-height: 1.85;
   margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .plants-btn {

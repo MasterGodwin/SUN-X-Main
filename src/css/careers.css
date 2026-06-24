@@ -269,6 +269,7 @@
       color: #777;
       line-height: 1.85;
       max-width: 420px;
+      text-align: justify;
     }
 
     .vacancy-quote-accent {
@@ -285,6 +286,7 @@
       color: #700707;
       line-height: 1.7;
       margin-bottom: 1.2rem;
+      text-align: justify;
     }
 
     .vacancy-quote-text em {
@@ -296,6 +298,7 @@
       font-size: 0.82rem;
       color: #999;
       line-height: 1.8;
+      text-align: justify;
     }
 
     /* ── RIGHT: form ── */
@@ -1068,6 +1071,7 @@
       .people-editorial-main,
       .people-editorial-fade {
         letter-spacing: -1px;
+        text-align: justify;
       }
 
       .people-deco {
@@ -1235,6 +1239,7 @@
       font-size: 0.86rem;
       color: #777;
       line-height: 1.8;
+      text-align: justify;
     }
 
     .why-card:nth-child(2) .why-card-desc {

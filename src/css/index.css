@@ -302,7 +302,10 @@
     @media(max-width:560px) {
       .fx2-grid {
         grid-template-columns: 1fr;
-        gap: 2rem
+        gap: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+
       }
 
       .fx2-bottom {
@@ -397,7 +400,7 @@
       }
 
       .vc-img {
-        max-height: 44px;
+        max-height: 80px;
       }
     }
 
@@ -487,7 +490,7 @@
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: #700707; 
+      color: #700707;
       background: #7007071a;
       display: inline-block;
       padding: 0.3rem 0.7rem;
