@@ -89,3 +89,57 @@ document.querySelectorAll('.drawer-nav a').forEach(l => l.addEventListener('clic
 // })();
 
 // document.documentElement.classList.add('preload');
+
+document.addEventListener('DOMContentLoaded', function () {
+      var items = document.querySelectorAll('.mv-acc-item');
+
+      // Init: open first item
+      var firstBody = document.querySelector('.mv-acc-item.mv-acc-open .mv-acc-body');
+      if (firstBody) firstBody.style.maxHeight = firstBody.scrollHeight + 'px';
+
+      items.forEach(function (item) {
+        item.querySelector('.mv-acc-header').addEventListener('click', function () {
+          var isOpen = item.classList.contains('mv-acc-open');
+
+          // Close all
+          items.forEach(function (i) {
+            i.classList.remove('mv-acc-open');
+            i.querySelector('.mv-acc-body').style.maxHeight = '0';
+            i.querySelector('.mv-acc-toggle').textContent = '+';
+          });
+
+          // Open this one
+          if (!isOpen) {
+            var body = item.querySelector('.mv-acc-body');
+            item.classList.add('mv-acc-open');
+            body.style.maxHeight = body.scrollHeight + 'px';
+            item.querySelector('.mv-acc-toggle').textContent = '−';
+          }
+        });
+      });
+
+      // ── Quick Links Footer Accordion ──
+      document.querySelectorAll('.ql-acc-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var li = this.closest('.ql-acc-item');
+          var sub = li.querySelector('.ql-acc-sub');
+          var icon = li.querySelector('.ql-acc-icon');
+          var isOpen = li.classList.contains('ql-open');
+
+          // Close all in same list
+          li.closest('.fx2-quicklinks').querySelectorAll('.ql-acc-item').forEach(function (el) {
+            el.classList.remove('ql-open');
+            el.querySelector('.ql-acc-sub').style.maxHeight = '0';
+            el.querySelector('.ql-acc-icon').textContent = '+';
+            el.querySelector('.ql-acc-btn').setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isOpen) {
+            li.classList.add('ql-open');
+            sub.style.maxHeight = sub.scrollHeight + 'px';
+            icon.textContent = '−';
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    });

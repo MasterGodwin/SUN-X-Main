@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="src/css/Nav-Dropdown.css" />
   <link rel="stylesheet" href="src/css/services.css" />
   <link rel="stylesheet" href="src/css/index.css" />
+  <link rel="stylesheet" href="src/css/style.css" />
   <link href="src/assets/images/sun-x.png" rel="shortcut icon" type="image/png">
 </head>
 
@@ -297,6 +298,14 @@
     </div>
   </section>
 
+  <!-- Lightbox -->
+  <div class="cert-lightbox" id="certLightbox">
+    <button class="cert-lb-close" id="certLbClose">&#x2715;</button>
+    <div class="cert-lb-inner">
+      <img src="" alt="" id="certLbImg" />
+    </div>
+  </div>
+
   <section class="srv-cert">
     <div class="srv-cert-inner">
       <div class="srv-sec-hdr anim-up">
@@ -305,41 +314,46 @@
         </div>
         <h2 class="srv-sec-title">Certifications &amp; <span class="red">Standards</span></h2>
       </div>
-      <div class="srv-cert-grid">
-        <div class="srv-cert-card anim-up">
-          <div class="srv-cert-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" />
-              <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" />
-            </svg>
+
+      <!-- Carousel -->
+      <div class="cert-carousel-wrap">
+        <button class="cert-car-btn cert-car-prev" id="certPrev" aria-label="Previous">&#8592;</button>
+
+        <div class="cert-car-viewport" id="certViewport">
+          <div class="cert-car-track" id="certTrack">
+            <div class="cert-car-slide" data-src="src/assets/images/certificates/iso-9001-2015.webp" data-alt="ISO 9001:2015">
+              <img src="src/assets/images/certificates/iso-9001-2015.webp" alt="ISO 9001:2015" />
+              <div class="cert-card-zoom">🔍 View</div>
+            </div>
+            <div class="cert-car-slide" data-src="src/assets/images/certificates/iso-9001-2015-annexure.webp" data-alt="ISO 9001:2015 Annexure">
+              <img src="src/assets/images/certificates/iso-9001-2015-annexure.webp" alt="ISO 9001:2015 Annexure" />
+              <div class="cert-card-zoom">🔍 View</div>
+            </div>
+            <div class="cert-car-slide" data-src="src/assets/images/certificates/iso-14001-2015.webp" data-alt="ISO 14001:2015">
+              <img src="src/assets/images/certificates/iso-14001-2015.webp" alt="ISO 14001:2015" />
+              <div class="cert-card-zoom">🔍 View</div>
+            </div>
+            <div class="cert-car-slide" data-src="src/assets/images/certificates/iso-14001-2015-annexure.webp" data-alt="ISO 14001:2015 Annexure">
+              <img src="src/assets/images/certificates/iso-14001-2015-annexure.webp" alt="ISO 14001:2015 Annexure" />
+              <div class="cert-card-zoom">🔍 View</div>
+            </div>
+            <div class="cert-car-slide" data-src="src/assets/images/certificates/tuv-rmcpcs.webp" data-alt="TUV India RMCPCS">
+              <img src="src/assets/images/certificates/tuv-rmcpcs.webp" alt="TUV India RMCPCS" />
+              <div class="cert-card-zoom">🔍 View</div>
+            </div>
+            <div class="cert-car-slide" data-src="src/assets/images/certificates/igbc-membership.webp" data-alt="IGBC Membership">
+              <img src="src/assets/images/certificates/igbc-membership.webp" alt="IGBC Membership" />
+              <div class="cert-card-zoom">🔍 View</div>
+            </div>
           </div>
-          <div class="srv-cert-name">ISO 9001:2015</div>
-          <p class="srv-cert-desc">Quality Management System — ensuring consistent product quality, process
-            control and customer satisfaction.</p>
         </div>
-        <div class="srv-cert-card anim-up">
-          <div class="srv-cert-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" />
-              <path
-                d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
-          </div>
-          <div class="srv-cert-name">ISO 14001:2015</div>
-          <p class="srv-cert-desc">Environmental Management System — committed to environmental protection and
-            sustainable resource use.</p>
-        </div>
-        <div class="srv-cert-card anim-up">
-          <div class="srv-cert-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <div class="srv-cert-name">ISO 45001:2018</div>
-          <p class="srv-cert-desc">Occupational Health &amp; Safety Management — providing a safe and healthy
-            workplace for employees, clients and partners.</p>
-        </div>
+
+        <button class="cert-car-btn cert-car-next" id="certNext" aria-label="Next">&#8594;</button>
       </div>
+
+      <!-- Dots -->
+      <div class="cert-car-dots" id="certDots"></div>
+
       <p class="srv-cert-foot">
         Our batching plants and transit mixers have successfully completed <strong>NRMCA</strong> inspection and
         auditing in accordance with international ready-mix industry requirements — ensuring reliable production,
@@ -428,7 +442,7 @@
     </div>
   </section>
 
-  <footer class="fx">
+ <footer class="fx">
     <div class="fx-sub">
       <div class="fx-sub-label fx-top-item">Subsidiary of</div>
       <div class="fx-logos">
@@ -441,7 +455,7 @@
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
         <div class="fx-logo-item">
-          <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.webp" alt="SUN-X" width="104"
+          <img loading="lazy" decoding="async" src="./src/assets/images/PS_logo.webp" alt="SUN-X" width="104"
             height="46" />
         </div>
         <div class="fx-logo-item">
@@ -565,13 +579,13 @@
             <polyline points="22,6 12,13 2,6" />
           </svg>
           <ul class="fx2-links">
-            <li><a href="mailto:grk@sunxconcrete.org">grk@sunxconcrete.org</a></li>
+            <li><a href="mailto:info@sunx.ae">info@sunx.ae</a></li>
           </ul>
         </div>
       </div>
 
       <div class="fx2-col">
-        <p class="fx2-col-title">Quick Links</p>
+        <p class="fx2-col-title">Our Works</p>
         <ul class="fx2-links">
           <li><a href="our-products.html">Our Products</a></li>
           <li><a href="our-projects.html">Our Projects</a></li>
@@ -580,12 +594,39 @@
       </div>
 
       <div class="fx2-col">
-        <p class="fx2-col-title">About Us</p>
-        <ul class="fx2-links">
+        <p class="fx2-col-title">Quick Links</p>
+        <ul class="fx2-links fx2-quicklinks">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
+
+          <!-- About Us accordion -->
+          <li class="ql-acc-item">
+            <button class="ql-acc-btn" aria-expanded="false">
+              About Us
+              <span class="ql-acc-icon">+</span>
+            </button>
+            <ul class="ql-acc-sub">
+              <li><a href="about.html">About Sunx Concrete</a></li>
+              <li><a href="about-sunx-uae.html">About Sunx UAE</a></li>
+              <li><a href="team.html">Our Team</a></li>
+            </ul>
+          </li>
+
           <li><a href="services.html">Our Services</a></li>
-          <li><a href="team.html">Our Team</a></li>
+
+          <!-- Capabilities accordion -->
+          <li class="ql-acc-item">
+            <button class="ql-acc-btn" aria-expanded="false">
+              Capabilities
+              <span class="ql-acc-icon">+</span>
+            </button>
+            <ul class="ql-acc-sub">
+              <li><a href="quality-assurance.html">Quality Assurance</a></li>
+              <li><a href="production-facilities.html">Production Facilities</a></li>
+              <li><a href="fleet-management.html">Fleet Management</a></li>
+              <li><a href="batching-plant.html">Batching Plant</a></li>
+            </ul>
+          </li>
+
           <li><a href="careers.html">Careers</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>

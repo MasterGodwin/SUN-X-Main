@@ -19,6 +19,9 @@
       logoItems.forEach((el, i) => {
         el.style.transitionDelay = (i * 0.1) + 's';
         fxObs.observe(el);
+        el.addEventListener('transitionend', function clearDelay() {
+          el.style.transitionDelay = '0s';
+          el.removeEventListener('transitionend', clearDelay);
+        });
       });
     })();
-

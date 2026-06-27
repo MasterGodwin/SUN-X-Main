@@ -66,3 +66,117 @@ document.querySelectorAll('.srv-proc-step').forEach((el, i) => {
   el.style.transitionDelay = (i * 0.14) + 's';
   srvAnimObs.observe(el);
 });
+// ══════════════════════════════════════
+// CERTIFICATE LIGHTBOX
+// ══════════════════════════════════════
+(function () {
+  const lightbox = document.getElementById('certLightbox');
+  const lbImg    = document.getElementById('certLbImg');
+  const lbClose  = document.getElementById('certLbClose');
+
+  document.querySelectorAll('.srv-cert-img-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.dataset.src;
+      const alt = card.dataset.alt;
+      lbImg.src = src;
+      lbImg.alt = alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLb() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { lbImg.src = ''; }, 300);
+  }
+
+  lbClose.addEventListener('click', closeLb);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+})();
+
+// ══════════════════════════════════════
+// CERTIFICATE CAROUSEL
+// ══════════════════════════════════════
+(function () {
+  const track    = document.getElementById('certTrack');
+  const viewport = document.getElementById('certViewport');
+  const prevBtn  = document.getElementById('certPrev');
+  const nextBtn  = document.getElementById('certNext');
+  const dotsWrap = document.getElementById('certDots');
+  const slides   = Array.from(track.querySelectorAll('.cert-car-slide'));
+  let current = 0;
+
+  function getVisible() {
+    const w = window.innerWidth;
+    if (w <= 700)  return 1;
+    if (w <= 1024) return 2;
+    return 3;
+  }
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const total = slides.length - getVisible() + 1;
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'cert-car-dot' + (i === current ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function goTo(index) {
+    const vis = getVisible();
+    const max = slides.length - vis;
+    current = Math.max(0, Math.min(index, max));
+
+    const slideW = slides[0].offsetWidth + 16; // gap = 1.2rem ≈ 16px
+    track.style.transform = `translateX(-${current * slideW}px)`;
+
+    dotsWrap.querySelectorAll('.cert-car-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === current)
+    );
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= max;
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+  window.addEventListener('resize', () => { buildDots(); goTo(current); });
+
+  // Touch swipe
+  let tx = 0;
+  track.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = tx - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+  }, { passive: true });
+
+  // Lightbox on slide click
+  const lightbox = document.getElementById('certLightbox');
+  const lbImg    = document.getElementById('certLbImg');
+  const lbClose  = document.getElementById('certLbClose');
+
+  slides.forEach(slide => {
+    slide.addEventListener('click', () => {
+      lbImg.src = slide.dataset.src;
+      lbImg.alt = slide.dataset.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLb() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { lbImg.src = ''; }, 300);
+  }
+
+  if (lbClose) lbClose.addEventListener('click', closeLb);
+  if (lightbox) lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+  buildDots();
+  goTo(0);
+})();

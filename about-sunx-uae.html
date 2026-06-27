@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="src/css/index.css" />
   <link rel="stylesheet" href="src/css/about-sunx-uae.css" />
   <link rel="stylesheet" href="src/css/top-customers.css" />
+  <link rel="stylesheet" href="src/css/style.css" />
   <link href="src/assets/images/sun-x.png" rel="shortcut icon" type="image/png">
 </head>
 
@@ -392,7 +393,7 @@
 
         <div class="lgm-card anim-up delay-2">
           <div class="lgm-card-bg"
-            style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80')">
+            style="background-image:url('src/assets/images/sobha_island.webp')">
           </div>
           <div class="lgm-card-shade"></div>
           <div class="lgm-card-content">
@@ -469,31 +470,31 @@
     </div>
   </section>
 
-  <footer class="fx">
+ <footer class="fx">
     <div class="fx-sub">
       <div class="fx-sub-label fx-top-item">Subsidiary of</div>
       <div class="fx-logos">
         <div class="fx-logo-item">
-          <img loading="lazy" decoding="async" src="./src/assets/images/sunxholding.png" alt="SUNX Holdings"
+          <img loading="lazy" decoding="async" src="./src/assets/images/sunxholding.webp" alt="SUNX Holdings"
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
         <div class="fx-logo-item">
-          <img loading="lazy" decoding="async" src="./src/assets/images/sunxtech.png" alt="Suntech Civil Services"
+          <img loading="lazy" decoding="async" src="./src/assets/images/sunxtech.webp" alt="Suntech Civil Services"
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
         <div class="fx-logo-item">
-          <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.webp" alt="SUN-X" width="104"
+          <img loading="lazy" decoding="async" src="./src/assets/images/PS_logo.webp" alt="SUN-X" width="104"
             height="46" />
         </div>
         <div class="fx-logo-item">
-          <img loading="lazy" decoding="async" src="./src/assets/images/alturus.png" alt="Alturas Infrastructure"
+          <img loading="lazy" decoding="async" src="./src/assets/images/alturus.webp" alt="Alturas Infrastructure"
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
       </div>
     </div>
   </footer>
 
-   <footer class="fx2">
+  <footer class="fx2">
     <div class="fx2-grid">
 
       <div class="fx2-col">
@@ -606,13 +607,13 @@
             <polyline points="22,6 12,13 2,6" />
           </svg>
           <ul class="fx2-links">
-            <li><a href="mailto:grk@sunxconcrete.org">grk@sunxconcrete.org</a></li>
+            <li><a href="mailto:info@sunx.ae">info@sunx.ae</a></li>
           </ul>
         </div>
       </div>
 
       <div class="fx2-col">
-        <p class="fx2-col-title">Quick Links</p>
+        <p class="fx2-col-title">Our Works</p>
         <ul class="fx2-links">
           <li><a href="our-products.html">Our Products</a></li>
           <li><a href="our-projects.html">Our Projects</a></li>
@@ -621,12 +622,39 @@
       </div>
 
       <div class="fx2-col">
-        <p class="fx2-col-title">About Us</p>
-        <ul class="fx2-links">
+        <p class="fx2-col-title">Quick Links</p>
+        <ul class="fx2-links fx2-quicklinks">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
+
+          <!-- About Us accordion -->
+          <li class="ql-acc-item">
+            <button class="ql-acc-btn" aria-expanded="false">
+              About Us
+              <span class="ql-acc-icon">+</span>
+            </button>
+            <ul class="ql-acc-sub">
+              <li><a href="about.html">About Sunx Concrete</a></li>
+              <li><a href="about-sunx-uae.html">About Sunx UAE</a></li>
+              <li><a href="team.html">Our Team</a></li>
+            </ul>
+          </li>
+
           <li><a href="services.html">Our Services</a></li>
-          <li><a href="team.html">Our Team</a></li>
+
+          <!-- Capabilities accordion -->
+          <li class="ql-acc-item">
+            <button class="ql-acc-btn" aria-expanded="false">
+              Capabilities
+              <span class="ql-acc-icon">+</span>
+            </button>
+            <ul class="ql-acc-sub">
+              <li><a href="quality-assurance.html">Quality Assurance</a></li>
+              <li><a href="production-facilities.html">Production Facilities</a></li>
+              <li><a href="fleet-management.html">Fleet Management</a></li>
+              <li><a href="batching-plant.html">Batching Plant</a></li>
+            </ul>
+          </li>
+
           <li><a href="careers.html">Careers</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>

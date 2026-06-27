@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="src/css/about.css">
   <link rel="stylesheet" href="src/css/index.css" />
   <link rel="stylesheet" href="src/css/our-projects.css" />
+  <link rel="stylesheet" href="src/css/style.css" />
   <link href="src/assets/images/sun-x.png" rel="shortcut icon" type="image/png">
 </head>
 
@@ -159,7 +160,7 @@
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
         <div class="fx-logo-item">
-          <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.webp" alt="SUN-X" width="104"
+          <img loading="lazy" decoding="async" src="./src/assets/images/PS_logo.webp" alt="SUN-X" width="104"
             height="46" />
         </div>
         <div class="fx-logo-item">
@@ -170,7 +171,7 @@
     </div>
   </footer>
 
-   <footer class="fx2">
+  <footer class="fx2">
     <div class="fx2-grid">
 
       <div class="fx2-col">
@@ -252,7 +253,8 @@
       <div class="fx2-col">
         <p class="fx2-col-title" style="display: flex;justify-content: flex-start;gap: 11px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAA
           LEwEAmpwYAAAAY0lEQVR4nO3PsQnEMBAAwavKOPjovj9VahAG5fepQofSexa2gImQJOkfGt+jnny2zxIHQAMogDmABlAA4w2Aq99LHAAdoADmADpAAYw3
-          ADJziQMgAQpgDiABCmDsDJAkKTbsB4q949k7s9xrAAAAAElFTkSuQmCC" alt="united-arab-emirates" style="width: 32px;height: 26px;">Head Office</p>
+          ADJziQMgAQpgDiABCmDsDJAkKTbsB4q949k7s9xrAAAAAElFTkSuQmCC" alt="united-arab-emirates"
+            style="width: 32px;height: 26px;">Head Office</p>
         <div class="fx2-info-item">
           <svg class="fx2-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
@@ -283,13 +285,13 @@
             <polyline points="22,6 12,13 2,6" />
           </svg>
           <ul class="fx2-links">
-            <li><a href="mailto:grk@sunxconcrete.org">grk@sunxconcrete.org</a></li>
+            <li><a href="mailto:info@sunx.ae">info@sunx.ae</a></li>
           </ul>
         </div>
       </div>
 
       <div class="fx2-col">
-        <p class="fx2-col-title">Quick Links</p>
+        <p class="fx2-col-title">Our Works</p>
         <ul class="fx2-links">
           <li><a href="our-products.html">Our Products</a></li>
           <li><a href="our-projects.html">Our Projects</a></li>
@@ -298,12 +300,39 @@
       </div>
 
       <div class="fx2-col">
-        <p class="fx2-col-title">About Us</p>
-        <ul class="fx2-links">
+        <p class="fx2-col-title">Quick Links</p>
+        <ul class="fx2-links fx2-quicklinks">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
+
+          <!-- About Us accordion -->
+          <li class="ql-acc-item">
+            <button class="ql-acc-btn" aria-expanded="false">
+              About Us
+              <span class="ql-acc-icon">+</span>
+            </button>
+            <ul class="ql-acc-sub">
+              <li><a href="about.html">About Sunx Concrete</a></li>
+              <li><a href="about-sunx-uae.html">About Sunx UAE</a></li>
+              <li><a href="team.html">Our Team</a></li>
+            </ul>
+          </li>
+
           <li><a href="services.html">Our Services</a></li>
-          <li><a href="team.html">Our Team</a></li>
+
+          <!-- Capabilities accordion -->
+          <li class="ql-acc-item">
+            <button class="ql-acc-btn" aria-expanded="false">
+              Capabilities
+              <span class="ql-acc-icon">+</span>
+            </button>
+            <ul class="ql-acc-sub">
+              <li><a href="quality-assurance.html">Quality Assurance</a></li>
+              <li><a href="production-facilities.html">Production Facilities</a></li>
+              <li><a href="fleet-management.html">Fleet Management</a></li>
+              <li><a href="batching-plant.html">Batching Plant</a></li>
+            </ul>
+          </li>
+
           <li><a href="careers.html">Careers</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>

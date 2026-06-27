@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="src/css/Nav-Dropdown.css" />
   <link rel="stylesheet" href="src/css/index.css" />
   <link rel="stylesheet" href="src/css/batching-plant.css" />
+  <link rel="stylesheet" href="src/css/style.css" />
   <link href="src/assets/images/sun-x.png" rel="shortcut icon" type="image/png">
 </head>
 
@@ -308,7 +309,7 @@
             style="max-height: 68px !important; max-width: 219px !important;" />
         </div>
         <div class="fx-logo-item">
-          <img loading="lazy" decoding="async" src="./src/assets/images/sun-x.webp" alt="SUN-X" width="104"
+          <img loading="lazy" decoding="async" src="./src/assets/images/PS_logo.webp" alt="SUN-X" width="104"
             height="46" />
         </div>
         <div class="fx-logo-item">
@@ -319,7 +320,7 @@
     </div>
   </footer>
 
-   <footer class="fx2">
+  <footer class="fx2">
     <div class="fx2-grid">
 
       <div class="fx2-col">
@@ -432,13 +433,13 @@
             <polyline points="22,6 12,13 2,6" />
           </svg>
           <ul class="fx2-links">
-            <li><a href="mailto:grk@sunxconcrete.org">grk@sunxconcrete.org</a></li>
+            <li><a href="mailto:info@sunx.ae">info@sunx.ae</a></li>
           </ul>
         </div>
       </div>
 
       <div class="fx2-col">
-        <p class="fx2-col-title">Quick Links</p>
+        <p class="fx2-col-title">Our Works</p>
         <ul class="fx2-links">
           <li><a href="our-products.html">Our Products</a></li>
           <li><a href="our-projects.html">Our Projects</a></li>
@@ -447,12 +448,39 @@
       </div>
 
       <div class="fx2-col">
-        <p class="fx2-col-title">About Us</p>
-        <ul class="fx2-links">
+        <p class="fx2-col-title">Quick Links</p>
+        <ul class="fx2-links fx2-quicklinks">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
+
+          <!-- About Us accordion -->
+          <li class="ql-acc-item">
+            <button class="ql-acc-btn" aria-expanded="false">
+              About Us
+              <span class="ql-acc-icon">+</span>
+            </button>
+            <ul class="ql-acc-sub">
+              <li><a href="about.html">About Sunx Concrete</a></li>
+              <li><a href="about-sunx-uae.html">About Sunx UAE</a></li>
+              <li><a href="team.html">Our Team</a></li>
+            </ul>
+          </li>
+
           <li><a href="services.html">Our Services</a></li>
-          <li><a href="team.html">Our Team</a></li>
+
+          <!-- Capabilities accordion -->
+          <li class="ql-acc-item">
+            <button class="ql-acc-btn" aria-expanded="false">
+              Capabilities
+              <span class="ql-acc-icon">+</span>
+            </button>
+            <ul class="ql-acc-sub">
+              <li><a href="quality-assurance.html">Quality Assurance</a></li>
+              <li><a href="production-facilities.html">Production Facilities</a></li>
+              <li><a href="fleet-management.html">Fleet Management</a></li>
+              <li><a href="batching-plant.html">Batching Plant</a></li>
+            </ul>
+          </li>
+
           <li><a href="careers.html">Careers</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -475,6 +503,31 @@
   </footer>
 
   <script src="src/js/batching-plant.js"></script>
+  <script>
+    document.querySelectorAll('.ql-acc-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var li = this.closest('.ql-acc-item');
+    var sub = li.querySelector('.ql-acc-sub');
+    var icon = li.querySelector('.ql-acc-icon');
+    var isOpen = li.classList.contains('ql-open');
+
+    // Close all in same list
+    li.closest('.fx2-quicklinks').querySelectorAll('.ql-acc-item').forEach(function (el) {
+      el.classList.remove('ql-open');
+      el.querySelector('.ql-acc-sub').style.maxHeight = '0';
+      el.querySelector('.ql-acc-icon').textContent = '+';
+      el.querySelector('.ql-acc-btn').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      li.classList.add('ql-open');
+      sub.style.maxHeight = sub.scrollHeight + 'px';
+      icon.textContent = '−';
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+  </script>
 </body>
 
 </html>
